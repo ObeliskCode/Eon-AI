@@ -1,6 +1,6 @@
-# Eon-Calc
+# Eon
 
-Eon-Calc is a Machine Learning Math Library. The library is still a WIP. 
+Eon is a Machine Learning Math Library. The library is still a WIP. 
 The Latex Neural Network is the first model I've devised for Eon-Calc.
 
 ```
