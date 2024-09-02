@@ -1,0 +1,96 @@
+import tensorflow as tf
+import numpy as np
+
+
+# pip install tensorflow --break-system-packages # you may have to run this command
+
+
+class Latex_RNN_Cell(tf.keras.layers.Layer):
+    def __init__(self, input_size, hidden_size):
+        super(Latex_RNN_Cell, self).__init__()
+        self.W_input = self.add_weight(
+            shape=(input_size, hidden_size), initializer="random_normal", trainable=True
+        )
+        self.W_hidden = self.add_weight(
+            shape=(hidden_size, hidden_size),
+            initializer="random_normal",
+            trainable=True,
+        )
+        self.bias = self.add_weight(
+            shape=(hidden_size,), initializer="random_normal", trainable=True
+        )
+
+        self.identity = self.add_weight(
+            shape=(hidden_size,), initializer="random_normal", trainable=True
+        )
+        self.negative = self.add_weight(
+            shape=(hidden_size,), initializer="random_normal", trainable=True
+        )
+        self.zero = self.add_weight(
+            shape=(hidden_size,), initializer="random_normal", trainable=True
+        )
+
+    def call(self, inputs, hidden_state):
+        pre_activation = (
+            tf.matmul(inputs, self.W_input)
+            + tf.matmul(hidden_state, self.W_hidden)
+            + self.bias
+        )
+        latex_negative = tf.tanh(pre_activation) * self.negative
+        latex_zero = tf.tanh(pre_activation) * self.zero
+        latex_identity = self.identity
+
+        next_hidden_state = latex_negative + latex_zero + latex_identity
+        return next_hidden_state
+
+
+class Latex_RNN(tf.keras.Model):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(Latex_RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.rnn_cell = Latex_RNN_Cell(input_size, hidden_size)
+        self.output_layer = tf.keras.layers.Dense(output_size)
+
+    def call(self, inputs):
+        hidden_state = tf.zeros((tf.shape(inputs)[0], self.hidden_size))
+
+        for t in range(inputs.shape[1]):
+            hidden_state = self.rnn_cell(inputs[:, t], hidden_state)
+
+        output = self.output_layer(hidden_state)
+        return output
+
+
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+
+train_images = train_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+test_images = test_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+
+input_size = 28
+hidden_size = 128
+output_size = 10
+
+latex_rnn = Latex_RNN(input_size, hidden_size, output_size)
+
+latex_rnn.compile(
+    optimizer="adam",
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=["accuracy"],
+)
+
+latex_rnn.fit(
+    train_images,
+    train_labels,
+    epochs=5,
+    batch_size=64,
+    validation_data=(test_images, test_labels),
+)
+
+test_loss, test_acc = latex_rnn.evaluate(test_images, test_labels, verbose=2)
+print(f"Test accuracy: {test_acc}")
+
+predictions = latex_rnn.predict(test_images[:10])
+predicted_classes = tf.argmax(predictions, axis=1)
+print(f"Predicted classes: {predicted_classes.numpy()}")
