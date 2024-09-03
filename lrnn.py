@@ -4,6 +4,12 @@ import numpy as np
 
 # pip install tensorflow --break-system-packages # you may have to run this command
 
+# Continuous Tan-Sigmoid Function : https://en.wikibooks.org/wiki/Artificial_Neural_Networks/Activation_Functions
+# We use the tanh function in a way that is uncommon to normal perceptron design;
+# tanh is our activation function as per a normal perceptron would have;
+# except that our activated function output is then multiplied by a variable "gain" which is also tuned;
+# the concept of a variable "gain" is how my perceptron is not "binary" imo;
+
 
 class Latex_RNN_Cell(tf.keras.layers.Layer):
     def __init__(self, input_size, hidden_size):
