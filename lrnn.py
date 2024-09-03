@@ -4,6 +4,14 @@ import numpy as np
 
 # pip install tensorflow --break-system-packages # you may have to run this command
 
+
+# Perceiving The Perceptron - Perpetual Enigma
+# Link : https://prateekvjoshi.com/2012/12/04/perceiving-the-perceptron/
+# A perceptron has a number of external input links, one internal input (called bias), a threshold, and one output link.
+# Usually, the input values are boolean (that is, they can only have two possible values: 1 or 0), but they can be any real number as well.
+# The output of the perceptron, however, is always boolean. Dec 4, 2012
+
+
 # Problem : https://stackoverflow.com/questions/52450683/can-a-perceptron-take-real-values-as-input-or-just-0-and-1
 # Continuous Tan-Sigmoid Function : https://en.wikibooks.org/wiki/Artificial_Neural_Networks/Activation_Functions
 # We use the tanh function in a way that is uncommon to normal perceptron design;
