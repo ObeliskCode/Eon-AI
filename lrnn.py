@@ -4,6 +4,7 @@ import numpy as np
 
 # pip install tensorflow --break-system-packages # you may have to run this command
 
+# Problem : https://stackoverflow.com/questions/52450683/can-a-perceptron-take-real-values-as-input-or-just-0-and-1
 # Continuous Tan-Sigmoid Function : https://en.wikibooks.org/wiki/Artificial_Neural_Networks/Activation_Functions
 # We use the tanh function in a way that is uncommon to normal perceptron design;
 # tanh is our activation function as per a normal perceptron would have;
