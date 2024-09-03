@@ -17,7 +17,7 @@ import numpy as np
 # We use the tanh function in a way that is uncommon to normal perceptron design;
 # tanh is our activation function as per a normal perceptron would have;
 # except that our activated function output is then multiplied by a variable "gain" which is also tuned;
-# the concept of a variable "gain" is how my perceptron is not "binary" imo;
+# the concept of a variable "gain" is how my perceptron is not "binary" but "continous" (Continuous Neural Network) ;
 
 
 class Latex_RNN_Cell(tf.keras.layers.Layer):
