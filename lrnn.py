@@ -98,7 +98,7 @@ latex_rnn.compile(
 latex_rnn.fit(
     train_images,
     train_labels,
-    epochs=5,
+    epochs=20,
     batch_size=64,
     validation_data=(test_images, test_labels),
 )
@@ -109,3 +109,64 @@ print(f"Test accuracy: {test_acc}")
 predictions = latex_rnn.predict(test_images[:10])
 predicted_classes = tf.argmax(predictions, axis=1)
 print(f"Predicted classes: {predicted_classes.numpy()}")
+
+
+# Load and preprocess the MNIST dataset
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+train_images = train_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
+test_images = test_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
+
+
+# Define the Perceptron Model
+def create_perceptron_model(input_size, output_size):
+    model = tf.keras.Sequential(
+        [
+            tf.keras.layers.Dense(
+                output_size, activation="softmax", input_shape=(input_size,)
+            )
+        ]
+    )
+    return model
+
+
+input_size = 28 * 28
+output_size = 10
+
+perceptron = create_perceptron_model(input_size, output_size)
+
+# Compile the perceptron model
+perceptron.compile(
+    optimizer="adam",
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
+    metrics=["accuracy"],
+)
+
+# Train the Perceptron Model
+history_perceptron = perceptron.fit(
+    train_images,
+    train_labels,
+    epochs=20 * 7,  # on average these epochs take 1/7th the time of LRNN epochs
+    batch_size=64,
+    validation_data=(test_images, test_labels),
+    verbose=2,
+)
+
+# Evaluate the Perceptron Model
+test_loss_perceptron, test_acc_perceptron = perceptron.evaluate(
+    test_images, test_labels, verbose=2
+)
+print(f"Perceptron Test accuracy: {test_acc_perceptron}")
+
+# Predictions for the first 10 test images using the Perceptron Model
+predictions_perceptron = perceptron.predict(test_images[:10])
+predicted_classes_perceptron = tf.argmax(predictions_perceptron, axis=1)
+print(f"Perceptron Predicted classes: {predicted_classes_perceptron.numpy()}")
+
+
+# Print test accuracy for Latex_RNN (from the earlier code provided)
+print(f"Latex_RNN Test accuracy: {test_acc}")
+
+# Print test accuracy for Perceptron
+print(f"Perceptron Test accuracy: {test_acc_perceptron}")
