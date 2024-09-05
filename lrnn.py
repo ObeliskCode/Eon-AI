@@ -98,7 +98,7 @@ latex_rnn.compile(
 latex_rnn.fit(
     train_images,
     train_labels,
-    epochs=20,
+    epochs=50,
     batch_size=64,
     validation_data=(test_images, test_labels),
 )
@@ -106,12 +106,82 @@ latex_rnn.fit(
 test_loss, test_acc = latex_rnn.evaluate(test_images, test_labels, verbose=2)
 print(f"Test accuracy: {test_acc}")
 
-predictions = latex_rnn.predict(test_images[:10])
-predicted_classes = tf.argmax(predictions, axis=1)
-print(f"Predicted classes: {predicted_classes.numpy()}")
+
+class Sigmoid_RNN_Cell(tf.keras.layers.Layer):
+    def __init__(self, input_size, hidden_size):
+        super(Sigmoid_RNN_Cell, self).__init__()
+        self.W_input = self.add_weight(
+            shape=(input_size, hidden_size), initializer="random_normal", trainable=True
+        )
+        self.W_hidden = self.add_weight(
+            shape=(hidden_size, hidden_size),
+            initializer="random_normal",
+            trainable=True,
+        )
+        self.bias = self.add_weight(
+            shape=(hidden_size,), initializer="random_normal", trainable=True
+        )
+
+    def call(self, inputs, hidden_state):
+        pre_activation = (
+            tf.matmul(inputs, self.W_input)
+            + tf.matmul(hidden_state, self.W_hidden)
+            + self.bias
+        )
+
+        next_hidden_state = tf.maximum(0.0, tf.tanh(pre_activation))
+        return next_hidden_state
 
 
-# Load and preprocess the MNIST dataset
+class Sigmoid_RNN(tf.keras.Model):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(Sigmoid_RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.rnn_cell = Sigmoid_RNN_Cell(input_size, hidden_size)
+        self.output_layer = tf.keras.layers.Dense(output_size)
+
+    def call(self, inputs):
+        hidden_state = tf.zeros((tf.shape(inputs)[0], self.hidden_size))
+
+        for t in range(inputs.shape[1]):
+            hidden_state = self.rnn_cell(inputs[:, t], hidden_state)
+
+        output = self.output_layer(hidden_state)
+        return output
+
+
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+
+train_images = train_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+test_images = test_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+
+input_size = 28
+hidden_size = 128
+output_size = 10
+
+sigmoid_rnn = Sigmoid_RNN(input_size, hidden_size, output_size)
+
+sigmoid_rnn.compile(
+    optimizer="adam",
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=["accuracy"],
+)
+
+sigmoid_rnn.fit(
+    train_images,
+    train_labels,
+    epochs=50,
+    batch_size=64,
+    validation_data=(test_images, test_labels),
+)
+
+sigmoid_test_loss, sigmoid_test_acc = sigmoid_rnn.evaluate(
+    test_images, test_labels, verbose=2
+)
+print(f"Sigmoid Test accuracy: {sigmoid_test_acc}")
+
 mnist = tf.keras.datasets.mnist
 (train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
@@ -119,7 +189,6 @@ train_images = train_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
 test_images = test_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
 
 
-# Define the Perceptron Model
 def create_perceptron_model(input_size, output_size):
     model = tf.keras.Sequential(
         [
@@ -136,37 +205,27 @@ output_size = 10
 
 perceptron = create_perceptron_model(input_size, output_size)
 
-# Compile the perceptron model
 perceptron.compile(
     optimizer="adam",
     loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
     metrics=["accuracy"],
 )
 
-# Train the Perceptron Model
 history_perceptron = perceptron.fit(
     train_images,
     train_labels,
-    epochs=20 * 7,  # on average these epochs take 1/7th the time of LRNN epochs
+    epochs=50,  # on average these epochs take 1/7th the time of LRNN epochs
     batch_size=64,
     validation_data=(test_images, test_labels),
     verbose=2,
 )
 
-# Evaluate the Perceptron Model
-test_loss_perceptron, test_acc_perceptron = perceptron.evaluate(
+simple_test_loss_, simple_test_acc = perceptron.evaluate(
     test_images, test_labels, verbose=2
 )
-print(f"Perceptron Test accuracy: {test_acc_perceptron}")
 
-# Predictions for the first 10 test images using the Perceptron Model
-predictions_perceptron = perceptron.predict(test_images[:10])
-predicted_classes_perceptron = tf.argmax(predictions_perceptron, axis=1)
-print(f"Perceptron Predicted classes: {predicted_classes_perceptron.numpy()}")
+print(f"Simple Perceptron Test accuracy: {simple_test_acc}")
 
-
-# Print test accuracy for Latex_RNN (from the earlier code provided)
 print(f"Latex_RNN Test accuracy: {test_acc}")
 
-# Print test accuracy for Perceptron
-print(f"Perceptron Test accuracy: {test_acc_perceptron}")
+print(f"Sigmoid Test accuracy: {sigmoid_test_acc}")
