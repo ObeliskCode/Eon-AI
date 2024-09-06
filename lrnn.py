@@ -284,7 +284,6 @@ input_size = 28 * 28
 output_size = 10
 hidden_size = 128
 
-perceptron = create_perceptron_model(input_size, output_size)
 multilayer = create_multilayer_model(
     input_size, hidden_sizes=[128, 64], output_size=output_size
 )
@@ -292,7 +291,6 @@ cnn = create_cnn_model(output_size)
 simple_rnn = create_simple_rnn_model(
     input_size=28, hidden_size=hidden_size, output_size=output_size
 )
-latex_rnn = Latex_RNN(input_size=28, hidden_size=hidden_size, output_size=output_size)
 
 models = {
     "multilayer": multilayer,
