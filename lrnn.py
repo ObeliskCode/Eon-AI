@@ -1,5 +1,6 @@
 import tensorflow as tf
 import numpy as np
+import matplotlib.pyplot as plt
 
 
 # pip install tensorflow --break-system-packages # you may have to run this command
@@ -98,7 +99,7 @@ latex_rnn.compile(
 latex_rnn.fit(
     train_images,
     train_labels,
-    epochs=50,
+    epochs=5,
     batch_size=64,
     validation_data=(test_images, test_labels),
 )
@@ -172,7 +173,7 @@ sigmoid_rnn.compile(
 sigmoid_rnn.fit(
     train_images,
     train_labels,
-    epochs=50,
+    epochs=5,
     batch_size=64,
     validation_data=(test_images, test_labels),
 )
@@ -214,7 +215,7 @@ perceptron.compile(
 history_perceptron = perceptron.fit(
     train_images,
     train_labels,
-    epochs=50,  # on average these epochs take 1/7th the time of LRNN epochs
+    epochs=5,  # on average these epochs take 1/7th the time of LRNN epochs
     batch_size=64,
     validation_data=(test_images, test_labels),
     verbose=2,
@@ -224,8 +225,124 @@ simple_test_loss_, simple_test_acc = perceptron.evaluate(
     test_images, test_labels, verbose=2
 )
 
-print(f"Simple Perceptron Test accuracy: {simple_test_acc}")
+print(f"Simple Perceptron (Non-Recurrent) NN Test accuracy: {simple_test_acc}")
 
 print(f"Latex_RNN Test accuracy: {test_acc}")
 
 print(f"Sigmoid Test accuracy: {sigmoid_test_acc}")
+
+# comparison to other pre-packaged NN designs from tensorflow
+
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+train_images = train_images.astype("float32") / 255.0
+test_images = test_images.astype("float32") / 255.0
+
+train_images_flat = train_images.reshape((-1, 28 * 28))
+test_images_flat = test_images.reshape((-1, 28 * 28))
+
+
+def create_multilayer_model(input_size, hidden_sizes, output_size):
+    model = tf.keras.Sequential()
+    model.add(tf.keras.layers.InputLayer(input_shape=(input_size,)))
+    for hidden_size in hidden_sizes:
+        model.add(tf.keras.layers.Dense(hidden_size, activation="relu"))
+    model.add(tf.keras.layers.Dense(output_size, activation="softmax"))
+    return model
+
+
+def create_cnn_model(output_size):
+    model = tf.keras.Sequential(
+        [
+            tf.keras.layers.Conv2D(
+                32, (3, 3), activation="relu", input_shape=(28, 28, 1)
+            ),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            tf.keras.layers.Conv2D(64, (3, 3), activation="relu"),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            tf.keras.layers.Flatten(),
+            tf.keras.layers.Dense(64, activation="relu"),
+            tf.keras.layers.Dense(output_size, activation="softmax"),
+        ]
+    )
+    return model
+
+
+def create_simple_rnn_model(input_size, hidden_size, output_size):
+    model = tf.keras.Sequential(
+        [
+            tf.keras.layers.SimpleRNN(hidden_size, input_shape=(input_size, 28)),
+            tf.keras.layers.Dense(output_size, activation="softmax"),
+        ]
+    )
+    return model
+
+
+input_size = 28 * 28
+output_size = 10
+hidden_size = 128
+
+perceptron = create_perceptron_model(input_size, output_size)
+multilayer = create_multilayer_model(
+    input_size, hidden_sizes=[128, 64], output_size=output_size
+)
+cnn = create_cnn_model(output_size)
+simple_rnn = create_simple_rnn_model(
+    input_size=28, hidden_size=hidden_size, output_size=output_size
+)
+latex_rnn = Latex_RNN(input_size=28, hidden_size=hidden_size, output_size=output_size)
+
+models = {
+    "multilayer": multilayer,
+    "CNN": cnn,
+    "Simple_RNN": simple_rnn,
+}
+
+for model_name, model in models.items():
+    model.compile(
+        optimizer="adam",
+        loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+        metrics=["accuracy"],
+    )
+
+results = {}
+
+for model_name, model in models.items():
+    print(f"Training {model_name}...")
+    if model_name == "CNN":
+        train_images_model = train_images[
+            ..., np.newaxis
+        ]  # Add channel dimension for CNN
+        test_images_model = test_images[..., np.newaxis]
+    else:
+        train_images_model = (
+            train_images_flat
+            if model_name != "Simple_RNN" and model_name != "Latex_RNN"
+            else train_images
+        )
+        test_images_model = (
+            test_images_flat
+            if model_name != "Simple_RNN" and model_name != "Latex_RNN"
+            else test_images
+        )
+
+    model.fit(
+        train_images_model,
+        train_labels,
+        epochs=5,
+        batch_size=64,
+        validation_data=(test_images_model, test_labels),
+        verbose=2,
+    )
+
+    test_loss, test_acc = model.evaluate(test_images_model, test_labels, verbose=2)
+    print(f"{model_name} Test accuracy: {test_acc}\n")
+    results[model_name] = test_acc
+
+# Plot the results
+plt.bar(results.keys(), results.values())
+plt.xlabel("Model")
+plt.ylabel("Test Accuracy")
+plt.title("Test Accuracy Comparison Across Different Models")
+plt.show()
