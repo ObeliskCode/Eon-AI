@@ -57,6 +57,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         latex_identity = pre_activation + self.identity
 
         next_hidden_state = latex_negative + latex_zero + latex_identity
+        next_hidden_state = tf.maximum(0.0, next_hidden_state)
         return next_hidden_state
 
 
