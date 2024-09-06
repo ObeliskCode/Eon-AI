@@ -54,7 +54,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         )
         latex_negative = tf.tanh(pre_activation) * self.negative
         latex_zero = tf.tanh(pre_activation) * self.zero
-        latex_identity = self.identity
+        latex_identity = pre_activation + self.identity
 
         next_hidden_state = latex_negative + latex_zero + latex_identity
         return next_hidden_state
@@ -105,7 +105,7 @@ latex_rnn.fit(
 )
 
 test_loss, test_acc = latex_rnn.evaluate(test_images, test_labels, verbose=2)
-print(f"Test accuracy: {test_acc}")
+print(f"Latex-RNN Test accuracy: {test_acc}")
 
 
 class Sigmoid_RNN_Cell(tf.keras.layers.Layer):
