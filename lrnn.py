@@ -2,6 +2,11 @@ import tensorflow as tf
 import numpy as np
 import matplotlib.pyplot as plt
 
+import sys
+import heapq
+
+sys_maxsize_simulation = 9223372036854775807  # This is typically the value of sys.maxsize on most 64-bit systems
+
 
 # pip install tensorflow --break-system-packages # you may have to run this command
 
@@ -23,6 +28,24 @@ import matplotlib.pyplot as plt
 EPOCH_NUM = 30
 
 def domain_restrict(x):
+	print("xxx")
+	mval_list = []
+	paris_list = []
+
+
+	heapq.heappush(mval_list, -sys_maxsize_simulation)
+	heapq.heappush(mval_list, sys_maxsize_simulation)
+
+	mval_list.clear()
+	paris_list.clear()
+
+def domain_restrict_avg(x):
+	print("xxx")
+
+def range_squueze(x):
+	print("xxx")
+
+def range_squeeze_avg(x):
 	print("xxx")
 
 
