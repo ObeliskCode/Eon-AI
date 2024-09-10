@@ -26,7 +26,7 @@ sys_maxsize_simulation = 9223372036854775807  # This is typically the value of s
 # except that our activated function output is then multiplied by a variable "gain" which is also tuned;
 # the concept of a variable "gain" is how my perceptron is not "binary" but "continous" (Continuous Neural Network) ;
 
-EPOCH_NUM = 30
+EPOCH_NUM = 10
 
 def domain_restrict(x):
 	paris_list = []
@@ -120,6 +120,13 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
+		self.zero_gain = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+		self.negative_gain = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 
 	def call(self, inputs, hidden_state):
 		pre_activation = (
@@ -152,11 +159,11 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
 		post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
-		vx = tf.maximum(0.0,post_activation)			
-		ox = tf.minimum(0.0,post_activation)
+		vx = tf.maximum(-10.0,post_activation)			
+		ox = tf.minimum(-10.0,post_activation)
 		vx -= ox
 
-		next_hidden_state = vx
+		next_hidden_state = (post_activation*self.negative_gain) + (vx*self.zero_gain)
 		return next_hidden_state
 
 
