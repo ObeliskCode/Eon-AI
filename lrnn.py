@@ -120,12 +120,22 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
+		self.zero_identity = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
+		self.negative_identity = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 		self.zero_gain = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
+
 		self.negative_gain = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
+
 
 
 	def call(self, inputs, hidden_state):
@@ -163,7 +173,10 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		ox = tf.minimum(-10.0,post_activation)
 		vx -= ox
 
-		next_hidden_state = (post_activation*self.negative_gain) + (vx*self.zero_gain)
+		advance_soft_max_clip = tf.maximum(0.0,vx + self.negative_identity) * self.negative_gain
+		advance_soft_max_linear = tf.maximum(0.0,post_activation + self.zero_identity) * self.zero_gain 
+
+		next_hidden_state =  advance_soft_max_clip + advance_soft_max_linear
 		return next_hidden_state
 
 
