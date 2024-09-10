@@ -145,16 +145,16 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			+ self.bias
 		)
 
-		dr_pre_actiavation = domain_restrict(pre_activation) * 100
+		dr_pre_activation = domain_restrict(pre_activation) * 100
 
-		latex_negative = tf.tanh(dr_pre_actiavation) * self.negative
-		latex_zero = tf.tanh(dr_pre_actiavation) * self.zero
-		latex_negative_sech = (1.0 /tf.cosh(dr_pre_actiavation)) * self.negative_sech
-		latex_zero_sech = (1.0 / tf.cosh(dr_pre_actiavation)) * self.zero_sech
-		latex_negative_cos = tf.cos(dr_pre_actiavation) * self.negative_cos
-		latex_zero_cos = tf.cos(dr_pre_actiavation) * self.zero_cos
-		latex_negative_sin = tf.sin(dr_pre_actiavation) * self.negative_sin
-		latex_zero_sin = tf.sin(dr_pre_actiavation) * self.zero_sin
+		latex_negative = tf.tanh(dr_pre_activation) * self.negative
+		latex_zero = tf.tanh(dr_pre_activation) * self.zero
+		latex_negative_sech = (1.0 /tf.cosh(dr_pre_activation)) * self.negative_sech
+		latex_zero_sech = (1.0 / tf.cosh(dr_pre_activation)) * self.zero_sech
+		latex_negative_cos = tf.cos(dr_pre_activation) * self.negative_cos
+		latex_zero_cos = tf.cos(dr_pre_activation) * self.zero_cos
+		latex_negative_sin = tf.sin(dr_pre_activation) * self.negative_sin
+		latex_zero_sin = tf.sin(dr_pre_activation) * self.zero_sin
 
 		latex_tanh = tf.maximum(0.0, latex_zero - latex_negative)
 		latex_sech = tf.maximum(0.0, latex_zero_sech - latex_negative_sech)
