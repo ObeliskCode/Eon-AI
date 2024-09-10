@@ -309,48 +309,6 @@ mnist = tf.keras.datasets.mnist
 train_images = train_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
 test_images = test_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
 
-
-def create_perceptron_model(input_size, output_size):
-	model = tf.keras.Sequential(
-		[
-			tf.keras.layers.Dense(
-				output_size, activation="softmax", input_shape=(input_size,)
-			)
-		]
-	)
-	return model
-
-
-input_size = 28 * 28
-output_size = 10
-
-perceptron = create_perceptron_model(input_size, output_size)
-
-perceptron.compile(
-	optimizer="adam",
-	loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=False),
-	metrics=["accuracy"],
-)
-
-history_perceptron = perceptron.fit(
-	train_images,
-	train_labels,
-	epochs=EPOCH_NUM,  # on average these epochs take 1/7th the time of LRNN epochs
-	batch_size=64,
-	validation_data=(test_images, test_labels),
-	verbose=2,
-)
-
-simple_test_loss_, simple_test_acc = perceptron.evaluate(
-	test_images, test_labels, verbose=2
-)
-
-print(f"Simple Perceptron (Non-Recurrent) NN Test accuracy: {simple_test_acc}")
-
-print(f"Latex_RNN Test accuracy: {latex_test_acc}")
-
-print(f"Sigmoid Test accuracy: {sigmoid_test_acc}")
-
 # comparison to other pre-packaged NN designs from tensorflow
 
 mnist = tf.keras.datasets.mnist
@@ -461,7 +419,6 @@ for model_name, model in models.items():
 raw_models = {
 	"latex rnn": latex_test_acc,
 	"sigmoid rnn": sigmoid_test_acc,
-	"simple binary nn": simple_test_acc,
 }
 
 for model_acc, model_name in raw_models.items():
