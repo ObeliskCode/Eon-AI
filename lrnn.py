@@ -22,6 +22,9 @@ import matplotlib.pyplot as plt
 
 EPOCH_NUM = 30
 
+def domain_restrict(x):
+	print("xxx")
+
 
 class Latex_RNN_Cell(tf.keras.layers.Layer):
 	def __init__(self, input_size, hidden_size):
@@ -81,7 +84,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		latex_cos = tf.maximum(0.0, latex_zero_cos - latex_negative_cos)
 		latex_identity = tf.maximum(0.0, pre_activation) + self.identity
 
-		next_hidden_state =   latex_tanh + latex_sech + latex_cos + latex_identity
+		next_hidden_state =   latex_tanh * latex_sech + latex_cos + latex_identity
 		next_hidden_state = tf.maximum(0.0, next_hidden_state)
 		return next_hidden_state
 
