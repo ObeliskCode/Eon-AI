@@ -20,6 +20,8 @@ import matplotlib.pyplot as plt
 # except that our activated function output is then multiplied by a variable "gain" which is also tuned;
 # the concept of a variable "gain" is how my perceptron is not "binary" but "continous" (Continuous Neural Network) ;
 
+EPOCH_NUM = 30
+
 
 class Latex_RNN_Cell(tf.keras.layers.Layer):
 	def __init__(self, input_size, hidden_size):
@@ -123,7 +125,7 @@ latex_rnn.compile(
 latex_rnn.fit(
 	train_images,
 	train_labels,
-	epochs=5,
+	epochs=EPOCH_NUM,
 	batch_size=64,
 	validation_data=(test_images, test_labels),
 )
@@ -197,7 +199,7 @@ sigmoid_rnn.compile(
 sigmoid_rnn.fit(
 	train_images,
 	train_labels,
-	epochs=5,
+	epochs=EPOCH_NUM,
 	batch_size=64,
 	validation_data=(test_images, test_labels),
 )
@@ -239,7 +241,7 @@ perceptron.compile(
 history_perceptron = perceptron.fit(
 	train_images,
 	train_labels,
-	epochs=5,  # on average these epochs take 1/7th the time of LRNN epochs
+	epochs=EPOCH_NUM,  # on average these epochs take 1/7th the time of LRNN epochs
 	batch_size=64,
 	validation_data=(test_images, test_labels),
 	verbose=2,
@@ -352,7 +354,7 @@ for model_name, model in models.items():
 	model.fit(
 		train_images_model,
 		train_labels,
-		epochs=5,
+		epochs=EPOCH_NUM,
 		batch_size=64,
 		validation_data=(test_images_model, test_labels),
 		verbose=2,
