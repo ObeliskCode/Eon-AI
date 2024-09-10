@@ -7,7 +7,6 @@ import heapq
 
 sys_maxsize_simulation = 9223372036854775807  # This is typically the value of sys.maxsize on most 64-bit systems
 
-
 # pip install tensorflow --break-system-packages # you may have to run this command
 
 
@@ -28,26 +27,45 @@ sys_maxsize_simulation = 9223372036854775807  # This is typically the value of s
 EPOCH_NUM = 30
 
 def domain_restrict(x):
-	print("xxx")
+	paris_list = []
+
+	w = x / sys_maxsize_simulation
+
+	paris_list.clear()
+
+	return w
+	
+def domain_restrict_avg(x):
 	mval_list = []
 	paris_list = []
 
+	for n in x:
+		heapq.heappush(mval_list, n)
 
-	heapq.heappush(mval_list, -sys_maxsize_simulation)
-	heapq.heappush(mval_list, sys_maxsize_simulation)
+	accum = []
+
+	while(len(mval_list) > 0):
+		y = heapq.heappop(mval_list)
+		q = y / sys_maxsize_simulation
+		accum.append(q)
+
+	res = 0
+
+	for w in accum:
+		res += w
+
+	w = res / len(x)
 
 	mval_list.clear()
 	paris_list.clear()
 
-def domain_restrict_avg(x):
-	print("xxx")
-
+	return w
+	
 def range_squueze(x):
 	print("xxx")
 
 def range_squeeze_avg(x):
 	print("xxx")
-
 
 class Latex_RNN_Cell(tf.keras.layers.Layer):
 	def __init__(self, input_size, hidden_size):
@@ -95,12 +113,15 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			+ tf.matmul(hidden_state, self.W_hidden)
 			+ self.bias
 		)
-		latex_negative = tf.tanh(pre_activation) * self.negative
-		latex_zero = tf.tanh(pre_activation) * self.zero
-		latex_negative_sech = (1.0 /tf.cosh(pre_activation)) * self.negative_sech
-		latex_zero_sech = (1.0 / tf.cosh(pre_activation)) * self.zero_sech
-		latex_negative_cos = tf.cos(pre_activation) * self.negative_cos
-		latex_zero_cos = tf.cos(pre_activation) * self.zero_cos
+
+		dr_pre_actiavation = domain_restrict(pre_activation) * 100
+
+		latex_negative = tf.tanh(dr_pre_actiavation) * self.negative
+		latex_zero = tf.tanh(dr_pre_actiavation) * self.zero
+		latex_negative_sech = (1.0 /tf.cosh(dr_pre_actiavation)) * self.negative_sech
+		latex_zero_sech = (1.0 / tf.cosh(dr_pre_actiavation)) * self.zero_sech
+		latex_negative_cos = tf.cos(dr_pre_actiavation) * self.negative_cos
+		latex_zero_cos = tf.cos(dr_pre_actiavation) * self.zero_cos
 		
 		latex_tanh = tf.maximum(0.0, latex_zero - latex_negative)
 		latex_sech = tf.maximum(0.0, latex_zero_sech - latex_negative_sech)
