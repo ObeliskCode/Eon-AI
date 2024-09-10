@@ -130,8 +130,8 @@ latex_rnn.fit(
 	validation_data=(test_images, test_labels),
 )
 
-test_loss, test_acc = latex_rnn.evaluate(test_images, test_labels, verbose=2)
-print(f"Latex-RNN Test accuracy: {test_acc}")
+test_loss, latex_test_acc = latex_rnn.evaluate(test_images, test_labels, verbose=2)
+print(f"Latex-RNN Test accuracy: {latex_test_acc}")
 
 
 class Sigmoid_RNN_Cell(tf.keras.layers.Layer):
@@ -253,7 +253,7 @@ simple_test_loss_, simple_test_acc = perceptron.evaluate(
 
 print(f"Simple Perceptron (Non-Recurrent) NN Test accuracy: {simple_test_acc}")
 
-print(f"Latex_RNN Test accuracy: {test_acc}")
+print(f"Latex_RNN Test accuracy: {latex_test_acc}")
 
 print(f"Sigmoid Test accuracy: {sigmoid_test_acc}")
 
@@ -362,6 +362,15 @@ for model_name, model in models.items():
 
 	test_loss, test_acc = model.evaluate(test_images_model, test_labels, verbose=2)
 	print(f"{model_name} Test accuracy: {test_acc}\n")
+	results[model_name] = test_acc
+
+raw_models = {
+	"latex rnn": latex_test_acc,
+	"sigmoid rnn": sigmoid_test_acc,
+	"simple binary nn": simple_test_acc,
+}
+
+for model_acc, model_name in raw_models.items():
 	results[model_name] = test_acc
 
 # Plot the results
