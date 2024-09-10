@@ -46,6 +46,21 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
+		self.negative_sech = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+		self.zero_sech = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
+
+		self.negative_cos = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+		self.zero_cos = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 	def call(self, inputs, hidden_state):
 		pre_activation = (
 			tf.matmul(inputs, self.W_input)
@@ -54,9 +69,17 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		)
 		latex_negative = tf.tanh(pre_activation) * self.negative
 		latex_zero = tf.tanh(pre_activation) * self.zero
-		latex_identity = pre_activation + self.identity
+		latex_negative_sech = (1.0 /tf.cosh(pre_activation)) * self.negative_sech
+		latex_zero_sech = (1.0 / tf.cosh(pre_activation)) * self.zero_sech
+		latex_negative_cos = tf.cos(pre_activation) * self.negative_cos
+		latex_zero_cos = tf.cos(pre_activation) * self.zero_cos
+		
+		latex_tanh = tf.maximum(0.0, latex_zero - latex_negative)
+		latex_sech = tf.maximum(0.0, latex_zero_sech - latex_negative_sech)
+		latex_cos = tf.maximum(0.0, latex_zero_cos - latex_negative_cos)
+		latex_identity = tf.maximum(0.0, pre_activation) + self.identity
 
-		next_hidden_state = latex_negative + latex_zero + latex_identity
+		next_hidden_state =   latex_tanh + latex_sech + latex_cos + latex_identity
 		next_hidden_state = tf.maximum(0.0, next_hidden_state)
 		return next_hidden_state
 
