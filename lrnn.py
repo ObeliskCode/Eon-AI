@@ -152,8 +152,8 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
 		post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
-		vx = tf.maximum(1.0,post_activation*pre_activation)			
-		ox = tf.minimum(post_activation-3.0,0.0)
+		vx = tf.maximum(0.0,post_activation)			
+		ox = tf.minimum(0.0,post_activation)
 		vx -= ox
 
 		next_hidden_state = vx
