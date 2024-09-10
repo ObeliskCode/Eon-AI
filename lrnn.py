@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 import sys
 import heapq
 
+from tensorflow.keras.backend import eval
+
 sys_maxsize_simulation = 9223372036854775807  # This is typically the value of sys.maxsize on most 64-bit systems
 
 # pip install tensorflow --break-system-packages # you may have to run this command
@@ -85,27 +87,39 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		self.identity = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
+
 		self.negative = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 		self.zero = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
-
 		self.negative_sech = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 		self.zero_sech = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
-
-
 		self.negative_cos = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 		self.zero_cos = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
+		self.negative_sin = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+		self.zero_sin = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
+		self.negative_dist = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+		self.zero_dist = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 
 	def call(self, inputs, hidden_state):
 		pre_activation = (
@@ -122,14 +136,27 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		latex_zero_sech = (1.0 / tf.cosh(dr_pre_actiavation)) * self.zero_sech
 		latex_negative_cos = tf.cos(dr_pre_actiavation) * self.negative_cos
 		latex_zero_cos = tf.cos(dr_pre_actiavation) * self.zero_cos
-		
+		latex_negative_sin = tf.sin(dr_pre_actiavation) * self.negative_sin
+		latex_zero_sin = tf.sin(dr_pre_actiavation) * self.zero_sin
+
 		latex_tanh = tf.maximum(0.0, latex_zero - latex_negative)
 		latex_sech = tf.maximum(0.0, latex_zero_sech - latex_negative_sech)
 		latex_cos = tf.maximum(0.0, latex_zero_cos - latex_negative_cos)
+		latex_sin = tf.maximum(0.0, latex_zero_sin - latex_negative_sin)
 		latex_identity = tf.maximum(0.0, pre_activation) + self.identity
 
-		next_hidden_state =   latex_tanh * latex_sech + latex_cos + latex_identity
-		next_hidden_state = tf.maximum(0.0, next_hidden_state)
+		latex_zero_dist = (latex_tanh * latex_sech) + latex_cos - latex_sin 
+		latex_zero_dist = latex_zero_dist * self.zero_dist
+		latex_negative_dist = (latex_tanh * latex_sech) - latex_cos - latex_sin
+		latex_negative_dist = latex_negative_dist * self.negative_dist 
+
+		post_activation = latex_zero_dist + latex_negative_dist + latex_identity
+
+		vx = tf.maximum(1.0,post_activation*pre_activation)			
+		ox = tf.minimum(post_activation-3.0,0.0)
+		vx -= ox
+
+		next_hidden_state = vx
 		return next_hidden_state
 
 
