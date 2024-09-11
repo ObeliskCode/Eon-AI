@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 import sys
 import heapq
 
-from tensorflow.keras.backend import eval
-
 sys_maxsize_simulation = 9223372036854775807  # This is typically the value of sys.maxsize on most 64-bit systems
 
 # pip install tensorflow --break-system-packages # you may have to run this command
@@ -145,7 +143,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			+ self.bias
 		)
 
-		dr_pre_activation = domain_restrict(pre_activation) * 100
+		dr_pre_activation = domain_restrict(tf.maximum(0.0,pre_activation))
 
 		latex_negative = tf.tanh(dr_pre_activation) * self.negative
 		latex_zero = tf.tanh(dr_pre_activation) * self.zero
@@ -162,14 +160,12 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		latex_sin = tf.maximum(0.0, latex_zero_sin - latex_negative_sin)
 		latex_identity = tf.maximum(0.0, pre_activation) + self.identity
 
-		latex_zero_dist = (latex_tanh * latex_sech) + latex_cos - latex_sin 
-		latex_zero_dist = latex_zero_dist * self.zero_dist
-		latex_negative_dist = (latex_tanh * latex_sech) - latex_cos - latex_sin
-		latex_negative_dist = latex_negative_dist * self.negative_dist 
+		latex_zero_dist = ((latex_tanh * latex_sech) + latex_cos - latex_sin) * self.zero_dist
+		latex_negative_dist = ((latex_tanh * latex_sech) - latex_cos - latex_sin) * self.negative_dist  
 
 		post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
-		vx = tf.maximum(-10.0,post_activation)			
+		vx = tf.maximum(-10.0,post_activation)
 		ox = tf.minimum(-10.0,post_activation)
 		vx -= ox
 
