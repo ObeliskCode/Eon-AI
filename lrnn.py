@@ -126,11 +126,24 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
+		
+		self.ox_identity = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 		self.zero_gain = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
 		self.negative_gain = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
+		self.vx_bias = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
+		self.ox_bias = self.add_weight(
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
@@ -143,7 +156,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			+ self.bias
 		)
 
-		dr_pre_activation = domain_restrict(tf.maximum(0.0,pre_activation))
+		dr_pre_activation = domain_restrict(tf.maximum(0.0,pre_activation)) + self.vx_bias
 
 		latex_negative = tf.tanh(dr_pre_activation) * self.negative
 		latex_zero = tf.tanh(dr_pre_activation) * self.zero
@@ -166,13 +179,38 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
 		vx = tf.maximum(-10.0,post_activation)
-		ox = tf.minimum(-10.0,post_activation)
-		vx -= ox
+		vx -= tf.minimum(-10.0,post_activation)
 
 		advance_soft_max_clip = tf.maximum(0.0,vx + self.negative_identity) * self.negative_gain
 		advance_soft_max_linear = tf.maximum(0.0,post_activation + self.zero_identity) * self.zero_gain 
 
-		next_hidden_state =  advance_soft_max_clip + advance_soft_max_linear
+		ox_pre_activation = domain_restrict(tf.maximum(0.0,pre_activation)) + self.ox_bias
+
+		ox_latex_negative = tf.tanh(ox_pre_activation) * self.negative
+		ox_latex_zero = tf.tanh(ox_pre_activation) * self.zero
+		ox_latex_negative_sech = (1.0 /tf.cosh(ox_pre_activation)) * self.negative_sech
+		ox_latex_zero_sech = (1.0 / tf.cosh(ox_pre_activation)) * self.zero_sech
+		ox_latex_negative_cos = tf.cos(ox_pre_activation) * self.negative_cos
+		ox_latex_zero_cos = tf.cos(ox_pre_activation) * self.zero_cos
+		ox_latex_negative_sin = tf.sin(ox_pre_activation) * self.negative_sin
+		ox_latex_zero_sin = tf.sin(ox_pre_activation) * self.zero_sin
+
+		ox_latex_tanh = tf.maximum(0.0, ox_latex_zero - ox_latex_negative)
+		ox_latex_sech = tf.maximum(0.0, ox_latex_zero_sech - ox_latex_negative_sech)
+		ox_latex_cos = tf.maximum(0.0, ox_latex_zero_cos - ox_latex_negative_cos)
+		ox_latex_sin = tf.maximum(0.0, ox_latex_zero_sin - ox_latex_negative_sin)
+		ox_latex_identity = tf.maximum(0.0, ox_pre_activation) + self.identity
+
+		ox_latex_zero_dist = ((ox_latex_tanh * ox_latex_sech) + ox_latex_cos - ox_latex_sin) * self.zero_dist
+		ox_latex_negative_dist = ((ox_latex_tanh * ox_latex_sech) - ox_latex_cos - ox_latex_sin) * self.negative_dist  
+
+		ox_post_activation = ox_latex_zero_dist + ox_latex_negative_dist + ox_latex_identity
+
+		ox = tf.maximum(1.0,ox_post_activation*ox_pre_activation)
+		ox -= tf.minimum(ox_post_activation-3.0,0.0)
+		ox = ox + self.ox_identity
+
+		next_hidden_state =  advance_soft_max_clip + advance_soft_max_linear + ox
 		return next_hidden_state
 
 
