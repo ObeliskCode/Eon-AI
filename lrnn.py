@@ -151,6 +151,10 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
+		self.cutoff = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 
 
 	def call(self, inputs, hidden_state):
@@ -212,9 +216,9 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
 		ox = tf.maximum(1.0,ox_post_activation*ox_pre_activation)
 		ox -= tf.minimum(ox_post_activation-3.0,0.0)
-		ox = ox - self.ox_identity
+		ox = ox - 1000.0 + (self.ox_identity * self.cutoff)
 
-		next_hidden_state =  advance_soft_max_clip + advance_soft_max_linear + tf.maximum(0.0,ox) + self.offset
+		next_hidden_state =  advance_soft_max_clip + advance_soft_max_linear + tf.maximum(0.0,tf.minimum(1000.0,ox)) + self.offset
 		return next_hidden_state
 
 
