@@ -218,7 +218,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		ox -= tf.minimum(ox_post_activation-3.0,0.0)
 		ox = ox - 1000.0 + (self.ox_identity * self.cutoff)
 
-		next_hidden_state =  self.offset -  (advance_soft_max_clip + advance_soft_max_linear + tf.maximum(0.0,tf.minimum(1000.0,ox)))
+		next_hidden_state =  self.offset + pre_activation -  (advance_soft_max_clip + advance_soft_max_linear + tf.maximum(0.0,tf.minimum(1000.0,ox)))
 		return next_hidden_state
 
 
