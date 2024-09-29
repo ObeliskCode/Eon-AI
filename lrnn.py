@@ -24,7 +24,7 @@ sys_maxsize_simulation = 9223372036854775807  # This is typically the value of s
 # except that our activated function output is then multiplied by a variable "gain" which is also tuned;
 # the concept of a variable "gain" is how my perceptron is not "binary" but "continous" (Continuous Neural Network) ;
 
-EPOCH_NUM = 10
+EPOCH_NUM = 100
 
 def domain_restrict(x):
 	paris_list = []
