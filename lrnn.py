@@ -61,7 +61,7 @@ def domain_restrict_avg(x):
 
 	return w
 	
-def range_squueze(x):
+def range_squeeze(x):
 	print("xxx")
 
 def range_squeeze_avg(x):
@@ -147,6 +147,14 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 			shape=(hidden_size,), initializer="random_normal", trainable=True
 		)
 
+		self.offset = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
+		self.cutoff = self.add_weight(
+			shape=(hidden_size,), initializer="random_normal", trainable=True
+		)
+
 
 
 	def call(self, inputs, hidden_state):
@@ -202,15 +210,15 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 		ox_latex_identity = tf.maximum(0.0, ox_pre_activation) + self.identity
 
 		ox_latex_zero_dist = ((ox_latex_tanh * ox_latex_sech) + ox_latex_cos - ox_latex_sin) * self.zero_dist
-		ox_latex_negative_dist = ((ox_latex_tanh * ox_latex_sech) - ox_latex_cos - ox_latex_sin) * self.negative_dist  
+		ox_latex_negative_dist = ((ox_latex_tanh * ox_latex_sech) - ox_latex_cos - ox_latex_sin) * self.negative_dist
 
 		ox_post_activation = ox_latex_zero_dist + ox_latex_negative_dist + ox_latex_identity
 
 		ox = tf.maximum(1.0,ox_post_activation*ox_pre_activation)
 		ox -= tf.minimum(ox_post_activation-3.0,0.0)
-		ox = ox + self.ox_identity
+		ox = ox - 1000.0 + (self.ox_identity * self.cutoff)
 
-		next_hidden_state =  advance_soft_max_clip + advance_soft_max_linear + ox
+		next_hidden_state =  self.offset + pre_activation -  (advance_soft_max_clip + advance_soft_max_linear + tf.maximum(0.0,tf.minimum(1000.0,ox)))
 		return next_hidden_state
 
 
