@@ -212,6 +212,6 @@ so, +>x can return a set of either 3,5 or 7 numbers
 
 +>x + +>y = {all numbers in both +>x added together} = N
 
-2. the set N can return either 5,7,9,11,13,15,17,19,21... numbers
+2. the set N can return either 5,7,...,19,21,...,31,33 numbers
 
-3. there are 9 different cardinalities for the set of adding two glider numbers together
+3. there are 15 different cardinalities for the set of adding two glider numbers together
