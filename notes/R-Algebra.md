@@ -209,3 +209,9 @@ so, +>x can return a set of either 3,5 or 7 numbers
 +>x + +>y = +>x - +>y = +y - +>x (1.)
 
 1. both glider addition and glider subtraction are commutative
+
++>x + +>y = {all numbers in both +>x added together} = N
+
+2. the set N can return either 5,7,9,11,13,15,17,19, or 21 numbers
+
+3. there are 9 different cardinalities for the set of adding two glider numbers together
