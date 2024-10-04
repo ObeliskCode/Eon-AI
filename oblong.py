@@ -41,18 +41,18 @@ def repeated_fib_oblong_additions(max_fib):
     return result_set
 
 def main():
-    start_x = int(input("Enter the first oblong number >x: "))
-    start_y = int(input("Enter the second oblong number >y: "))
+    start_x = int(input("Enter the first oblong number +>x: "))
+    start_y = int(input("Enter the second oblong number +>y: "))
     
     final_result = oblong_add(start_x, start_y)
     
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
-    max_fib = int(input("Enter the number of Fibonacci oblong additions: "))
+    #max_fib = int(input("Enter the number of Fibonacci oblong additions: "))
     
-    final_result = repeated_fib_oblong_additions(max_fib)
+    #final_result = repeated_fib_oblong_additions(max_fib)
     
-    print(f"Final result after {max_fib} Fibonacci-based additions: {final_result}")
+    #print(f"Final result after {max_fib} Fibonacci-based additions: {final_result}")
 
 if __name__ == "__main__":
     main()
