@@ -48,6 +48,11 @@ def main():
     
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
+    while(true):
+        z = int(input("Enter the x oblong number +>z: "))
+        final_result = oblong_add(final_result, z)
+        print(f"... + +>{z} = {sorted(final_result)}")
+
     #max_fib = int(input("Enter the number of Fibonacci oblong additions: "))
     
     #final_result = repeated_fib_oblong_additions(max_fib)
