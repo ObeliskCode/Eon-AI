@@ -280,3 +280,7 @@ this means that 2(+>x) + c requires enductive proofs to be able to be related to
 +>x + +>x = xe^2 + xe^2 = 2xe^2 = 2+>x
 
 so, +>1 + +>1 = 2+>1 NOTEQ +>2
+
+thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates oblong numbers to the irrationals R/Q
+
+the calculation of the set +>x + +>x is trivial and linear but what computational requirements does H take?
