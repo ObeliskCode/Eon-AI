@@ -1,12 +1,17 @@
 ## R-Algebra
 
-I have devised a superset of Algebra that surprisingly still keeps one critical rule, x =|x !
+I have devised a superset of Algebra that surprisingly still keeps one critical rule,
+x =|x !
 
 R-Algebra can only be used to derive formulas in algebra!.
 
-= | stands for R-Algebra, so if there is = | and you can prove that a chain of x = | y works in algebra thats how you can do derivation with R-Algebra.
+= | stands for R-Algebra, so if there is = | and you can prove that a chain of x = |
+y works in algebra thats how you can do derivation with R-Algebra.
 
-hard dirac is just a naming scheme for the number 2ei. | = | means something still needs further statements in between, = | is supposed to mean proven up to a reduction to algebra. so if you can fully collapse = | and | = | to each sides of an equation then you possibly have an algebraic derivation iff the result != 0.
+hard dirac is just a naming scheme for the number 2ei. | = | means something still
+needs further statements in between, = | is supposed to mean proven up to a
+reduction to algebra. so if you can fully collapse = | and | = | to each sides
+of an equation then you possibly have an algebraic derivation iff the result != 0.
 
 ## R-Algebra
 
@@ -30,7 +35,8 @@ a set only contains unique numbers!
 
 ## Complex Number Analysis
 
-An Informal Number x from X is a complex number with an imaginary component restricted to R/Q.
+An Informal Number x from X is a complex number with an imaginary component
+restricted to R/Q.
 
 scratch work:
 
@@ -184,7 +190,8 @@ sqrt(n) = e^i\*sqrt(n)
 
 sqrt(1/4) = 1/2
 
-sqrt(-1/4) = e^sqrt(1/4) = e^i\*sqrt(-1/4) = +/- sqrt(-1/4) = +/- isqrt(1/4) = +/- i1/2
+sqrt(-1/4) = e^sqrt(1/4) = e^i\*sqrt(-1/4) = +/- sqrt(-1/4) = +/- isqrt(1/4)
+= +/- i1/2
 
 =>
 
@@ -234,7 +241,8 @@ so, +>x can return a set of either 3,5 or 7 numbers
 
 2. the set N can return either 5,7,...,19,21,...,31,33 numbers
 
-3. there are 15 different cardinalities for the set of adding two oblong numbers together
+3. there are 15 different cardinalities for the set of adding two oblong numbers
+   together
 
 ## Oblong Number Theory
 
@@ -249,9 +257,11 @@ to solve find all unique numbers in [-2,-1,0,1,2] \* [-3,-2,-1,0,1,2,3]
 => {-6,-4,-3,-2,-1,0,1,2,3,4,6}
 note: only the upper triangle of the matrix needs to be calculated
 
-Assume for sake of contradiction division were not possible in the oblong number set
+Assume for sake of contradiction division were not possible in the oblong number
+set
 
-to be considered an oblong number it'd require for the addition after a division to be,
+to be considered an oblong number it'd require for the addition after a division
+to be,
 
 contained within the set O of oblong numbers
 
