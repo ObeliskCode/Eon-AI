@@ -13,6 +13,18 @@ def oblong_add(x, y):
 
     return sorted(result)
 
+def oblong_append(x, y):
+    set_x = x
+    set_y = oblong_set(y)
+
+    result = set()
+
+    for num_x in set_x:
+        for num_y in set_y:
+            result.add(num_x + num_y)
+
+    return sorted(result)
+
 def fibonacci_sequence(n):
     """
     Generates the Fibonacci sequence up to the nth number.
@@ -48,9 +60,9 @@ def main():
     
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
-    while(true):
+    while(True):
         z = int(input("Enter the x oblong number +>z: "))
-        final_result = oblong_add(final_result, z)
+        final_result = oblong_append(final_result, z)
         print(f"... + +>{z} = {sorted(final_result)}")
 
     #max_fib = int(input("Enter the number of Fibonacci oblong additions: "))
