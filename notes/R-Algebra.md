@@ -8,6 +8,26 @@ R-Algebra can only be used to derive formulas in algebra!.
 
 hard dirac is just a naming scheme for the number 2ei. | = | means something still needs further statements in between, = | is supposed to mean proven up to a reduction to algebra. so if you can fully collapse = | and | = | to each sides of an equation then you possibly have an algebraic derivation iff the result != 0.
 
+## R-Algebra
+
+Informal Number
+Oblong Number
+
+x uses only whole numbers 0,1,2,...,n to inf when, >x is an oblong number
+
+> x is equal to {-x-1,-x,-x+1,0,x-1,x,x+1}
+
+> x + >y = {all num in >x added together with all num in >y}
+
+a set only contains unique numbers!
+
+> x + >y = {[{all num in >x}] + [{all num in >y}]}
+
+> x + >y = >x - >y = >y - >x
+> commutative subtraction
+
+> 1 = e\*i
+
 ## Complex Number Analysis
 
 An Informal Number x from X is a complex number with an imaginary component restricted to R/Q.
