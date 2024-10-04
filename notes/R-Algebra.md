@@ -271,7 +271,7 @@ solve.
 
 by S i mean integral.
 
-S(2e^2)dx = 2e^2x + c = 2xei + c = 2(+>x) + c
+S(2e^2)dx = 2e^2x + c = c + 2xei = c + 2(+>x)
 
 so, e^2x = +>x and +>x = xei thus, +>x is an imaginary component
 
