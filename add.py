@@ -25,7 +25,7 @@ def oblong_append(x, y):
 
     return sorted(result)
 
-def main():
+def calculator():
     start_x = int(input("Enter the first oblong number +>x: "))
     start_y = int(input("Enter the second oblong number +>y: "))
     
@@ -39,4 +39,4 @@ def main():
         print(f"... + +>{z} = {sorted(final_result)}")
 
 if __name__ == "__main__":
-    main()
+    calculator()
