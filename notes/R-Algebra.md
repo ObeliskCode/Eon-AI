@@ -333,7 +333,7 @@ thus, 15e^2 = H(3(+>4) + +>2)e^2
 
 3x(+>5) = 3x(+>4) + x(+>2) CORRECT (1.)
 
-3x(5e^2) = 3x(4e^2) + x(e^2) ERROR (1.)
+3x(5e^2) = 3x(4e^2) + 2x(e^2) ERROR (1.)
 
 (1.) this allows you to do the work to
 calculate 15xe^2 with 1 less integer required than in
