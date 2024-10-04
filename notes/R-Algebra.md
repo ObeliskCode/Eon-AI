@@ -266,3 +266,9 @@ to be,
 contained within the set O of oblong numbers
 
 solve.
+
+## New Calculus
+
+by S i mean integral.
+
+S(2e^2)dx = 2e^2x + c = 2xei +c = 2(+>x) + c
