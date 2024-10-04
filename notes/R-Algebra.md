@@ -284,3 +284,7 @@ so, +>1 + +>1 = 2+>1 NOTEQ +>2
 thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates oblong numbers to the irrationals R/Q
 
 the calculation of the set +>x + +>x is trivial and linear but what computational requirements does H take?
+
++>2 + +>2 = {-6,...,6} = +>1 + +>3
+
++>4 + +>4 = {-10,...,10} = +>3 + +>5 = +>2 + +>6 NOTEQ +>1 + +>7
