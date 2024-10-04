@@ -46,7 +46,7 @@ def main():
     
     final_result = oblong_add(start_x, start_y)
     
-    print(f">x + >y: {sorted(final_result)}")
+    print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
     max_fib = int(input("Enter the number of Fibonacci oblong additions: "))
     
