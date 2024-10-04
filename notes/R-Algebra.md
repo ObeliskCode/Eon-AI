@@ -13,20 +13,20 @@ hard dirac is just a naming scheme for the number 2ei. | = | means something sti
 Informal Number
 Oblong Number
 
-x uses only whole numbers 0,1,2,...,n to inf when, >x is an oblong number
+x uses only whole numbers 0,1,2,...,n to inf when, +>x is an oblong number
 
-> x is equal to {-x-1,-x,-x+1,0,x-1,x,x+1}
++> x is equal to {-x-1,-x,-x+1,0,x-1,x,x+1}
 
-> x + >y = {all num in >x added together with all num in >y}
++> x + >y = {all num in >x added together with all num in +>y}
 
 a set only contains unique numbers!
 
-> x + >y = {[{all num in >x}] + [{all num in >y}]}
++> x + >y = {[{all num in +>x}] + [{all num in +>y}]}
 
-> x + >y = >x - >y = >y - >x
-> commutative subtraction
++>x + +>y = +>x - +>y = +>y - +>x
++> commutative subtraction
 
-> 1 = e\*i
++>1 = e\*i
 
 ## Complex Number Analysis
 
@@ -242,7 +242,7 @@ I wish to officially call +>x oblong numbers
 
 here is a couple simple proofs for the Oblong Number Set.
 
-Solve. >1 \* >2
+Solve. +>1 \* +>2
 
 to solve find all unique numbers in [-2,-1,0,1,2] \* [-3,-2,-1,0,1,2,3]
 
