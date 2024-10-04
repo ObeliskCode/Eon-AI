@@ -2,7 +2,7 @@
 
 I have devised a superset of Algebra that surprisingly still keeps one critical rule, x =|x !
 
-R-Algebra can only be used to derive formulas in algebra!
+R-Algebra can only be used to derive formulas in algebra!.
 
 = | stands for R-Algebra, so if there is = | and you can prove that a chain of x = | y works in algebra thats how you can do derivation with R-Algebra.
 
@@ -186,7 +186,7 @@ i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
 
 i = 0.54630248985 or -1.83048772172
 
-## Ordinality of Glider Addition Relations
+## Ordinality of Oblong Addition Relations
 
 +/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
 
@@ -204,14 +204,35 @@ thus,
 
 so, +>x can return a set of either 3,5 or 7 numbers
 
-## Glider Group Theory
+## Oblong Group Theory
 
 +>x + +>y = +>x - +>y = +y - +>x (1.)
 
-1. both glider addition and glider subtraction are commutative
+1. both oblong addition and oblong subtraction are commutative
 
 +>x + +>y = {all numbers in both +>x added together} = N
 
 2. the set N can return either 5,7,...,19,21,...,31,33 numbers
 
-3. there are 15 different cardinalities for the set of adding two glider numbers together
+3. there are 15 different cardinalities for the set of adding two oblong numbers together
+
+## Oblong Number Theory
+
+I wish to officially call +>x oblong numbers
+
+here is a couple simple proofs for the Oblong Number Set.
+
+Solve. >1 \* >2
+
+to solve find all unique numbers in [-2,-1,0,1,2] \* [-3,-2,-1,0,1,2,3]
+
+=> {-6,-4,-3,-2,-1,0,1,2,3,4,6}
+note: only the upper triangle of the matrix needs to be calculated
+
+Assume for sake of contradiction division were not possible in the oblong number set
+
+to be considered an oblong number it'd require for the addition after a division to be,
+
+contained within the set O of oblong numbers
+
+solve.
