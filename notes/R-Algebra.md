@@ -271,4 +271,8 @@ solve.
 
 by S i mean integral.
 
-S(2e^2)dx = 2e^2x + c = 2xei +c = 2(+>x) + c
+S(2e^2)dx = 2e^2x + c = 2xei + c = 2(+>x) + c
+
+so, e^2x = +>x and +>x = xei thus, +>x is an imaginary component
+
+this means that 2(+>x) + c requires enductive proofs to be able to be related to algebra "R-Algebra"
