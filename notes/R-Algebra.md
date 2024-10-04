@@ -267,6 +267,10 @@ contained within the set O of oblong numbers
 
 solve.
 
+the simplest assumption is that +>x \* +>y = +>x / +>y = +>y / +>X
+
+which is that division is commutative and exactly the same as multiplication
+
 ## New Calculus
 
 by S i mean integral.
@@ -298,3 +302,7 @@ the calculation of the set +>x + +>x is trivial and linear but what computationa
 so +>40 + +>40 NOTEQ +>39 + +>41 NOTEQ +>38 + +>42
 
 +>4 + +>4 = +>1 + +>2 + +>4 = +>4 + +>2 + +>1 = +>2 + +>1 + +>2 + +>1
+
++>8 + +>8 = [-18, -17, -16, -15, -14, -9, -8, -7, -2, -1, 0, 1, 2, 7, 8, 9, 14, 15, 16, 17, 18]
+
+4(+>4) = 4(+>2) + 4(+>1)
