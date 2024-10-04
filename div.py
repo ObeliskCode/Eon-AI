@@ -1,4 +1,4 @@
-# conj.py
+# div.py
 
 # R-Algebra operations implementation
 
