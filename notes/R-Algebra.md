@@ -332,3 +332,9 @@ so, 3(+>5) = 4(+>2) + 3(+>1) = 3(+>4) + +>2
 thus, 15e^2 = H(3(+>4) + +>2)e^2
 
 3x(+>5) = 3x(+>4) + x(+>2)
+
+3x(5e^2) = 3x(4e^2) + x(e^2) (1.)
+
+(1.) this allows you to do the work to
+calculate 15xe^2 with 1 less integer required than in
+regular O(1) calculations possibly O(-1) due to number packing
