@@ -397,3 +397,5 @@ regular O(1) calculations possibly O(-1) due to number packing
 [->96,+>96]{+>47}(2) = 4(+>8) + 6(+>1)
 [->98,+>98]{+>48}(2) = 4(+>8) + 7(+>1)
 [->100,+>100]{+>49}(2) = 4(+>8) + 8(+>1)
+
+a 9x10 matrix is enough to store 100 slots for an integer with only 90 locations!
