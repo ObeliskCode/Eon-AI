@@ -25,7 +25,7 @@ def find_geometric_patterns(numbers, target_sum):
 
 def main():
     # Define the limit for informal numbers and target sum
-    limit = 10000
+    limit = 4
     target_sum = 0  # You can modify this to set the desired sum
     informal_numbers = generate_informal_numbers(limit)
     

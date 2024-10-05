@@ -24,7 +24,7 @@ def find_geometric_patterns(numbers, target_sum):
     return results
 
 # Define the limit for informal numbers and target sum
-limit = 1000  # Reduced for performance
+limit = 4  # Reduced for performance
 target_sum = 0  # Set the desired sum
 
 # Generate informal numbers
@@ -37,4 +37,4 @@ total_unique_combinations = len(equality_results)
 # Find geometric patterns for the given target sum
 geometric_patterns = find_geometric_patterns(informal_numbers, target_sum)
 
-total_unique_combinations, len(geometric_patterns), geometric_patterns[:5]  # Displaying first 5 results
+print(total_unique_combinations, len(geometric_patterns), geometric_patterns)  # Displaying first 5 results
