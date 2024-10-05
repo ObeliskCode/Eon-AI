@@ -31,7 +31,7 @@ def infn_append(x, y):
 def find_informal_sets(combo_length, target):
     """Generate combinations of informal numbers that equal the target."""
     informal_sets = []
-    numbers = list(range(1, 10))  # Modify range as needed for your use case
+    numbers = list(range(1, combo_length))  # Modify range as needed for your use case
     
     # Iterate over all combinations of 'combo_length'
     for i in range(2, combo_length + 1):
