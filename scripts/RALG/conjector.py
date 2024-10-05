@@ -80,9 +80,9 @@ def main():
     combination = find_informal_sets(combo_length, target)
     
     if combination:
-        print(f'The combination of informal numbers that sum to {target} is: {combination}')
+        print(combination)
     else:
-        print(f'No combination of informal numbers found for {target}.')
+        print(f'No combinations found.')
 
 if __name__ == "__main__":
     main()
