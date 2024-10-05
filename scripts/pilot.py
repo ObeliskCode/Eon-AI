@@ -1,32 +1,40 @@
-# pilot.py
+from itertools import combinations
 
-import numpy as np
-import tensorflow as tf
-from your_perceptron_module import LatexRNN  # Adjust this import based on your module name
+# Function to generate informal numbers in the range -limit to limit
+def generate_informal_numbers(limit):
+    return list(range(-limit, limit + 1))
 
-def generate_data(samples, time_steps, features):
-    x_train = np.random.random((samples, time_steps, features))
-    y_train = np.random.randint(0, 2, (samples, 2))
-    return x_train, y_train
+# Function to check for equality among all combinations of informal numbers
+def check_equality(numbers):
+    results = {}
+    for r in range(1, len(numbers) + 1):
+        for combo in combinations(numbers, r):
+            combo_sorted = tuple(sorted(combo))
+            if combo_sorted not in results:
+                results[combo_sorted] = True  # Unique combination found
+    return results
 
-def main():
-    # Hyperparameters
-    samples = 1000
-    time_steps = 10
-    features = 5
-    hidden_size = 10
-    output_size = 2
-    epochs = 100
+# Function to find geometric patterns of integers that add up to a minimized sum
+def find_geometric_patterns(numbers, target_sum):
+    results = []
+    for r in range(1, len(numbers) + 1):
+        for combo in combinations(numbers, r):
+            if sum(combo) == target_sum:
+                results.append(combo)
+    return results
 
-    # Generate data
-    x_train, y_train = generate_data(samples, time_steps, features)
+# Define the limit for informal numbers and target sum
+limit = 1000  # Reduced for performance
+target_sum = 0  # Set the desired sum
 
-    # Build and compile the model
-    model = LatexRNN(input_size=features, hidden_size=hidden_size, output_size=output_size)
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
+# Generate informal numbers
+informal_numbers = generate_informal_numbers(limit)
 
-    # Train the model
-    model.fit(x_train, y_train, epochs=epochs)
+# Check equality of combinations
+equality_results = check_equality(informal_numbers)
+total_unique_combinations = len(equality_results)
 
-if __name__ == "__main__":
-    main()
+# Find geometric patterns for the given target sum
+geometric_patterns = find_geometric_patterns(informal_numbers, target_sum)
+
+total_unique_combinations, len(geometric_patterns), geometric_patterns[:5]  # Displaying first 5 results
