@@ -211,9 +211,10 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         ox_identity = tf.abs(pre_activation) + self.identity
         ox_post_activation = (ox_latex_zero + ox_latex_negative) * self.ox_identity + ox_identity
 
-        gain = domain_restrict_avg(tf.abs(post_activation) + self.offset + self.cutoff)  # Compute gain using domain restriction
+		#[todo]: code cutoff to be an "informal number"
+        gain = domain_restrict_avg(tf.abs(post_activation + ox_post_activation) + self.offset + self.cutoff)  # Compute gain using domain restriction
 
-        return post_activation, hidden_state, gain
+        return pre_activation, hidden_state, gain
 
 
 class LatexRNN(tf.keras.Model):

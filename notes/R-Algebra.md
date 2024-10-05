@@ -1,24 +1,19 @@
 ## R-Algebra
 
-I have devised a superset of Algebra that surprisingly still keeps one critical rule,
-x =|x !
+R-Algebra is math that uses the Reductive Proof Method.
 
-R-Algebra can only be used to derive formulas in algebra!.
+R-Algebra derives formulas in Algebra with functional analysis.
 
-= | stands for R-Algebra, so if there is = | and you can prove that a chain of x = |
-y works in algebra thats how you can do derivation with R-Algebra.
+= | stands for Reduction.
+| = | stands for Irreducible Reduction
 
-hard dirac is just a naming scheme for the number 2ei. | = | means something still
-needs further statements in between, = | is supposed to mean proven up to a
-reduction to algebra. so if you can fully collapse = | and | = | to each sides
-of an equation then you possibly have an algebraic derivation iff the result != 0.
+in a reductive proof anything is 0 at any point but,
+that just means more pile math to simplify
+later down the line - Noel
 
 ## R-Algebra
 
-Informal Number
-Oblong Number
-
-x uses only whole numbers 0,1,2,...,n to inf when, +>x is an oblong number
+x uses only whole numbers 0,1,2,...,n to inf when, +>x is an informal number
 
 +> x is equal to {-x-1,-x,-x+1,0,x-1,x,x+1}
 
@@ -34,9 +29,6 @@ a set only contains unique numbers!
 +>1 = e\*i
 
 ## Complex Number Analysis
-
-An Informal Number x from X is a complex number with an imaginary component
-restricted to R/Q.
 
 scratch work:
 
@@ -77,8 +69,6 @@ e^2 =| +/> 1
 show, e^2 =| +> 1 since e^2 =| ei
 
 <=> e^2 =| 1-1
-
-an informal number is from the set X of informal numbers.
 
 i. e^2 - 1 =| 0 <=> 1*1 =| 0*1 =| 0 <=> 1/0 =| 0
 
@@ -213,7 +203,7 @@ i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
 
 i = 0.54630248985 or -1.83048772172
 
-## Ordinality of Oblong Addition Relations
+## Ordinality of informal Addition Relations
 
 +/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
 
@@ -231,24 +221,24 @@ thus,
 
 so, +>x can return a set of either 3,5 or 7 numbers
 
-## Oblong Group Theory
+## informal Group Theory
 
 +>x + +>y = +>x - +>y = +y - +>x (1.)
 
-1. both oblong addition and oblong subtraction are commutative
+1. both informal addition and informal subtraction are commutative
 
 +>x + +>y = {all numbers in both +>x added together} = N
 
 2. the set N can return either 5,7,...,19,21,...,31,33 numbers
 
-3. there are 15 different cardinalities for the set of adding two oblong numbers
+3. there are 15 different cardinalities for the set of adding two informal numbers
    together
 
-## Oblong Number Theory
+## informal Number Theory
 
-I wish to officially call +>x oblong numbers
+I wish to officially call +>x informal numbers
 
-here is a couple simple proofs for the Oblong Number Set.
+here is a couple simple proofs for the informal Number Set.
 
 Solve. +>1 \* +>2
 
@@ -257,13 +247,13 @@ to solve find all unique numbers in [-2,-1,0,1,2] \* [-3,-2,-1,0,1,2,3]
 => {-6,-4,-3,-2,-1,0,1,2,3,4,6}
 note: only the upper triangle of the matrix needs to be calculated
 
-Assume for sake of contradiction division were not possible in the oblong number
+Assume for sake of contradiction division were not possible in the informal number
 set
 
-to be considered an oblong number it'd require for the addition after a division
+to be considered an informal number it'd require for the addition after a division
 to be,
 
-contained within the set O of oblong numbers
+contained within the set O of informal numbers
 
 solve.
 
@@ -279,13 +269,13 @@ S(2e^2)dx = 2e^2x + c = c + 2xei = c + 2(+>x)
 
 so, e^2x = +>x and +>x = xei thus, +>x is an imaginary component
 
-this means that 2(+>x) + c requires enductive proofs to be able to be related to algebra "R-Algebra"
+this means that 2(+>x) + c requires reductive proofs to be able to be related to algebra "R-Algebra"
 
 +>x + +>x = xe^2 + xe^2 = 2xe^2 = 2+>x
 
 so, +>1 + +>1 = 2+>1 NOTEQ +>2
 
-thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates oblong numbers to the irrationals R/Q
+thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates informal numbers to the irrationals R/Q
 
 the calculation of the set +>x + +>x is trivial and linear but what computational requirements does H take?
 
