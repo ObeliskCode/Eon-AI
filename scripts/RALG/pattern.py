@@ -1,42 +1,66 @@
 from itertools import combinations
 
-def generate_informal_numbers(limit):
-    """Generate informal numbers in the range -limit to limit."""
-    return list(range(-limit, limit + 1))
+def oblong_set(x):
+    return set([-x - 1, -x, -x + 1, 0, x - 1, x, x + 1])
 
-def check_equality(numbers):
+def oblong_add(x, y):
+    set_x = oblong_set(x)
+    set_y = oblong_set(y)
+
+    result = set()
+
+    for num_x in set_x:
+        for num_y in set_y:
+            result.add(num_x + num_y)
+
+    return sorted(result)
+
+def oblong_append(x, y):
+    set_x = x
+    set_y = oblong_set(y)
+
+    result = set()
+
+    for num_x in set_x:
+        for num_y in set_y:
+            result.add(num_x + num_y)
+
+    return sorted(result)
+
+def find_informal_sets(combinations, target):
+    """Generate list of numbers for analysis."""
+    # [TODO]
+
+    return
+    
+
+def check_equality(numbers, target):
     """Check for equality among all combinations of informal numbers."""
-    results = {}
-    for r in range(1, len(numbers) + 1):
-        for combo in combinations(numbers, r):
-            combo_sorted = tuple(sorted(combo))
-            if combo_sorted not in results:
-                results[combo_sorted] = True  # Unique combination found
-    return results
+    infn = set()
+    
+    for o in range(len(numbers)):
+        if o == 0:
+            infn = oblong_add(numbers[0],numbers[1])
+        else if o == 1:
+            continue
+        else:
+            infn = oblong_append(infn,numbers[o])
 
-def find_geometric_patterns(numbers, target_sum):
-    """Find geometric patterns of integers that add up to a minimized sum."""
-    results = []
-    for r in range(1, len(numbers) + 1):
-        for combo in combinations(numbers, r):
-            if sum(combo) == target_sum:
-                results.append(combo)
-    return results
+    if infn == oblong_set(target):
+        return True
+    else:
+        return False
 
 def main():
     # Define the limit for informal numbers and target sum
-    limit = 4
-    target_sum = 0  # You can modify this to set the desired sum
-    informal_numbers = generate_informal_numbers(limit)
+    combinations = 4
+    target_infn = 5  # You can modify this to set the desired sum
     
     # Check equality of combinations
-    equality_results = check_equality(informal_numbers)
-    total_unique_combinations = len(equality_results)
-    print(f'Total unique combinations found: {total_unique_combinations}')
-    
-    # Find geometric patterns for the given target sum
-    geometric_patterns = find_geometric_patterns(informal_numbers, target_sum)
-    print(f'Geometric patterns that add up to {target_sum}: {geometric_patterns}')
+    informal_sets = find_informal_sets(combinations, target_infn)
+    total_unique_combinations = len(informal_sets)
+    print(f'combinations for {target_infn} up to {combinations} slots: {total_unique_combinations}')
+    print(f'{informal_sets}')
 
 if __name__ == "__main__":
     main()
