@@ -1,14 +1,14 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Function to generate the oblong number set for a given position `x`
-def oblong_number(x):
+# Function to generate the infn number set for a given position `x`
+def infn_number(x):
     return {-x-1, -x, -x+1, 0, x-1, x, x+1}
 
 
-def oblong_add(x, y):
-    set_x = oblong_number(x)
-    set_y = oblong_number(y)
+def infn_add(x, y):
+    set_x = infn_number(x)
+    set_y = infn_number(y)
 
     result = set()
 
@@ -45,12 +45,12 @@ def next_generation(grid):
     
     for i in range(n):
         # try this!
-        #oblong_set = oblong_add((int)(hwpx + i), 3)
-        oblong_set = oblong_number((int)(hwpx + i))
+        #infn_set = infn_add((int)(hwpx + i), 3)
+        infn_set = infn_number((int)(hwpx + i))
 
-        # Check neighbors based on the oblong set
+        # Check neighbors based on the infn set
         neighbors = []
-        for num_line in oblong_set:
+        for num_line in infn_set:
             stat = (int)((num_line + hwp))
             if stat > hwp or stat < -hwp:
                 continue

@@ -2,20 +2,20 @@
 
 # R-Algebra operations implementation
 
-# Function for Oblong Addition
-def oblong_addition(a, b, c, d):
+# Function for infn Addition
+def infn_addition(a, b, c, d):
     return (a + c, b + d)
 
-# Function for Oblong Subtraction
-def oblong_subtraction(a, b, c, d):
+# Function for infn Subtraction
+def infn_subtraction(a, b, c, d):
     return (a - c, b - d)
 
-# Function for Oblong Multiplication
-def oblong_multiplication(a, b, c, d):
+# Function for infn Multiplication
+def infn_multiplication(a, b, c, d):
     return (a * c - b * d, a * d + b * c)
 
-# Function for Oblong Division
-def oblong_division(a, b, c, d):
+# Function for infn Division
+def infn_division(a, b, c, d):
     denominator = c**2 + d**2
     return ((a * c + b * d) / denominator, (b * c - a * d) / denominator)
 
@@ -28,24 +28,24 @@ def informal_number_operations(c, d, e, f):
 
 # Testing framework for R-Algebra functions
 def run_tests():
-    # Test Oblong Addition
-    assert oblong_addition(3, 4, 1, 2) == (4, 6), "Test failed for oblong_addition"
-    print("Oblong Addition Test Passed!")
+    # Test infn Addition
+    assert infn_addition(3, 4, 1, 2) == (4, 6), "Test failed for infn_addition"
+    print("infn Addition Test Passed!")
 
-    # Test Oblong Subtraction
-    assert oblong_subtraction(3, 4, 1, 2) == (2, 2), "Test failed for oblong_subtraction"
-    print("Oblong Subtraction Test Passed!")
+    # Test infn Subtraction
+    assert infn_subtraction(3, 4, 1, 2) == (2, 2), "Test failed for infn_subtraction"
+    print("infn Subtraction Test Passed!")
 
-    # Test Oblong Multiplication
-    assert oblong_multiplication(3, 4, 1, 2) == (-5, 10), "Test failed for oblong_multiplication"
-    print("Oblong Multiplication Test Passed!")
+    # Test infn Multiplication
+    assert infn_multiplication(3, 4, 1, 2) == (-5, 10), "Test failed for infn_multiplication"
+    print("infn Multiplication Test Passed!")
 
-    # Test Oblong Division
-    div_result = oblong_division(3, 4, 1, 2)
+    # Test infn Division
+    div_result = infn_division(3, 4, 1, 2)
     expected_div_result = (2.2, 0.4)  # Approximate expected values
-    assert abs(div_result[0] - expected_div_result[0]) < 1e-10, "Test failed for oblong_division"
-    assert abs(div_result[1] - expected_div_result[1]) < 1e-10, "Test failed for oblong_division"
-    print("Oblong Division Test Passed!")
+    assert abs(div_result[0] - expected_div_result[0]) < 1e-10, "Test failed for infn_division"
+    assert abs(div_result[1] - expected_div_result[1]) < 1e-10, "Test failed for infn_division"
+    print("infn Division Test Passed!")
 
     # Test Informal Number Operations
     add_result, multiply_result = informal_number_operations(2, 1, 3, 0.5)
@@ -54,10 +54,10 @@ def run_tests():
     print("Informal Number Operations Test Passed!")
 
 def calculator():
-    print("+",oblong_addition(3, 4, 1, 2))
-    print("-",oblong_subtraction(3, 4, 1, 2))
-    print("*",oblong_multiplication(3, 4, 1, 2))
-    print("/",oblong_division(3, 4, 1, 2))
+    print("+",infn_addition(3, 4, 1, 2))
+    print("-",infn_subtraction(3, 4, 1, 2))
+    print("*",infn_multiplication(3, 4, 1, 2))
+    print("/",infn_division(3, 4, 1, 2))
 
 
 # Main function to execute the tests

@@ -1,9 +1,9 @@
-def oblong_set(x):
+def infn_set(x):
     return set([-x - 1, -x, -x + 1, 0, x - 1, x, x + 1])
 
-def oblong_add(x, y):
-    set_x = oblong_set(x)
-    set_y = oblong_set(y)
+def infn_add(x, y):
+    set_x = infn_set(x)
+    set_y = infn_set(y)
 
     result = set()
 
@@ -13,9 +13,9 @@ def oblong_add(x, y):
 
     return sorted(result)
 
-def oblong_append(x, y):
+def infn_append(x, y):
     set_x = x
-    set_y = oblong_set(y)
+    set_y = infn_set(y)
 
     result = set()
 
@@ -26,16 +26,16 @@ def oblong_append(x, y):
     return sorted(result)
 
 def calculator():
-    start_x = int(input("Enter the first oblong number +>x: "))
-    start_y = int(input("Enter the second oblong number +>y: "))
+    start_x = int(input("Enter the first infn number +>x: "))
+    start_y = int(input("Enter the second infn number +>y: "))
     
-    final_result = oblong_add(start_x, start_y)
+    final_result = infn_add(start_x, start_y)
     
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
     while(True):
-        z = int(input("Enter the x oblong number +>z: "))
-        final_result = oblong_append(final_result, z)
+        z = int(input("Enter the x infn number +>z: "))
+        final_result = infn_append(final_result, z)
         print(f"... + +>{z} = {sorted(final_result)}")
 
 if __name__ == "__main__":
