@@ -1,7 +1,7 @@
 from itertools import combinations
 
 def oblong_set(x):
-    return set([-x - 1, -x, -x + 1, 0, x - 1, x, x + 1])
+    return sorted(set([-x - 1, -x, -x + 1, 0, x - 1, x, x + 1]))
 
 def oblong_add(x, y):
     set_x = oblong_set(x)
@@ -27,12 +27,23 @@ def oblong_append(x, y):
 
     return sorted(result)
 
-def find_informal_sets(combinations, target):
+def find_informal_sets(combo_length, target):
     """Generate list of numbers for analysis."""
-    # [TODO]
-
-    return
+    informal_sets = []
     
+    # Consider numbers from 1 to some arbitrary limit for now (you can change the limit as desired)
+    numbers = list(range(1, 10))  # Modify range as needed for your use case
+    
+    # Iterate over all combinations of 'combo_length' length
+    for i in range(combo_length):
+        if i < 2:
+            continue
+        for combo in combinations(numbers, i):
+            # Check if this combination satisfies the target using check_equality
+            if check_equality(combo, target):
+                informal_sets.append(combo)
+
+    return informal_sets
 
 def check_equality(numbers, target):
     """Check for equality among all combinations of informal numbers."""
@@ -41,25 +52,25 @@ def check_equality(numbers, target):
     for o in range(len(numbers)):
         if o == 0:
             infn = oblong_add(numbers[0],numbers[1])
-        else if o == 1:
+        elif o == 1:
             continue
         else:
             infn = oblong_append(infn,numbers[o])
 
-    if infn == oblong_set(target):
+    if infn == target:
         return True
     else:
         return False
 
 def main():
     # Define the limit for informal numbers and target sum
-    combinations = 4
-    target_infn = 5  # You can modify this to set the desired sum
+    combo_length = 4  # Adjust the number of slots
+    target_infset = oblong_add(2,1) # You can modify this to set the desired target sum
     
     # Check equality of combinations
-    informal_sets = find_informal_sets(combinations, target_infn)
+    informal_sets = find_informal_sets(combo_length, target_infset)
     total_unique_combinations = len(informal_sets)
-    print(f'combinations for {target_infn} up to {combinations} slots: {total_unique_combinations}')
+    print(f'Combinations for {target_infset} up to {combo_length} slots: {total_unique_combinations}')
     print(f'{informal_sets}')
 
 if __name__ == "__main__":
