@@ -373,3 +373,7 @@ regular O(1) calculations possibly O(-1) due to number packing
 [->54,+>54] = 9(+>5)
 
 H([->102,+>102]) = H(9(+>9) + +>7 + +>3) = 102
+
+H([[2,3],[3,2]]) = 26508
+
+a 2x2 informal matrix can hold 26508 numbers with only integers <= 3
