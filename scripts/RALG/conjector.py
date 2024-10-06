@@ -1,4 +1,5 @@
 from itertools import combinations
+from itertools import combinations_with_replacement
 
 def infn_set(x):
     """Generate a set of informal numbers based on x."""
@@ -104,9 +105,9 @@ def find_informal_sets(combo_length, target):
     informal_sets = []
     numbers = list(range(1, combo_length))  # Modify range as needed for your use case
     
-    # Iterate over all combinations of 'combo_length'
+    # Iterate over all combinations of 'combo_length' with replacement (allows repeated numbers)
     for i in range(2, combo_length + 1):
-        for combo in combinations(numbers, i):
+        for combo in combinations_with_replacement(numbers, i):
             if check_equality(combo, target):
                 informal_sets.append(combo)
 
@@ -135,7 +136,10 @@ def calculator():
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
     while True:
-        z = int(input("Enter the x infn number +>z (or type -x to multiply): "))
+        inp = input("Enter +>z (type -x to multiply) (q to quit): ")
+        if inp == 'q':
+            break
+        z = int(inp)
         if z < 0:
             final_result = infn_div(final_result, -z)
             print(f"... + +>{z} = {sorted(final_result)}")
