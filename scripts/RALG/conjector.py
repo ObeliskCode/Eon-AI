@@ -138,7 +138,9 @@ def calculator():
     start_x = z
     inp = input("infn number +>y (q to quit): ")
     if inp == 'q':
-        return infn_set(start_x)
+        ret = infn_set(start_x)
+        print(f"+>{start_x} = {sorted(ret)}")
+        return ret
     z = int(inp)
     start_y = z
     
