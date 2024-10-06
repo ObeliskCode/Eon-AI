@@ -374,6 +374,70 @@ regular O(1) calculations possibly O(-1) due to number packing
 
 H([->102,+>102]) = H(9(+>9) + +>7 + +>3) = 102
 
-H([[2,3],[3,2]]) = 26508
+H([[2,3],[3,2]](+\*)) = 26508
 
 a 2x2 informal matrix can hold 26508 numbers with only integers <= 3
+
+lets examine[[2,3],[3,2]](+\*)
+
+## Informal Subtraction and Simplification(div operation)
+
+if an nxn(+\*) matrix be allocated a numeric in another matrix,
+then an nxn(nxn(+\*)) matrrix would still aloow for ordinary matrix operations
+on top of the existing thinner matrix which fits perfectly as subset speed for
+found numerics which minimize the computational bound of H to O(1)
+
+ergo, this could lead to faster matrix multiplication algorithms
+for most non-trivial computations
+
+so informal number theory suggest matrices contain matrices within matrices
+
+informal subtraction (trivial):
+
++>4 - +>2 = {-5,5} - {-3,3} = {-5,-5,0,4,5}
+
+obviously using integer subtraction within informal calc. is commutative
+same thing for division and subtraction, but informal subtraction
+is not integer subtraction! (set closure)
+
+thus,
+
++>0 - +>0 = {0}
+
+Simplication(Informal Division) Proofs
+
+Q: we said that +>4 meant a solution which means choice for elements in the set
+
+we can quantify it into one number then do some operation probably just
+multiplication again to the whole set as one operation to the whole set...
+
+this means division is about multiplication by selection sorting H or maybe h
+another conjector function similar to H in the same field of conjector funcs?
+
+so, is it the func H or h which relates Simplification?
+
+u suggest that h is the new function which relates higher dim informal matrices
+to lower informal matrix spaces but not to integers!
+
+so if simplification (/) were a real operation in informal numbers regardless
+it'd have to send itself as a function from ->n +>x= -> ->1 +>x (n dim to 1 dim)
+
+the example matrix multiplication is the first order of informal (simplification)
+
+INFORMAL MATRIX SIMPLIFICATION ALGORITHM IN 1D:
+------------[b1,b2,b3,b4,b5]
+[a1, a2, a3, a4]------------
+
+1D informal matrix simpl requires stacking matrices like this.
+
+also, note:
+
+1. x/0 =| 0 =| 0/x =| 0
+
+2. there are three simpl functions, (/-), (/+), (/\*)
+
+calculating (/+) is the easiest one to calc
+
+there are 6-dimensions to manage in this system in total
+
+(-/), (+/), (\*/), (_+), (-+), (-_)
