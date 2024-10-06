@@ -135,9 +135,11 @@ def calculator():
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
     while True:
-        z = int(input("Enter the x infn number +>z (or type -1 to finish): "))
-        if z == -1:
-            break
+        z = int(input("Enter the x infn number +>z (or type -x to multiply): "))
+        if z < 0:
+            final_result = infn_div(final_result, -z)
+            print(f"... + +>{z} = {sorted(final_result)}")
+            continue
         final_result = infn_append(final_result, z)
         print(f"... + +>{z} = {sorted(final_result)}")
     
