@@ -152,7 +152,12 @@ def calculator():
 def main():
     target = calculator()
     
-    combo_length = int(input("Enter combo length to search: "))
+    inp = input("Enter combo length to search (q to quit): ")
+    if inp == 'q':
+        return
+    z = int(inp)
+
+    combo_length = int(z)
 
     informal_combinations = find_informal_sets(combo_length, target)
     
