@@ -129,8 +129,18 @@ def check_equality(numbers, target):
 
 def calculator():
     """Interactive calculator for adding informal numbers."""
-    start_x = int(input("Enter the first infn number +>x: "))
-    start_y = int(input("Enter the second infn number +>y: "))
+    inp = ''
+    z = 0
+    inp = input("infn number +>x (q to quit): ")
+    if inp == 'q':
+        return -1
+    z = int(inp)
+    start_x = z
+    inp = input("infn number +>y (q to quit): ")
+    if inp == 'q':
+        return infn_set(start_x)
+    z = int(inp)
+    start_y = z
     
     final_result = infn_add(start_x, start_y)
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
@@ -151,6 +161,9 @@ def calculator():
 
 def main():
     target = calculator()
+
+    if target == -1:
+        return
     
     inp = input("Enter combo length to search (q to quit): ")
     if inp == 'q':
