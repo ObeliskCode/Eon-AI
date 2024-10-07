@@ -4,8 +4,20 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-def generate_4D_points(num_points):
-    return np.random.rand(num_points, 4) * 10  # Generate points in [0, 10)
+def generate_toroidal_4D_points(num_points, radius=5, tube_radius=1):
+    """Generate points on a toroidal surface in 4D."""
+    points = []
+    for _ in range(num_points):
+        u = np.random.rand() * 2 * np.pi  # Angle around the toroidal hole
+        v = np.random.rand() * 2 * np.pi  # Angle around the tube
+
+        x = (radius + tube_radius * np.cos(v)) * np.cos(u)
+        y = (radius + tube_radius * np.cos(v)) * np.sin(u)
+        z = tube_radius * np.sin(v)
+        w = np.random.rand() * 10  # Randomly spread in the fourth dimension
+
+        points.append([x, y, z, w])
+    return np.array(points)
 
 def rotate_4D(points, angles):
     theta, phi, psi = angles
@@ -38,7 +50,8 @@ def rotate_4D(points, angles):
     return rotated_points
 
 def project_to_3D(points_4D):
-    return points_4D[:, :3]  # Use only the first three dimensions for projection
+    # Use only the first three dimensions for projection
+    return points_4D[:, :3]  
 
 def draw_points(points):
     glBegin(GL_POINTS)
@@ -54,7 +67,7 @@ def main():
     glTranslatef(0.0, 0.0, -30)
 
     num_points = 1000
-    points_4D = generate_4D_points(num_points)
+    points_4D = generate_toroidal_4D_points(num_points)
     angles = (np.pi / 4, np.pi / 4, np.pi / 4)
 
     while True:
