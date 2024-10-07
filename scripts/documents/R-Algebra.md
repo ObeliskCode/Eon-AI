@@ -438,6 +438,28 @@ also, note:
 
 calculating (/+) is the easiest one to calc
 
-there are 6-dimensions to manage in this system in total
+there are 6 2d axes to manage in this system in total
 
-(-/), (+/), (\*/), (_+), (-+), (-_)
+(-,/), (+,/), (_,/), (_,+), (-,+), (-,\*)
+
+## 4-D -> 6-D extension
+
++, -, \*, / are all formally defined operations in the informal number system
+
+[+ := set add.,- := set subt.,* := set mult.,/ := simpl.]
+
+so, (-,/), (+,/), (_,/), (_,+), (-,+), (-,_)
+= (+,-,_),(+,-,/),(+,_,/),(-,_,/) => 4-D
+
+so for 6-D we have
+
+[1]:[(+,-,*),(+,-,/)]
+[2]:[(+,-,*),(+,*,/)]
+[3]:[(+,-,*),(-,*,/)]
+[4]:[(+,-,/),(+,*,/)]
+[5]:[(+,-,/),(-,*,/)]
+[6]:[(+,*,/),(-,*,/)]
+
+where for example we have the operator h then,
+
+(+,-,\*) h (+,-,/) |=| (x,y,z) ?
