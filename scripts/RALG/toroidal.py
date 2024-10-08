@@ -129,7 +129,7 @@ def lineloop():
 
     num_points = 1000
     lines_4D = g_lines()
-    angles = (np.pi / 2, np.pi / 2, np.pi / 2)
+    angles = (np.pi / 4, np.pi / 2, np.pi / 8)
 
     while True:
         for event in pygame.event.get():

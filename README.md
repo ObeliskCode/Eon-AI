@@ -1,4 +1,4 @@
-# Eon-Crypto
+# Eon-Crypt
 
 ```
 def infn_set(x):
