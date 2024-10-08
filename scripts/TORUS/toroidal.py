@@ -131,6 +131,9 @@ def lineloop():
     lines_4D = g_lines()
     angles = (np.pi / 4, np.pi / 2, np.pi / 8)
 
+    rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
+    projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
+
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -140,9 +143,6 @@ def lineloop():
         glRotatef(1, 0, 1, 0)  # Rotate the scene
 
         # Rotate and project each endpoint of the lines separately
-        rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
-        projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
-
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         draw_lines(projected_lines)
 
