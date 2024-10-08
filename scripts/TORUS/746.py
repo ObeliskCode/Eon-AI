@@ -51,7 +51,7 @@ def project_to_3d(vertex):
     """ Project a 6D vertex to 3D space. """
     proj = []
     for v in vertex:
-        proj.append(v*matrices_4x6[0].T*v*matrices_4x6[1].T*v*matrices_4x6[2].T*v*matrices_4x6[3].T*v*matrices_4x6[4].T*v*matrices_4x6[5].T)
+        proj.append(v*matrices_4x6[0].T*v*matrices_4x6[1].T*v*matrices_4x6[2].T*v*matrices_4x6[3].T*v*matrices_4x6[4].T*v*matrices_4x6[5].T*v*matrices_4x6[6].T)
     scale = 1 / (3 - vertex[3])  # Perspective effect based on the 4th dimension
     return np.array([
         vertex[0] * scale,
