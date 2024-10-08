@@ -4,14 +4,17 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-def g():
+import os, sys
+
+def g(tes_amount):
     """Generate vertices of a 4D square (tesseract)."""
     vertices = []
-    for x in [0, 1]:
-        for y in [0, 1]:
-            for z in [0, 1]:
-                for w in [0, 1]:
-                    vertices.append([x, y, z, w])
+    for i in range(tes_amount):
+        for x in [i, i+1]:
+            for y in [i, i+1]:
+                for z in [i, i+1]:
+                    for w in [i, i+1]:
+                        vertices.append([x, y, z, w])
     return np.array(vertices)
 
 def g_lines(tes_amount):
@@ -94,7 +97,7 @@ def pointloop():
     glTranslatef(0.0, 0.0, -30)
 
     num_points = 1000
-    points_4D = g()
+    points_4D = g(50)
     angles = (np.pi / 4, np.pi / 4, np.pi / 4)
 
     while True:
@@ -152,4 +155,8 @@ def lineloop():
         pygame.time.wait(10)
 
 if __name__ == "__main__":
-    lineloop()
+    if '--points' in sys.argv:
+        pointloop()
+    else:
+        lineloop()
+    
