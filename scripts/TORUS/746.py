@@ -79,6 +79,8 @@ def main():
     glTranslatef(0.0, 0.0, -5)  # Closer zoom for better visualization
 
     vertices = get_tesseract_vertices(1)  # Size of the tesseract
+    vertices2 = get_tesseract_vertices(2)
+    vertices3 = get_tesseract_vertices(3)
 
     while True:
         for event in pygame.event.get():
@@ -91,6 +93,8 @@ def main():
         # Rotate the tesseract for better visualization
         glRotatef(0.5, 0.5, 0.5, 0.5)
         draw_tesseract(vertices)
+        draw_tesseract(vertices2)
+        draw_tesseract(vertices3)
         
         pygame.display.flip()
         pygame.time.wait(10)
