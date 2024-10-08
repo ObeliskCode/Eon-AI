@@ -78,9 +78,8 @@ def main():
     gluPerspective(60, (display[0] / display[1]), 0.1, 50.0)  # Adjusted field of view for zoom
     glTranslatef(0.0, 0.0, -5)  # Closer zoom for better visualization
 
-    vertices = get_tesseract_vertices(1)  # Size of the tesseract
-    vertices2 = get_tesseract_vertices(2)
-    vertices3 = get_tesseract_vertices(3)
+    vertices = get_tesseract_vertices(3/2)  # Size of the tesseract
+    vertices2 = get_tesseract_vertices(1/4)
 
     while True:
         for event in pygame.event.get():
@@ -94,7 +93,6 @@ def main():
         glRotatef(0.5, 0.5, 0.5, 0.5)
         draw_tesseract(vertices)
         draw_tesseract(vertices2)
-        draw_tesseract(vertices3)
         
         pygame.display.flip()
         pygame.time.wait(10)
