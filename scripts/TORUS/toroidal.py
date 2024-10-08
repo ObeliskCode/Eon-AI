@@ -14,12 +14,12 @@ def g():
                     vertices.append([x, y, z, w])
     return np.array(vertices)
 
-def g_lines():
+def g_lines(tes_amount):
     """Generate lines of a 4D square (tesseract)."""
     lines = []
     vertices = []
 
-    for i in range(5):
+    for i in range(tes_amount):
         # Generate the vertices first
         for x in [i, i+1]:
             for y in [i, i+1]:
@@ -129,8 +129,9 @@ def lineloop():
     glTranslatef(0.0, 0.0, -30)
 
     num_points = 1000
-    lines_4D = g_lines()
-    angles = (np.pi / 4, np.pi / 2, np.pi / 8)
+    lines_4D = g_lines(5)
+    # angles = (np.pi / 4, np.pi / 2, np.pi / 8) // spline
+    angles = (np.pi / 2, np.pi / 2, np.pi / 2)
 
     rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
     projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
