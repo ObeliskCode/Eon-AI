@@ -4,46 +4,7 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import *
 
-def l1(vertices):
-    """Generate lines connecting vertices of a 4D square."""
-    lines = []
-    num_vertices = len(vertices)
-    
-    # Connect vertices to form lines of the square
-    for i in range(num_vertices):
-        for j in range(i + 1, num_vertices):
-            if np.sum(np.abs(vertices[i] - vertices[j])) == 1:  # Check if they are adjacent
-                lines.append((vertices[i], vertices[j]))
-    
-    print(lines)
-    return lines
-
-def g1(num_points, radius=5, tube_radius=1):
-    """Generate points on a toroidal surface in 4D."""
-    points = []
-    for _ in range(num_points):
-        u = np.random.rand() * 2 * np.pi  # Angle around the toroidal hole
-        v = np.random.rand() * 2 * np.pi  # Angle around the tube
-
-        x = (radius + tube_radius * np.cos(v)) * np.cos(u)
-        y = (radius + tube_radius * np.cos(v)) * np.sin(u)
-        z = tube_radius * np.sin(v)
-        w = np.random.rand() * 10  # Randomly spread in the fourth dimension
-
-        points.append([x, y, z, w])
-    return np.array(points)
-
-def g2():
-    """Generate the vertices of a 4D square (2D square in 4D space)."""
-    # Create vertices of a unit square in 4D
-    vertices = np.array([[x, y, 0, 0] for x in [0, 1] for y in [0, 1]])
-    
-    # Scale and translate for visibility
-    vertices = vertices * 2 - 1  # Scale to [-1, 1]
-    print(vertices)
-    return vertices
-
-def g3():
+def g():
     """Generate vertices of a 4D square (tesseract)."""
     vertices = []
     for x in [0, 1]:
@@ -52,6 +13,28 @@ def g3():
                 for w in [0, 1]:
                     vertices.append([x, y, z, w])
     return np.array(vertices)
+
+def g_lines():
+    """Generate lines of a 4D square (tesseract)."""
+    lines = []
+    vertices = []
+
+    # Generate the vertices first
+    for x in [0, 1]:
+        for y in [0, 1]:
+            for z in [0, 1]:
+                for w in [0, 1]:
+                    vertices.append([x, y, z, w])
+
+    # Generate lines connecting vertices
+    for i in range(len(vertices)):
+        for j in range(i + 1, len(vertices)):
+            # Check if the vertices are adjacent (Hamming distance of 1)
+            if np.sum(np.abs(np.array(vertices[i]) - np.array(vertices[j]))) == 1:
+                lines.append((vertices[i], vertices[j]))
+
+    return np.array(lines)
+
 
 def rotate_4D(points, angles):
     theta, phi, psi = angles
@@ -110,7 +93,7 @@ def pointloop():
     glTranslatef(0.0, 0.0, -30)
 
     num_points = 1000
-    points_4D = g1(num_points)
+    points_4D = g()
     angles = (np.pi / 4, np.pi / 4, np.pi / 4)
 
     while True:
@@ -145,7 +128,7 @@ def lineloop():
     glTranslatef(0.0, 0.0, -30)
 
     num_points = 1000
-    lines_4D = l1(g1(num_points))
+    lines_4D = g_lines()
     angles = (np.pi / 4, np.pi / 4, np.pi / 4)
 
     while True:
