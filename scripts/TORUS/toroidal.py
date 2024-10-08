@@ -19,19 +19,20 @@ def g_lines():
     lines = []
     vertices = []
 
-    # Generate the vertices first
-    for x in [0, 1]:
-        for y in [0, 1]:
-            for z in [0, 1]:
-                for w in [0, 1]:
-                    vertices.append([x, y, z, w])
+    for i in range(5):
+        # Generate the vertices first
+        for x in [i, i+1]:
+            for y in [i, i+1]:
+                for z in [i, i+1]:
+                    for w in [i, i+1]:
+                        vertices.append([x, y, z, w])
 
-    # Generate lines connecting vertices
-    for i in range(len(vertices)):
-        for j in range(i + 1, len(vertices)):
-            # Check if the vertices are adjacent (Hamming distance of 1)
-            if np.sum(np.abs(np.array(vertices[i]) - np.array(vertices[j]))) == 1:
-                lines.append((vertices[i], vertices[j]))
+        # Generate lines connecting vertices
+        for i in range(len(vertices)):
+            for j in range(i + 1, len(vertices)):
+                # Check if the vertices are adjacent (Hamming distance of 1)
+                if np.sum(np.abs(np.array(vertices[i]) - np.array(vertices[j]))) == 1:
+                    lines.append((vertices[i], vertices[j]))
 
     return np.array(lines)
 
