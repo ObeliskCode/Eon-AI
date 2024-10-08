@@ -4,10 +4,6 @@ from OpenGL.GL import *
 from OpenGL.GLU import *
 import numpy as np
 
-def convert_4x6_to_4x4(matrix_4x6):
-    """ Convert a 4x6 matrix to a 4x4 matrix by taking the first four columns. """
-    return np.array(matrix_4x6[:, :4], dtype=float)
-
 def get_circle_matrix(rotation, translation):
     """ Create a 4x6 matrix representing a circle transformation. """
     cos_r = np.cos(rotation)
