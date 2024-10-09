@@ -472,10 +472,16 @@ p = (1+sqrt(5))/2
 
 let p' = (1+sqrt(-5))/2 then,
 
-p |=| x =| p' |=| 1+sqrt(-5) |=| 2x |=| sqrt(-5) |=| 2x - 1
+p' |=| x |=| p' |=| 1+sqrt(-5) |=| 2x
+
+|=| sqrt(-5) |=| 2x - 1
 
 sqrt(-5) |=| +/- i(sqrt(5))
 
 +/- i |=| (2x-1)/sqrt(5)
 
-+/- i |=| p/p |=| 1
++/- i |=| sqrt(-5)/sqrt(5)
+
+|=| +/- i sqrt(5)/sqrt(5) |=| +/- i
+
+so, +/- i = sqrt(-x)/sqrt(x) ?
