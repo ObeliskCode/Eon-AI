@@ -463,3 +463,19 @@ so for 6-D we have
 where for example we have the operator h then,
 
 (+,-,\*) h (+,-,/) |=| (x,y,z) ?
+
+## Golden ratio theory
+
+golden ratio p
+
+p = (1+sqrt(5))/2
+
+let p' = (1+sqrt(-5))/2 then,
+
+p |=| x =| p' |=| 1+sqrt(-5) |=| 2x |=| sqrt(-5) |=| 2x - 1
+
+sqrt(-5) |=| +/- i(sqrt(5))
+
++/- i |=| (2x-1)/sqrt(5)
+
++/- i |=| p/p |=| 1
