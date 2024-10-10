@@ -15,7 +15,15 @@ later down the line - Noel
 
 100 - 50 |=| x |=| 0 =| x + 50 =| 100 =| x - 50 =| 50
 
-## Reductive Algebra basics
+## Reductive Algebra Group
+
+1. x |=| x
+
+2. x |=| 0
+
+3. 1/0 |=| 0
+
+## Informal Number Basics
 
 x uses only whole numbers 0,1,2,...,n to inf when, +>x is an informal number
 
@@ -74,19 +82,9 @@ ii. -1 + ei =| 0 <=> x =| x
 
 iii. e^2 + ei =| 0
 
-## Reductive Algebra Group
+## Reductive Algebra Scratch Work
 
-1. x |=| x
-
-2. x |=| 0
-
-3. 1/0 |=| 0
-
-## Abstract Reductive Algebra
-
-[ Write Here ]
-
-axiom 1. {hard dirac} =| 0 + 2ei =| e^2 + ei =| +/> 1 + ei =| +/> 2
+1. {hard dirac} =| 0 + 2ei =| e^2 + ei =| +/> 1 + ei =| +/> 2
 
 e^2 =| ei =| +> 1 =| 1-1 =| 0
 
@@ -195,7 +193,7 @@ i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
 
 i = 0.54630248985 or -1.83048772172
 
-## Informal Numbers Construction
+## Informal Number Derivation
 
 +/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
 
@@ -226,7 +224,7 @@ so, +>x can return a set of either 3,5 or 7 numbers
 3. there are 15 different cardinalities for the set of adding two informal numbers
    together
 
-## informal Number Theory
+## Informal Number Theory
 
 I wish to officially call +>x informal numbers
 
@@ -252,8 +250,6 @@ solve.
 the simplest assumption is that +>x \* +>y = +>x / +>y = +>y / +>X
 
 which is that division is commutative and exactly the same as multiplication
-
-## Informal Calculus
 
 by S i mean integral.
 
