@@ -11,6 +11,10 @@ in a reductive proof anything is 0 at any point but,
 that just means more pile math to simplify
 later down the line - Noel
 
+## Long Handed Subtraction example (R-Algebra)
+
+100 - 50 |=| x |=| 0 =| x + 50 =| 100 =| x - 50 =| 50
+
 ## R-Algebra
 
 x uses only whole numbers 0,1,2,...,n to inf when, +>x is an informal number
@@ -82,11 +86,11 @@ ii. -1 + ei =| 0 <=> x =| x
 
 iii. e^2 + ei =| 0
 
-1. x =| x
+1. x |=| x
 
-2. x =| 0
+2. x |=| 0
 
-3. 1/0 =| 0
+3. 1/0 |=| 0
 
 ## Informal R-Algebra Theory
 
