@@ -133,8 +133,8 @@ def lineloop():
 
     num_points = 1000
     lines_4D = g_lines(5)
-    # angles = (np.pi / 4, np.pi / 2, np.pi / 8) // spline
-    angles = (np.pi / 2, np.pi / 2, np.pi / 2)
+    angles = (np.pi / 4, np.pi / 2, np.pi / 8) # spline
+    # angles = (np.pi / 2, np.pi / 2, np.pi / 2)
 
     rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
     projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
