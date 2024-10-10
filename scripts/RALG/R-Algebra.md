@@ -21,7 +21,7 @@ x uses only whole numbers 0,1,2,...,n to inf when, +>x is an informal number
 
 +> x is equal to {-x-1,-x,-x+1,0,x-1,x,x+1}
 
-+> x + >y = {all num in >x added together with all num in +>y}
++> x + >y = {all num in +>x added together with all num in +>y}
 
 a set only contains unique numbers!
 
@@ -44,11 +44,11 @@ then ...
 
 so ...
 
--1 + ei =| 0
+-1 + ei |=| 0
 
-e^2 + ei =| {hard dirac} =| 2ei
+e^2 + ei |=| {hard dirac} |=| 2ei
 
-e^2 - 1 =| x =| 0
+e^2 - 1 |=| x =| 0
 
 so,
 
