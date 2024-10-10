@@ -15,7 +15,7 @@ later down the line - Noel
 
 100 - 50 |=| x |=| 0 =| x + 50 =| 100 =| x - 50 =| 50
 
-## R-Algebra
+## Reductive Algebra basics
 
 x uses only whole numbers 0,1,2,...,n to inf when, +>x is an informal number
 
@@ -32,31 +32,21 @@ a set only contains unique numbers!
 
 +>1 = e\*i
 
-## Complex Number Analysis
-
-scratch work:
+## Scratch Work
 
 [ i 1 | 1 i ] x [ i 1 | 1 i ] = [ 0 2i | 2i 0 ]
 
-then ...
-
 [ i e | e i ] x [ i e | i e ] = [ 0 {hard dirac} | 0 {hard dirac} ]
 
-so ...
+-1 + ei =| 0
 
--1 + ei |=| 0
-
-e^2 + ei |=| {hard dirac} |=| 2ei
+e^2 + ei |= {hard dirac} |=| 2ei
 
 e^2 - 1 |=| x =| 0
 
-so,
+e^i = +/- 1 ?
 
-e^i = +/- 1
-
-how,
-
-{hard dirac} =| 0 + 2ei
+{hard dirac} |=| 0 + 2ei
 
 e^2 =| ei
 
@@ -67,8 +57,6 @@ e^2 =| ei
 =>
 
 e^2 =| +/> 1
-
-## R-Algebra Group Proof
 
 show, e^2 =| +> 1 since e^2 =| ei
 
@@ -86,19 +74,19 @@ ii. -1 + ei =| 0 <=> x =| x
 
 iii. e^2 + ei =| 0
 
+## Reductive Algebra Group
+
 1. x |=| x
 
 2. x |=| 0
 
 3. 1/0 |=| 0
 
-## Informal R-Algebra Theory
+## Abstract Reductive Algebra
 
 [ Write Here ]
 
 axiom 1. {hard dirac} =| 0 + 2ei =| e^2 + ei =| +/> 1 + ei =| +/> 2
-
-## R-Calculus
 
 e^2 =| ei =| +> 1 =| 1-1 =| 0
 
@@ -130,7 +118,7 @@ e^2 =| -< 1
 
 xei =| +> x =| -< x
 
-## Informal Algebra
+## Reductive Algebra
 
 e^i = +/- 1 \*(1)
 
@@ -193,7 +181,7 @@ sqrt(n) = e^sqrt(-n) = e^i\*sqrt(n) = +/- sqrt(n)
 
 sqrt(-n) = +/- isqrt(n)
 
-## i hypothesis (i is an irrational number)
+1. i hypothesis (i is an irrational number)
 
 e^i = cos(1) + isin(1) = +/- 1 = 0.54030230586 + isin(1)
 
@@ -207,7 +195,7 @@ i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
 
 i = 0.54630248985 or -1.83048772172
 
-## Ordinality of informal Addition Relations
+## Informal Numbers Construction
 
 +/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
 
@@ -265,7 +253,7 @@ the simplest assumption is that +>x \* +>y = +>x / +>y = +>y / +>X
 
 which is that division is commutative and exactly the same as multiplication
 
-## New Calculus
+## Informal Calculus
 
 by S i mean integral.
 
@@ -333,7 +321,7 @@ thus, 15e^2 = H(3(+>4) + +>2)e^2
 calculate 15xe^2 with 1 less integer required than in
 regular O(1) calculations possibly O(-1) due to number packing
 
-# [TODO] calculate 4 bil. in less than 32 bits
+# [CHALLENGE] calculate 4 bil. in less than 32 bits
 
 +>0 = [->1,+>1]
 +>1 = [->2,+>2] =+>0 + +>0
@@ -384,7 +372,7 @@ a 2x2 informal matrix can hold 26508 numbers with only integers <= 3
 
 lets examine[[2,3],[3,2]](+\*)
 
-## Informal Subtraction and Simplification(div operation)
+## Informal Set Subtraction and Simplification
 
 if an nxn(+\*) matrix be allocated a numeric in another matrix,
 then an nxn(nxn(+\*)) matrrix would still aloow for ordinary matrix operations
@@ -468,7 +456,7 @@ where for example we have the operator h then,
 
 (+,-,\*) h (+,-,/) |=| (x,y,z) ?
 
-## Golden ratio theory
+## Golden ratio math
 
 golden ratio p
 
