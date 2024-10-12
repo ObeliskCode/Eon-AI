@@ -116,7 +116,7 @@ e^2 =| -< 1
 
 xei =| +> x =| -< x
 
-## Reductive Algebra
+## Reductive Algebra Scratch Work
 
 e^i = +/- 1 \*(1)
 
@@ -193,7 +193,7 @@ i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
 
 i = 0.54630248985 or -1.83048772172
 
-## Informal Number Derivation
+## Informal Number Derivation Scratch Work
 
 +/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
 
