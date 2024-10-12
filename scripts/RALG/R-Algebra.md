@@ -49,7 +49,7 @@ a set only contains unique numbers!
 +>x + +>y = +>x - +>y = +>y - +>x
 +> commutative subtraction
 
-## Informal Set Addition and Multiplication
+## Informal Addition and Multiplication
 
 Solve. +>1 \* +>2
 
@@ -239,6 +239,12 @@ so for 6-D we have
 where for example we have the operator h then,
 
 (+,-,\*) h (+,-,/) |=| (x,y,z) ?
+
+## Informal Analysis
+
+Noel's Inequality:
+if x >= 1 and y >= 2
+(+>x)^y will never return a continuous set of integers
 
 ## Scratch Work
 
