@@ -246,7 +246,7 @@ Noel's Inequality:
 if x >= 1 and y >= 2
 (+>x)^y will never return a continuous set of integers
 
-hypothesis:
+hypothesis (INCORRECT):
 2(+>i) = (+>i)^2
 
 +>i + +>i =
