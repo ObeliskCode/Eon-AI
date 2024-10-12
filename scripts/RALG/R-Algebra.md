@@ -7,10 +7,6 @@ R-Algebra derives formulas in Algebra with functional analysis.
 = | stands for Reduction.
 | = | stands for Irreducible Reduction
 
-in a reductive proof anything is 0 at any point but,
-that just means more pile math to simplify
-later down the line - Noel
-
 ## Long Handed Subtraction example (R-Algebra)
 
 100 - 50 |=| x |=| 0 =| x + 50 =| 100 =| x - 50 =| 50
@@ -22,6 +18,21 @@ later down the line - Noel
 2. x |=| 0
 
 3. 1/0 |=| 0
+
+## Informal Number Group
+
++>x = {+/- x, +/- (x-1), +/- (x+1), 0}
+
++>x + +>y = +>x - +>y = +y - +>x (1.)
+
+1. both informal addition and informal subtraction are commutative
+
++>x + +>y = {all numbers in both +>x added together} = N
+
+2. the set N can return either 5,7,...,19,21,...,31,33 numbers
+
+3. there are 15 different cardinalities for the set of adding two informal numbers
+   together
 
 ## Informal Number Basics
 
@@ -40,7 +51,7 @@ a set only contains unique numbers!
 
 ## Scratch Work
 
-+>1 = ei
++>1 = ei ERROR
 
 [ i 1 | 1 i ] x [ i 1 | 1 i ] = [ 0 2i | 2i 0 ]
 [ i e | e i ] x [ i e | i e ] = [ 0 {hard dirac} | 0 {hard dirac} ]
@@ -62,7 +73,7 @@ x =| 0
 ii. -1 + ei =| 0 <=> x =| x
 iii. e^2 + ei =| 0
 
-1. {hard dirac} =| 0 + 2ei =| e^2 + ei =| +/> 1 + ei =| +/> 2
+1. {hard dirac} =| 0 + 2ei =| e^2 + ei =| +/> 1 + ei =| +/> 2 ERROR
    e^2 =| ei =| +> 1 =| 1-1 =| 0
    -< 1 |=| ei (1.)
    +> 1 |=| -< 1 (2.)
@@ -115,22 +126,27 @@ iii. e^2 + ei =| 0
    +>x = +/- x or +/- (x-1) or +/- (x+1) or 0
    so, +>x can return a set of either 3,5 or 7 numbers
 
-## informal Group Theory
+golden ratio p
 
-+>x = {+/- x and +/- (x-1) and +/- (x+1) and 0}
+p = (1+sqrt(5))/2
+let p' = (1+sqrt(-5))/2 then,
+p' |=| x |=| p' |=| 1+sqrt(-5) |=| 2x
+|=| sqrt(-5) |=| 2x - 1
+sqrt(-5) |=| +/- i(sqrt(5))
++/- i |=| (2x-1)/sqrt(5)
++/- i |=| sqrt(-5)/sqrt(5)
+|=| +/- i sqrt(5)/sqrt(5) |=| +/- i
+so, +/- i = sqrt(-x)/sqrt(x) ?
 
-+>x + +>y = +>x - +>y = +y - +>x (1.)
+sqrt(n) = e^sqrt(-n) = e^i \* sqrt(n) ?
 
-1. both informal addition and informal subtraction are commutative
+by S i mean integral.
+S(2e^2)dx = 2e^2x + c = c + 2xei = c + 2(+>x) ERROR
+so, e^2x = +>x and +>x = xei thus, +>x is an imaginary component
+this means that 2(+>x) + c requires reductive proofs to be able to be related to algebra "R-Algebra"
++>x + +>x = xe^2 + xe^2 = 2xe^2 = 2+>x
 
-+>x + +>y = {all numbers in both +>x added together} = N
-
-2. the set N can return either 5,7,...,19,21,...,31,33 numbers
-
-3. there are 15 different cardinalities for the set of adding two informal numbers
-   together
-
-## Informal Number Theory
+## Informal Set Addition and Multiplication
 
 I wish to officially call +>x informal numbers
 
@@ -154,14 +170,10 @@ contained within the set O of informal numbers
 solve.
 the simplest assumption is that +>x \* +>y = +>x / +>y = +>y / +>X
 which is that division is commutative and exactly the same as multiplication
-by S i mean integral.
-S(2e^2)dx = 2e^2x + c = c + 2xei = c + 2(+>x)
-so, e^2x = +>x and +>x = xei thus, +>x is an imaginary component
-this means that 2(+>x) + c requires reductive proofs to be able to be related to algebra "R-Algebra"
-+>x + +>x = xe^2 + xe^2 = 2xe^2 = 2+>x
+
 so, +>1 + +>1 = 2+>1 NOTEQ +>2
 
-thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates informal numbers to the irrationals R/Q
+thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates informal numbers to the integers
 
 the calculation of the set +>x + +>x is trivial and linear but what computational requirements does H take?
 
@@ -243,8 +255,6 @@ H([->102,+>102]) = H(9(+>9) + +>7 + +>3) = 102
 
 H([[2,3],[3,2]](+\*)) = 26508
 
-a 2x2 informal matrix can hold 26508 numbers with only integers <= 3
-
 lets examine[[2,3],[3,2]](+\*)
 
 ## Informal Set Subtraction and Simplification
@@ -309,7 +319,7 @@ there are 6 2d axes to manage in this system in total
 
 (-,/), (+,/), (_,/), (_,+), (-,+), (-,\*)
 
-## 4-D -> 6-D extension
+4-D -> 6-D extension:
 
 +, -, \*, / are all formally defined operations in the informal number system
 
@@ -330,17 +340,3 @@ so for 6-D we have
 where for example we have the operator h then,
 
 (+,-,\*) h (+,-,/) |=| (x,y,z) ?
-
-## Golden ratio math
-
-golden ratio p
-
-p = (1+sqrt(5))/2
-let p' = (1+sqrt(-5))/2 then,
-p' |=| x |=| p' |=| 1+sqrt(-5) |=| 2x
-|=| sqrt(-5) |=| 2x - 1
-sqrt(-5) |=| +/- i(sqrt(5))
-+/- i |=| (2x-1)/sqrt(5)
-+/- i |=| sqrt(-5)/sqrt(5)
-|=| +/- i sqrt(5)/sqrt(5) |=| +/- i
-so, +/- i = sqrt(-x)/sqrt(x) ?
