@@ -117,6 +117,8 @@ iii. e^2 + ei =| 0
 
 ## informal Group Theory
 
++>x = {+/- x and +/- (x-1) and +/- (x+1) and 0}
+
 +>x + +>y = +>x - +>y = +y - +>x (1.)
 
 1. both informal addition and informal subtraction are commutative
@@ -334,19 +336,11 @@ where for example we have the operator h then,
 golden ratio p
 
 p = (1+sqrt(5))/2
-
 let p' = (1+sqrt(-5))/2 then,
-
 p' |=| x |=| p' |=| 1+sqrt(-5) |=| 2x
-
 |=| sqrt(-5) |=| 2x - 1
-
 sqrt(-5) |=| +/- i(sqrt(5))
-
 +/- i |=| (2x-1)/sqrt(5)
-
 +/- i |=| sqrt(-5)/sqrt(5)
-
 |=| +/- i sqrt(5)/sqrt(5) |=| +/- i
-
 so, +/- i = sqrt(-x)/sqrt(x) ?
