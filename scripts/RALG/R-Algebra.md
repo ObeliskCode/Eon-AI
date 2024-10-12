@@ -246,10 +246,13 @@ Noel's Inequality:
 if x >= 1 and y >= 2
 (+>x)^y will never return a continuous set of integers
 
-+>i + +>i = 
-{-2i-2,-2i-1,-2i,-2i+1,-2i+2} + 
+hypothesis:
+2(+>i) = (+>i)^2
+
++>i + +>i =
+{-2i-2,-2i-1,-2i,-2i+1,-2i+2} +
 {-i-1,-i,-i+1} +
-{-2,-1,0,1,2} + 
+{-2,-1,0,1,2} +
 {2i-2,2i-1,2i,2i+1,2i+2} +
 {i-1,i,i+1}
 
