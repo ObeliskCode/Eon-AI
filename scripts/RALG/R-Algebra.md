@@ -38,178 +38,82 @@ a set only contains unique numbers!
 +>x + +>y = +>x - +>y = +>y - +>x
 +> commutative subtraction
 
-+>1 = e\*i
-
 ## Scratch Work
 
++>1 = ei
+
 [ i 1 | 1 i ] x [ i 1 | 1 i ] = [ 0 2i | 2i 0 ]
-
 [ i e | e i ] x [ i e | i e ] = [ 0 {hard dirac} | 0 {hard dirac} ]
-
 -1 + ei =| 0
-
 e^2 + ei |= {hard dirac} |=| 2ei
-
 e^2 - 1 |=| x =| 0
-
 e^i = +/- 1 ?
-
 {hard dirac} |=| 0 + 2ei
-
 e^2 =| ei
-
 -1 + ei =| -1 + e^2 =| 0 <=> e^2 =| ei =| 1
-
-0 + 2ei =| e^2 + ei =| 2e^2
-
-=>
-
+0 + 2ei =| e^2 + ei =| 2e^2 =>
 e^2 =| +/> 1
-
 show, e^2 =| +> 1 since e^2 =| ei
-
 <=> e^2 =| 1-1
-
 i. e^2 - 1 =| 0 <=> 1*1 =| 0*1 =| 0 <=> 1/0 =| 0
-
 -1 + e^2 =| 0
-
 -1 + 0 =| 0
-
 x =| 0
-
 ii. -1 + ei =| 0 <=> x =| x
-
 iii. e^2 + ei =| 0
 
-## Reductive Algebra Scratch Work
-
 1. {hard dirac} =| 0 + 2ei =| e^2 + ei =| +/> 1 + ei =| +/> 2
-
-e^2 =| ei =| +> 1 =| 1-1 =| 0
-
--< 1 |=| ei (1.)
-
-+> 1 |=| -< 1 (2.)
-
-+> 1 |=| -< 1
-
-+> 2 =| 1 + 1/1 =| 1+1 =| {hard dirac} =| 1-1 =| 1 - 1/1 =|-< 2
-
-+>2 =| 2
-
-+> 1 =| 1
-
--< 1 =| -1
-
-e^2 =| +> 1
-
-e^2 =| 0
-
-e^2 =| 1-1
-
-e^2 =| -< 1
-
-=>
-
--< 1 |=| ei (1.)
-
-xei =| +> x =| -< x
-
-## Reductive Algebra Scratch Work
-
-e^i = +/- 1 \*(1)
-
-e^i\*pi + 1 = 0 # eulers identity
-
-(+/- 1)^pi + 1 =| 0
-
-(+/- 1) + 1 =| 0
-
-e^i + 1 =| 0
-
-e^i =| -1
-
-iln(e) = ln(-1)
-
-iln(e) = i*pi # ln(-1) = i*pi
-
-i = i\*pi # ln(e) = 1
-
-=>
-
-sqrt(1) = +/- 1 = e^i =| -1
-
-=>
-
-sqrt(1) + 1 =| 0
-
-sqrt(n\*n) + n =| 0
-
-+/- n + n =| 0
-
-=>
-
-sqrt(-1) = i = i\*pi = iln(e) = ln(-1) = ln(e^i)
-
-e^sqrt(-1) = e^i = e^ln(e^i)
-
-=>
-
-sqrt(-n) = sqrt(n)*i = sqrt(n)*ln(e^i)
-
-=>
-
-e^sqrt(-1) = e^i = +/- 1 = sqrt(1)
-
-sqrt(n) = e^sqrt(-n)
-
-sqrt(n) = e^i\*sqrt(n)
-
-=>
-
-sqrt(1/4) = 1/2
-
-sqrt(-1/4) = e^sqrt(1/4) = e^i\*sqrt(-1/4) = +/- sqrt(-1/4) = +/- isqrt(1/4)
-= +/- i1/2
-
-=>
-
-sqrt(n) = e^sqrt(-n) = e^i\*sqrt(n) = +/- sqrt(n)
-
-sqrt(-n) = +/- isqrt(n)
-
+   e^2 =| ei =| +> 1 =| 1-1 =| 0
+   -< 1 |=| ei (1.)
+   +> 1 |=| -< 1 (2.)
+   +> 1 |=| -< 1
+   +> 2 =| 1 + 1/1 =| 1+1 =| {hard dirac} =| 1-1 =| 1 - 1/1 =|-< 2
+   +>2 =| 2
+   +> 1 =| 1
+   -< 1 =| -1
+   e^2 =| +> 1
+   e^2 =| 0
+   e^2 =| 1-1
+   e^2 =| -< 1 =>
+   -< 1 |=| ei (1.)
+   xei =| +> x =| -< x
+   e^i = +/- 1 \*(1)
+   e^i\*pi + 1 = 0 # eulers identity
+   (+/- 1)^pi + 1 =| 0
+   (+/- 1) + 1 =| 0
+   e^i + 1 =| 0
+   e^i =| -1
+   iln(e) = ln(-1)
+   iln(e) = i*pi # ln(-1) = i*pi
+   i = i\*pi # ln(e) = 1 =>
+   sqrt(1) = +/- 1 = e^i =| -1 =>
+   sqrt(1) + 1 =| 0
+   sqrt(n\*n) + n =| 0
+   +/- n + n =| 0 =>
+   sqrt(-1) = i = i\*pi = iln(e) = ln(-1) = ln(e^i)
+   e^sqrt(-1) = e^i = e^ln(e^i) =>
+   sqrt(-n) = sqrt(n)*i = sqrt(n)*ln(e^i) =>
+   e^sqrt(-1) = e^i = +/- 1 = sqrt(1)
+   sqrt(n) = e^sqrt(-n)
+   sqrt(n) = e^i\*sqrt(n) =>
+   sqrt(1/4) = 1/2
+   sqrt(-1/4) = e^sqrt(1/4) = e^i\*sqrt(-1/4) = +/- sqrt(-1/4) = +/- isqrt(1/4)
+   = +/- i1/2 =>
+   sqrt(n) = e^sqrt(-n) = e^i\*sqrt(n) = +/- sqrt(n)
+   sqrt(-n) = +/- isqrt(n)
 1. i hypothesis (i is an irrational number)
-
-e^i = cos(1) + isin(1) = +/- 1 = 0.54030230586 + isin(1)
-
-=>
-
-isin(1) = 0.45969769414 or -1.54030230586
-
-sin(1) = 0.8414709848
-
-i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
-
-i = 0.54630248985 or -1.83048772172
-
-## Informal Number Derivation Scratch Work
-
-+/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
-
-e^i + ei = 1(ln(e)) or 2 or 3 = +/> 2
-
-+/> 0 = 0 or 1 or -1 = (+/> 1)\*(0)
-
-+/> 0 = +/> 1 \* 0 = 0 or +/> 0 , since (1)
-
-(*1) x = 0 = x*0 = 0\*0 = 0 !
-
-thus,
-
-+>x = +/- x or +/- (x-1) or +/- (x+1) or 0
-
-so, +>x can return a set of either 3,5 or 7 numbers
+   e^i = cos(1) + isin(1) = +/- 1 = 0.54030230586 + isin(1) =>
+   isin(1) = 0.45969769414 or -1.54030230586
+   sin(1) = 0.8414709848
+   i = 0.45969769414 / 0.8414709848 or -1.54030230586 / 0.8414709848
+   i = 0.54630248985 or -1.83048772172
+   +/- ln(e) = 2ei = 1 or 2 or 3 = +/> 2
+   e^i + ei = 1(ln(e)) or 2 or 3 = +/> 2
+   +/> 0 = 0 or 1 or -1 = (+/> 1)\*(0)
+   +/> 0 = +/> 1 \* 0 = 0 or +/> 0 , since (1)
+   (*1) x = 0 = x*0 = 0\*0 = 0 ! thus,
+   +>x = +/- x or +/- (x-1) or +/- (x+1) or 0
+   so, +>x can return a set of either 3,5 or 7 numbers
 
 ## informal Group Theory
 
@@ -246,21 +150,13 @@ to be,
 contained within the set O of informal numbers
 
 solve.
-
 the simplest assumption is that +>x \* +>y = +>x / +>y = +>y / +>X
-
 which is that division is commutative and exactly the same as multiplication
-
 by S i mean integral.
-
 S(2e^2)dx = 2e^2x + c = c + 2xei = c + 2(+>x)
-
 so, e^2x = +>x and +>x = xei thus, +>x is an imaginary component
-
 this means that 2(+>x) + c requires reductive proofs to be able to be related to algebra "R-Algebra"
-
 +>x + +>x = xe^2 + xe^2 = 2xe^2 = 2+>x
-
 so, +>1 + +>1 = 2+>1 NOTEQ +>2
 
 thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates informal numbers to the irrationals R/Q
@@ -268,43 +164,24 @@ thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates informa
 the calculation of the set +>x + +>x is trivial and linear but what computational requirements does H take?
 
 +>2 + +>2 = {-6,...,6} = +>1 + +>3
-
 +>4 + +>4 = {-10,...,10} = +>3 + +>5 = +>2 + +>6 NOTEQ +>1 + +>7
-
 +>40 + +>40 = [-82, -81, -80, -79, -78, -41, -40, -39, -2, -1, 0, 1, 2, 39, 40, 41, 78, 79, 80, 81, 82]
-
 +>39 + +>41 = [-82, -81, -80, -79, -78, -42, -41, -40, -39, -38, -4, -3, -2, -1, 0, 1, 2, 3, 4, 38, 39, 40, 41, 42, 78, 79, 80, 81, 82]
-
 +>38 + +>42 = [-82, -81, -80, -79, -78, -43, -42, -41, -39, -38, -37, -6, -5, -4, -3, -2, 0, 2, 3, 4, 5, 6, 37, 38, 39, 41, 42, 43, 78, 79, 80, 81, 82]
-
 so +>40 + +>40 NOTEQ +>39 + +>41 NOTEQ +>38 + +>42
-
 +>4 + +>4 = +>1 + +>2 + +>4 = +>4 + +>2 + +>1 = +>2 + +>1 + +>2 + +>1
-
 +>8 + +>8 = [-18, -17, -16, -15, -14, -9, -8, -7, -2, -1, 0, 1, 2, 7, 8, 9, 14, 15, 16, 17, 18]
-
 4(+>4) = 4(+>2) + 4(+>1)
-
 so , x(+>4) = x(+>2) + x(+>1)
-
 we have, 2x(+>4) = x(+>2) + x(+>6)
-
 +>5 + +>5 = [-12, -11, -10, -9, -8, -6, -5, -4, -2, -1, 0, 1, 2, 4, 5, 6, 8, 9, 10, 11, 12]
-
 ... + +>5 = [-18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-
 +>2 + +>2 = [-6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6]
-
 ... + +>2 = [-9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-
 ... + +>1 = [-11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
 ... + +>1 = [-13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
-
 ... + +>1 = [-15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-
 ... + +>2 = [-18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
-
 so, 3(+>5) = 4(+>2) + 3(+>1) = 3(+>4) + +>2
 
 thus, 15e^2 = H(3(+>4) + +>2)e^2
