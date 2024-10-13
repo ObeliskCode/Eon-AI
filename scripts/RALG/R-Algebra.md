@@ -266,6 +266,14 @@ H(+>1 + +>2) = 5
 H(2+>1 + 2+>2) = 10
 H(+>1 + +>2) + H(+>1 + +>2) = 5 + 5 = 10
 
+an N-D Informal Matrix is one that grows combinatorically massively
+as it gets bigger and one that will always support O(1) matrix addition.
+
+let a 1x2 matrix U be a linear combination up to +>1
+each slot will be reperesented by a 2-bit int 0,1,2,3
+=> numerics [0,9] are supported by 4 bits allocated by U
+4 bits allocated using binary addition allows numerics [0,15]
+
 ## Scratch Work
 
 +>1 = ei ERROR
