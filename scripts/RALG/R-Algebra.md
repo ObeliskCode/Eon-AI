@@ -97,15 +97,11 @@ we have, 2x(+>4) = x(+>2) + x(+>6)
 ... + +>2 = [-18, -17, -16, -15, -14, -13, -12, -11, -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
 so, 3(+>5) = 4(+>2) + 3(+>1) = 3(+>4) + +>2
 
-thus, 15e^2 = H(3(+>4) + +>2)e^2
-
 3x(+>5) = 3x(+>4) + x(+>2) CORRECT (1.)
 
-3x(5e^2) = 3x(4e^2) + 2x(e^2) ERROR (1.)
-
-(1.) this allows you to do the work to
-calculate 15xe^2 with 1 less integer required than in
-regular O(1) calculations possibly O(-1) due to number packing
+(1.)
+1-D matrix/2-D matrix calculations could in theory,
+be faster than binary integer calculations past a very large number
 
 # [CHALLENGE] calculate 4 bil. in less than 32 bits
 
@@ -255,6 +251,13 @@ hypothesis (INCORRECT):
 {-2,-1,0,1,2} +
 {2i-2,2i-1,2i,2i+1,2i+2} +
 {i-1,i,i+1}
+
+an important deduction to be made first is,
+if we have two 1-D informal M and N matrices then
+does H(M) + H(N) = H(M+N) ?
+
+does the decomposition of integers addition relate to,
+O(1) integer addition with O(1) matrix addition ?
 
 ## Scratch Work
 
