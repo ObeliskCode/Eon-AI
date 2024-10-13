@@ -242,8 +242,7 @@ Noel's Inequality:
 if x >= 1 and y >= 2
 (+>x)^y will never return a continuous set of integers
 
-hypothesis (INCORRECT):
-2(+>i) = (+>i)^2
+hypothesis 2(+>i) = (+>i)^2 (INCORRECT):
 
 +>i + +>i =
 {-2i-2,-2i-1,-2i,-2i+1,-2i+2} +
@@ -252,12 +251,20 @@ hypothesis (INCORRECT):
 {2i-2,2i-1,2i,2i+1,2i+2} +
 {i-1,i,i+1}
 
+(+>i)^2 = {-2,-1,0,1,2} + {?} + {-2i-2} NOTEQ 2(+>i)
+
 an important deduction to be made first is,
 if we have two 1-D informal M and N matrices then
-does H(M) + H(N) = H(M+N) ?
+does H(M) + H(N) = H(M+N)
 
 does the decomposition of integers addition relate to,
-O(1) integer addition with O(1) matrix addition ?
+O(1) integer addition with O(1) matrix addition
+
+Case 1:
+H(+>1 + +>2) + H(+>1 + +>2) = H(2+>1 + 2+>2)
+H(+>1 + +>2) = 5
+H(2+>1 + 2+>2) = 10
+H(+>1 + +>2) + H(+>1 + +>2) = 5 + 5 = 10
 
 ## Scratch Work
 
