@@ -242,17 +242,6 @@ Noel's Inequality:
 if x >= 1 and y >= 2
 (+>x)^y will never return a continuous set of integers
 
-hypothesis 2(+>i) = (+>i)^2 (INCORRECT):
-
-+>i + +>i =
-{-2i-2,-2i-1,-2i,-2i+1,-2i+2} +
-{-i-1,-i,-i+1} +
-{-2,-1,0,1,2} +
-{2i-2,2i-1,2i,2i+1,2i+2} +
-{i-1,i,i+1}
-
-(+>i)^2 = {-2,-1,0,1,2} + {?} + {-2i-2} NOTEQ 2(+>i)
-
 an important deduction to be made first is,
 if we have two 1-D informal M and N matrices then
 does H(M) + H(N) = H(M+N)
@@ -379,3 +368,14 @@ sqrt(n) = +/-sqrt(-1)+/-sqrt(-1)sqrt(n)
 = sqrt(n)ie^i
 
 then, ie^i = 1 ?
+
+hypothesis 2(+>i) = (+>i)^2 (INCORRECT):
+
++>i + +>i =
+{-2i-2,-2i-1,-2i,-2i+1,-2i+2} +
+{-i-1,-i,-i+1} +
+{-2,-1,0,1,2} +
+{2i-2,2i-1,2i,2i+1,2i+2} +
+{i-1,i,i+1}
+
+(+>i)^2 = {-2,-1,0,1,2} + {?} + {-2i-2} NOTEQ 2(+>i)
