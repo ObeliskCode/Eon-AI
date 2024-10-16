@@ -119,11 +119,8 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
         post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
-        ox_latex_negative = tf.tanh(dr_pre_activation) * self.negative
-        ox_latex_zero = tf.tanh(dr_pre_activation) * self.zero
-
         ox_identity = pre_activation + self.identity
-        ox_post_activation = (ox_latex_zero + ox_latex_negative) * self.ox_identity + ox_identity
+        ox_post_activation = latex_tanh * self.ox_identity + ox_identity
 
         #[todo]: code cutoff to be an "informal number"
         next_hidden_state = post_activation + ox_post_activation + self.offset  # Compute gain using domain restriction
