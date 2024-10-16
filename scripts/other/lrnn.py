@@ -97,33 +97,39 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             + self.bias
         )
 
-        dr_pre_activation = tf.abs(pre_activation) + self.bias
+        def waveFunc(x):
+            dr_pre_activation = tf.abs(x) + self.bias
 
-        latex_negative = tf.tanh(dr_pre_activation) * self.negative
-        latex_zero = tf.tanh(dr_pre_activation) * self.zero
-        latex_negative_sech = (1.0 /tf.cosh(dr_pre_activation)) * self.negative_sech
-        latex_zero_sech = (1.0 / tf.cosh(dr_pre_activation)) * self.zero_sech
-        latex_negative_cos = tf.cos(dr_pre_activation) * self.negative_cos
-        latex_zero_cos = tf.cos(dr_pre_activation) * self.zero_cos
-        latex_negative_sin = tf.sin(dr_pre_activation) * self.negative_sin
-        latex_zero_sin = tf.sin(dr_pre_activation) * self.zero_sin
+            latex_negative = tf.tanh(dr_pre_activation) * self.negative
+            latex_zero = tf.tanh(dr_pre_activation) * self.zero
+            latex_negative_sech = (1.0 /tf.cosh(dr_pre_activation)) * self.negative_sech
+            latex_zero_sech = (1.0 / tf.cosh(dr_pre_activation)) * self.zero_sech
+            latex_negative_cos = tf.cos(dr_pre_activation) * self.negative_cos
+            latex_zero_cos = tf.cos(dr_pre_activation) * self.zero_cos
+            latex_negative_sin = tf.sin(dr_pre_activation) * self.negative_sin
+            latex_zero_sin = tf.sin(dr_pre_activation) * self.zero_sin
 
-        latex_tanh = tf.abs(latex_zero - latex_negative)
-        latex_sech = tf.abs(latex_zero_sech - latex_negative_sech)
-        latex_cos = tf.abs(latex_zero_cos - latex_negative_cos)
-        latex_sin = tf.abs(latex_zero_sin - latex_negative_sin)
-        latex_identity = tf.abs(pre_activation) + self.identity
+            latex_tanh = tf.abs(latex_zero - latex_negative)
+            latex_sech = tf.abs(latex_zero_sech - latex_negative_sech)
+            latex_cos = tf.abs(latex_zero_cos - latex_negative_cos)
+            latex_sin = tf.abs(latex_zero_sin - latex_negative_sin)
+            latex_identity = tf.abs(x) + self.identity
 
-        latex_zero_dist = ((latex_tanh * latex_sech) + latex_cos - latex_sin) * self.zero_dist
-        latex_negative_dist = ((latex_tanh * latex_sech) - latex_cos - latex_sin) * self.negative_dist  
+            latex_zero_dist = ((latex_tanh * latex_sech) + latex_cos - latex_sin) * self.zero_dist
+            latex_negative_dist = ((latex_tanh * latex_sech) - latex_cos - latex_sin) * self.negative_dist  
 
-        post_activation = latex_zero_dist + latex_negative_dist + latex_identity
+            post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
-        ox_identity = pre_activation + self.identity
-        ox_post_activation = latex_tanh * self.ox_identity + ox_identity
+            ox_identity = x + self.identity
+            ox_post_activation = latex_tanh * self.ox_identity + ox_identity
 
-        #[todo]: code cutoff to be an "informal number"
-        next_hidden_state = post_activation + ox_post_activation + self.offset  # Compute gain using domain restriction
+            #[todo]: code cutoff to be an "informal number"
+            return post_activation + ox_post_activation + self.offset  # Compute gain using domain restriction
+        
+        next_state = waveFunc(pre_activation)
+        final_state = waveFunc(next_state) + pre_activation
+
+        next_hidden_state = final_state
         return next_hidden_state
 
 
