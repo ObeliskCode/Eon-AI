@@ -97,7 +97,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             + self.bias
         )
 
-        dr_pre_activation = domain_restrict(tf.abs(pre_activation)) + self.bias
+        dr_pre_activation = tf.abs(pre_activation) + self.bias
 
         latex_negative = tf.tanh(dr_pre_activation) * self.negative
         latex_zero = tf.tanh(dr_pre_activation) * self.zero
