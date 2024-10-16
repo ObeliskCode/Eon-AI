@@ -126,8 +126,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             #[todo]: code cutoff to be an "informal number"
             return post_activation + ox_post_activation + self.offset  # Compute gain using domain restriction
         
-        next_state = waveFunc(pre_activation)
-        final_state = waveFunc(next_state) + pre_activation
+        final_state = tf.maximum(0.0,waveFunc(pre_activation)) + pre_activation
 
         next_hidden_state = final_state
         return next_hidden_state
