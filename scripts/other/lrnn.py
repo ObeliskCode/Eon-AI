@@ -24,59 +24,10 @@ sys_maxsize_simulation = 9223372036854775807  # This is typically the value of s
 # except that our activated function output is then multiplied by a variable "gain" which is also tuned;
 # the concept of a variable "gain" is how my perceptron is not "binary" but "continous" (Continuous Neural Network) ;
 
-EPOCH_NUM = 100
+EPOCH_NUM = 10
 
 def domain_restrict(x):
-    paris_list = []  # List to hold computed values for potential future use.
-
-    w = x / sys_maxsize_simulation  # Normalize the input based on the maximum system size.
-
-    paris_list.clear()  # Clear the list to ensure no stale data remains.
-
-    return w  # Return the normalized value.
-    
-def domain_restrict_avg(x):
-    mval_list = []  # List to hold the heap of values.
-    paris_list = []  # List to hold computed averages (currently unused).
-
-    for n in x:  # Iterate through the input values.
-        heapq.heappush(mval_list, n)  # Push each value onto the heap.
-
-    accum = []  # List to accumulate normalized values.
-
-    while(len(mval_list) > 0):  # While there are values in the heap.
-        y = heapq.heappop(mval_list)  # Pop the smallest value from the heap.
-        q = y / sys_maxsize_simulation  # Normalize the value.
-        accum.append(q)  # Append it to the accumulation list.
-
-    res = 0  # Initialize a result accumulator.
-
-    for w in accum:  # Iterate through the accumulated normalized values.
-        res += w  # Sum the normalized values.
-
-    w = res / len(x)  # Calculate the average.
-
-    mval_list.clear()  # Clear the heap list.
-    paris_list.clear()  # Clear the average list.
-
-    return w  # Return the average.
-
-def range_squeeze(x):
-    print("Range squeeze function called")  # Log the call to the function.
-    squeezed_values = x - np.min(x)  # Squeeze values to start from zero.
-    squeezed_values /= np.max(squeezed_values)  # Normalize to [0, 1].
-    
-    print(f"Squeezed values: {squeezed_values}")  # Log the squeezed values for debugging.
-    
-    return squeezed_values  # Return the squeezed values.
-
-def range_squeeze_avg(x):
-    print("Range squeeze average function called")  # Log the call to the function.
-    squeezed_avg = np.mean(range_squeeze(x))  # Compute the average of the squeezed values.
-    
-    print(f"Squeezed average: {squeezed_avg}")  # Log the squeezed average for debugging.
-    
-    return squeezed_avg  # Return the squeezed average.
+    return x / sys_maxsize_simulation  # Return the normalized value.
 
 class Latex_RNN_Cell(tf.keras.layers.Layer):
     def __init__(self, input_size, hidden_size):
@@ -128,41 +79,12 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         self.zero_dist = self.add_weight(
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
-
-        self.zero_identity = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
-        self.negative_identity = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
         
         self.ox_identity = self.add_weight(
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
 
-        self.zero_gain = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
-        self.negative_gain = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
-        self.vx_bias = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
-        self.ox_bias = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
         self.offset = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
-        self.cutoff = self.add_weight(
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
 
@@ -175,7 +97,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             + self.bias
         )
 
-        dr_pre_activation = domain_restrict(tf.abs(pre_activation)) + self.vx_bias
+        dr_pre_activation = domain_restrict(tf.abs(pre_activation)) + self.bias
 
         latex_negative = tf.tanh(dr_pre_activation) * self.negative
         latex_zero = tf.tanh(dr_pre_activation) * self.zero
@@ -197,64 +119,264 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
         post_activation = latex_zero_dist + latex_negative_dist + latex_identity
 
-        vx = tf.abs(post_activation)
-        vx -= tf.abs(post_activation)
+        ox_latex_negative = tf.tanh(dr_pre_activation) * self.negative
+        ox_latex_zero = tf.tanh(dr_pre_activation) * self.zero
 
-        advance_soft_max_clip = tf.abs(vx + self.negative_identity) * self.negative_gain
-        advance_soft_max_linear = tf.abs(post_activation + self.zero_identity) * self.zero_gain 
-
-        ox_pre_activation = domain_restrict(tf.abs(pre_activation)) + self.ox_bias
-
-        ox_latex_negative = tf.tanh(ox_pre_activation) * self.negative
-        ox_latex_zero = tf.tanh(ox_pre_activation) * self.zero
-
-        ox_identity = tf.abs(pre_activation) + self.identity
+        ox_identity = pre_activation + self.identity
         ox_post_activation = (ox_latex_zero + ox_latex_negative) * self.ox_identity + ox_identity
 
-		#[todo]: code cutoff to be an "informal number"
-        gain = domain_restrict_avg(tf.abs(post_activation + ox_post_activation) + self.offset + self.cutoff)  # Compute gain using domain restriction
+        #[todo]: code cutoff to be an "informal number"
+        next_hidden_state = post_activation + ox_post_activation + self.offset  # Compute gain using domain restriction
+        return next_hidden_state
 
-        return pre_activation, hidden_state, gain
 
-
-class LatexRNN(tf.keras.Model):
+class Latex_RNN(tf.keras.Model):
     def __init__(self, input_size, hidden_size, output_size):
-        super(LatexRNN, self).__init__()
+        super(Latex_RNN, self).__init__()
+        self.hidden_size = hidden_size
         self.rnn_cell = Latex_RNN_Cell(input_size, hidden_size)
-        self.dense = tf.keras.layers.Dense(output_size, activation='softmax')
+        self.output_layer = tf.keras.layers.Dense(output_size)
 
     def call(self, inputs):
-        batch_size = tf.shape(inputs)[0]
-        time_steps = tf.shape(inputs)[1]
-        hidden_state = self.rnn_cell.get_initial_state(batch_size=batch_size)
+        hidden_state = tf.zeros((tf.shape(inputs)[0], self.hidden_size))
 
-        outputs = []
+        for t in range(inputs.shape[1]):
+            hidden_state = self.rnn_cell(inputs[:, t], hidden_state)
 
-        for t in range(time_steps):
-            output, hidden_state, gain = self.rnn_cell(inputs[:, t, :], hidden_state)
-            outputs.append(output)
-
-        outputs = tf.stack(outputs, axis=1)  # Stack outputs to create a sequence of outputs
-        final_output = self.dense(outputs)  # Pass the outputs through the dense layer
-        return final_output
+        output = self.output_layer(hidden_state)
+        return output
 
 
-# Training script example
-if __name__ == "__main__":
-    # Create dummy data for demonstration
-    x_train = np.random.random((1000, 10, 5))  # 1000 samples, 10 timesteps, 5 features
-    y_train = np.random.randint(0, 2, (1000, 2))  # 1000 samples, 2 classes
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
 
-    # Build and compile the model
-    model = LatexRNN(input_size=5, hidden_size=10, output_size=2)
-    model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
-    # Train the model
-    model.fit(x_train, y_train, epochs=EPOCH_NUM)
+train_images = train_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+test_images = test_images.reshape((-1, 28, 28)).astype("float32") / 255.0
 
-    # Example plotting function
-    plt.plot(range(EPOCH_NUM), model.history.history['accuracy'])
-    plt.title('Model Accuracy Over Epochs')
-    plt.ylabel('Accuracy')
-    plt.xlabel('Epochs')
-    plt.show()
+input_size = 28
+hidden_size = 128
+output_size = 10
+
+latex_rnn = Latex_RNN(input_size, hidden_size, output_size)
+
+latex_rnn.compile(
+    optimizer="adam",
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=["accuracy"],
+)
+
+latex_rnn.fit(
+    train_images,
+    train_labels,
+    epochs=EPOCH_NUM,
+    batch_size=64,
+    validation_data=(test_images, test_labels),
+)
+
+test_loss, latex_test_acc = latex_rnn.evaluate(test_images, test_labels, verbose=2)
+print(f"Latex-RNN Test accuracy: {latex_test_acc}")
+
+
+class Sigmoid_RNN_Cell(tf.keras.layers.Layer):
+    def __init__(self, input_size, hidden_size):
+        super(Sigmoid_RNN_Cell, self).__init__()
+        self.W_input = self.add_weight(
+            shape=(input_size, hidden_size), initializer="random_normal", trainable=True
+        )
+        self.W_hidden = self.add_weight(
+            shape=(hidden_size, hidden_size),
+            initializer="random_normal",
+            trainable=True,
+        )
+        self.bias = self.add_weight(
+            shape=(hidden_size,), initializer="random_normal", trainable=True
+        )
+
+    def call(self, inputs, hidden_state):
+        pre_activation = (
+            tf.matmul(inputs, self.W_input)
+            + tf.matmul(hidden_state, self.W_hidden)
+            + self.bias
+        )
+
+        next_hidden_state = tf.maximum(0.0, tf.tanh(pre_activation))
+        return next_hidden_state
+
+
+class Sigmoid_RNN(tf.keras.Model):
+    def __init__(self, input_size, hidden_size, output_size):
+        super(Sigmoid_RNN, self).__init__()
+        self.hidden_size = hidden_size
+        self.rnn_cell = Sigmoid_RNN_Cell(input_size, hidden_size)
+        self.output_layer = tf.keras.layers.Dense(output_size)
+
+    def call(self, inputs):
+        hidden_state = tf.zeros((tf.shape(inputs)[0], self.hidden_size))
+
+        for t in range(inputs.shape[1]):
+            hidden_state = self.rnn_cell(inputs[:, t], hidden_state)
+
+        output = self.output_layer(hidden_state)
+        return output
+
+
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+
+train_images = train_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+test_images = test_images.reshape((-1, 28, 28)).astype("float32") / 255.0
+
+input_size = 28
+hidden_size = 128
+output_size = 10
+
+sigmoid_rnn = Sigmoid_RNN(input_size, hidden_size, output_size)
+
+sigmoid_rnn.compile(
+    optimizer="adam",
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+    metrics=["accuracy"],
+)
+
+sigmoid_rnn.fit(
+    train_images,
+    train_labels,
+    epochs=EPOCH_NUM,
+    batch_size=64,
+    validation_data=(test_images, test_labels),
+)
+
+sigmoid_test_loss, sigmoid_test_acc = sigmoid_rnn.evaluate(
+    test_images, test_labels, verbose=2
+)
+print(f"Sigmoid Test accuracy: {sigmoid_test_acc}")
+
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+train_images = train_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
+test_images = test_images.reshape((-1, 28 * 28)).astype("float32") / 255.0
+
+# comparison to other pre-packaged NN designs from tensorflow
+
+mnist = tf.keras.datasets.mnist
+(train_images, train_labels), (test_images, test_labels) = mnist.load_data()
+
+train_images = train_images.astype("float32") / 255.0
+test_images = test_images.astype("float32") / 255.0
+
+train_images_flat = train_images.reshape((-1, 28 * 28))
+test_images_flat = test_images.reshape((-1, 28 * 28))
+
+
+def create_multilayer_model(input_size, hidden_sizes, output_size):
+    model = tf.keras.Sequential()
+    model.add(tf.keras.layers.InputLayer(input_shape=(input_size,)))
+    for hidden_size in hidden_sizes:
+        model.add(tf.keras.layers.Dense(hidden_size, activation="relu"))
+    model.add(tf.keras.layers.Dense(output_size, activation="softmax"))
+    return model
+
+
+def create_cnn_model(output_size):
+    model = tf.keras.Sequential(
+        [
+            tf.keras.layers.Conv2D(
+                32, (3, 3), activation="relu", input_shape=(28, 28, 1)
+            ),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            tf.keras.layers.Conv2D(64, (3, 3), activation="relu"),
+            tf.keras.layers.MaxPooling2D((2, 2)),
+            tf.keras.layers.Flatten(),
+            tf.keras.layers.Dense(64, activation="relu"),
+            tf.keras.layers.Dense(output_size, activation="softmax"),
+        ]
+    )
+    return model
+
+
+def create_simple_rnn_model(input_size, hidden_size, output_size):
+    model = tf.keras.Sequential(
+        [
+            tf.keras.layers.SimpleRNN(hidden_size, input_shape=(input_size, 28)),
+            tf.keras.layers.Dense(output_size, activation="softmax"),
+        ]
+    )
+    return model
+
+
+input_size = 28 * 28
+output_size = 10
+hidden_size = 128
+
+multilayer = create_multilayer_model(
+    input_size, hidden_sizes=[128, 64], output_size=output_size
+)
+cnn = create_cnn_model(output_size)
+simple_rnn = create_simple_rnn_model(
+    input_size=28, hidden_size=hidden_size, output_size=output_size
+)
+
+models = {
+    "multilayer": multilayer,
+    "CNN": cnn,
+    "Simple_RNN": simple_rnn,
+}
+
+for model_name, model in models.items():
+    model.compile(
+        optimizer="adam",
+        loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+        metrics=["accuracy"],
+    )
+
+results = {}
+
+for model_name, model in models.items():
+    print(f"Training {model_name}...")
+    if model_name == "CNN":
+        train_images_model = train_images[
+            ..., np.newaxis
+        ]  # Add channel dimension for CNN
+        test_images_model = test_images[..., np.newaxis]
+    else:
+        train_images_model = (
+            train_images_flat
+            if model_name != "Simple_RNN" and model_name != "Latex_RNN"
+            else train_images
+        )
+        test_images_model = (
+            test_images_flat
+            if model_name != "Simple_RNN" and model_name != "Latex_RNN"
+            else test_images
+        )
+
+    model.fit(
+        train_images_model,
+        train_labels,
+        epochs=EPOCH_NUM,
+        batch_size=64,
+        validation_data=(test_images_model, test_labels),
+        verbose=2,
+    )
+
+    test_loss, test_acc = model.evaluate(test_images_model, test_labels, verbose=2)
+    print(f"{model_name} Test accuracy: {test_acc}\n")
+    results[model_name] = test_acc
+
+raw_models = {
+    "latex rnn": latex_test_acc,
+    "sigmoid rnn": sigmoid_test_acc,
+}
+
+for model_acc, model_name in raw_models.items():
+    results[model_name] = test_acc
+
+# Plot the results
+plt.bar(results.keys(), results.values())
+plt.xlabel("Model")
+plt.ylabel("Test Accuracy")
+plt.title("Test Accuracy Comparison Across Different Models")
+plt.show()
