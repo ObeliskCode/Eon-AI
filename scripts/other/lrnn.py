@@ -80,7 +80,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
         
-        self.ox_identity = self.add_weight(
+        self.domain_exp = self.add_weight(
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
 
@@ -127,7 +127,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             #[todo]: code cutoff to be an "informal number"
             return post_activation + x + self.offset  # Compute gain using domain restriction
         
-        final_state = tf.maximum(-self.cutoff,waveFunc(pre_activation) + pre_activation)
+        final_state = tf.maximum(-self.cutoff,waveFunc(pre_activation*self.domain_exp) + pre_activation)
 
         next_hidden_state = final_state
         return next_hidden_state
