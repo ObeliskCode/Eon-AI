@@ -13,7 +13,7 @@ def infn_mult(x, y):
     result = set()
     for num_x in set_x:
         for num_y in set_y:
-            result.mult(num_x * num_y)
+            result.add(num_x * num_y)
 
     return sorted(result)
 
