@@ -74,31 +74,14 @@ def infn_add_extend(informal_set_x, informal_set_y):
 
     return sorted(result)
 
-def H(informal_combination):
+def H(informal_set):
     """Calculate H from a linear combination of informal numbers and return the informal set."""
-    informal_nums = []
-    infn = set()
-    
-    # Generate informal sets for each number in the informal combination
-    for num in informal_combination:
-        informal_nums.append(infn_set(num))  # Create an informal set for each number
+    infn = informal_set
+    total = sum(infn)
 
-     # Start with the first informal number set
-    if len(informal_nums) > 0:
-        infn = informal_nums[0]
-
-    for infn_x in informal_nums[1:]:
-        infn = infn_add_extend(infn, infn_x)  # Use infn_append to build the set
-
-    total = sum(infn)  # Calculate total of the combined informal set
-
-    # Check if the total sum is zero
     if total == 0:
-        # Return the maximum element from the combined informal set
         return max(infn)
-    
-    # Return the total if it is not zero
-    return total
+    return 0
 
 
 def matrix_2d_add_mult_H(matrix, size):
@@ -134,16 +117,16 @@ def matrix_2d_add_mult_H(matrix, size):
             elif i > 0:
                 if i-1 == 0:
                     for t in range(x):
-                        compound = infn_mult_append(compound,j)
+                        compound = infn_mult_append(compound,j+1)
                 else:
                     for t in range(x):
                         for n in range(i):
                             if n == 0:
-                                compound2 = infn_mult_append(infn_set(j),j)
+                                compound2 = infn_mult_append(infn_set(j+1),j+1)
                                 continue
                             if n == 1:
                                 continue
-                            compound2 = infn_mult_append(compound2,j)
+                            compound2 = infn_mult_append(compound2,j+1)
                         compound = infn_mult_extend(compound,compound2)
                     
     return H(compound)

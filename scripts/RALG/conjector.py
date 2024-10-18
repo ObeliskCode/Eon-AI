@@ -74,32 +74,6 @@ def infn_add_extend(informal_set_x, informal_set_y):
 
     return sorted(result)
 
-def H(informal_combination):
-    """Calculate H from a linear combination of informal numbers and return the informal set."""
-    informal_nums = []
-    infn = set()
-    
-    # Generate informal sets for each number in the informal combination
-    for num in informal_combination:
-        informal_nums.append(infn_set(num))  # Create an informal set for each number
-
-     # Start with the first informal number set
-    if len(informal_nums) > 0:
-        infn = informal_nums[0]
-
-    for infn_x in informal_nums[1:]:
-        infn = infn_add_extend(infn, infn_x)  # Use infn_append to build the set
-
-    total = sum(infn)  # Calculate total of the combined informal set
-
-    # Check if the total sum is zero
-    if total == 0:
-        # Return the maximum element from the combined informal set
-        return max(infn)
-    
-    # Return the total if it is not zero
-    return total
-
 def calculator():
     """Interactive calculator for adding informal numbers."""
     inp = ''
@@ -145,6 +119,6 @@ def calculator():
         print(f"... + +>{z} = {sorted(final_result)}")
     
     return final_result
-    
+
 if __name__ == "__main__":
     calculator()
