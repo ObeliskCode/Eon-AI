@@ -1,13 +1,9 @@
-## R-Algebra
-
-R-Algebra is math that uses the Reductive Proof Method.
-
-R-Algebra derives formulas in Algebra with functional analysis.
+## Reduction Proof
 
 = | stands for Reduction.
 | = | stands for Irreducible Reduction
 
-## Long Handed Subtraction example (R-Algebra)
+## Long Handed Subtraction example
 
 100 - 50 |=| x |=| 0 =| x + 50 =| 100 =| x - 50 =| 50
 
