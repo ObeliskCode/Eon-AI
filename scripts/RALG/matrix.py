@@ -103,16 +103,26 @@ def H(informal_combination):
 
 def matrix_2d_add_mult_H(matrix, size):
     # if first row is all 0's matrix is 0
-    first_add = False 
+    first_add = False
+    
+    sum = 0
+    for j in range(size):
+        x = matrix[0][j]
+        if x == 0:
+            continue
+        sum += x
+        if first_add = False:
+            first_add = True
+            compound = infn_set(j)
+            matrix[0][j] = x - 1
+
+    if sum == 0:
+        return 0
 
     for i in range(size):
         for j in range(size):
             x = matrix[i][j]
-            if i == 0:
-                if j == 0:
-            
-            if first_add == False:
-                return 0
+            if x == 0:
     
     return 0
                 
