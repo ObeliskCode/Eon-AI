@@ -148,7 +148,7 @@ be faster than binary integer calculations past a very large number
 
 H([->102,+>102]) = H(9(+>9) + +>7 + +>3) = 102
 
-H([[2,3],[3,2]](+\*)) = 26508
+H([[2,3],[3,2]](+\*)) = 576
 
 lets examine[[2,3],[3,2]](+\*)
 
