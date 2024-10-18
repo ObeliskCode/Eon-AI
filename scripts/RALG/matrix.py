@@ -104,27 +104,49 @@ def H(informal_combination):
 def matrix_2d_add_mult_H(matrix, size):
     # if first row is all 0's matrix is 0
     first_add = False
-    
+
     sum = 0
     for j in range(size):
         x = matrix[0][j]
         if x == 0:
             continue
         sum += x
-        if first_add = False:
-            first_add = True
-            compound = infn_set(j)
-            matrix[0][j] = x - 1
 
     if sum == 0:
         return 0
 
+    compound = 0
+
     for i in range(size):
         for j in range(size):
             x = matrix[i][j]
-            if x == 0:
-    
-    return 0
+            if x < 1:
+                continue
+            if i == 0:
+                if first_add == False:
+                    first_add = True
+                    compound = infn_set(j)
+                    for t in range(x-1):
+                        compound = infn_append(compound,j)
+                    continue
+                for t in range(x):
+                    compound = infn_append(compound,j)
+            elif i > 0:
+                if i-1 == 0:
+                    for t in range(x):
+                        compound = infn_mult_append(compound,j)
+                else:
+                    for t in range(x):
+                        for n in range(i):
+                            if n == 0:
+                                compound2 = infn_mult_append(infn_set(j),j)
+                                continue
+                            if n == 1:
+                                continue
+                            compound2 = infn_mult_append(compound2,j)
+                        compound = infn_mult_extend(compound,compound2)
+                    
+    return H(compound)
                 
 
 # Calculator adapted for testing matrix efficiency using informal matrix
