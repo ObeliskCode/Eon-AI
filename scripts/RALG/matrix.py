@@ -77,9 +77,8 @@ def infn_add_extend(informal_set_x, informal_set_y):
 def H(informal_set):
     """Calculate H from a linear combination of informal numbers and return the informal set."""
     infn = informal_set
-    total = sum(infn)
 
-    if total == 0:
+    if len(infn) == ((2*max(infn))+1):
         return max(infn)
     return 0
 
@@ -120,12 +119,8 @@ def matrix_2d_add_mult_H(matrix, size):
                         compound = infn_mult_append(compound,j+1)
                 else:
                     for t in range(x):
-                        for n in range(i):
-                            if n == 0:
-                                compound2 = infn_mult_append(infn_set(j+1),j+1)
-                                continue
-                            if n == 1:
-                                continue
+                        compound2 = infn_set(j+1)
+                        for n in range(i-1):
                             compound2 = infn_mult_append(compound2,j+1)
                         compound = infn_mult_extend(compound,compound2)
                     
@@ -148,7 +143,10 @@ def informal_matrix_calculator():
         matrix.append(row)
 
     result = matrix_2d_add_mult_H(matrix, size)
-    print(f"result: {result}")
+    if result == 0:
+        print("invalid matrix!")
+    else:
+        print(f"result: {result}")
     
 
 
