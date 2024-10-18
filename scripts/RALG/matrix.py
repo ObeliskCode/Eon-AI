@@ -114,16 +114,10 @@ def matrix_2d_add_mult_H(matrix, size):
                 for t in range(x):
                     compound = infn_append(compound,j)
             elif i > 0:
-                if i-1 == 0:
-                    for t in range(x):
-                        compound = infn_mult_append(compound,j+1)
-                else:
-                    for t in range(x):
-                        compound2 = infn_set(j+1)
-                        for n in range(i-1):
-                            compound2 = infn_mult_append(compound2,j+1)
-                        compound = infn_mult_extend(compound,compound2)
-                    
+                for t in range(x):
+                    mult = infn_mult(j,i)
+                    compound = infn_add_extend(compound,mult)
+
     return H(compound)
                 
 
