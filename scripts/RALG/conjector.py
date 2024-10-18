@@ -17,7 +17,7 @@ def infn_mult(x, y):
 
     return sorted(result)
 
-def infn_div(x, y):
+def infn_mult_append(x, y):
     """Append informal number y to informal set x."""
     set_x = x
     set_y = infn_set(y)
@@ -153,8 +153,20 @@ def calculator():
             break
         z = int(inp)
         if z < 0:
-            final_result = infn_div(final_result, -z)
-            print(f"... + +>{z} = {sorted(final_result)}")
+            mult_scalar = -z
+            inp = input(f"Enter the integer scalar for +>{mult_scalar}: ")
+            scalar = int(inp)
+            ## do scalar math.
+            if scalar == 1:
+                final_result = infn_mult_append(final_result, mult_scalar)
+            elif scalar > 1:
+                compound = infn_add(mult_scalar, mult_scalar)
+                for i in range(scalar):
+                    if i < 2:
+                        continue
+                    compound = infn_append(compound,mult_scalar)
+                final_result = infn_mult_extend(final_result, compound)
+            print(f"... x ({scalar})+>{z} = {sorted(final_result)}")
             continue
         final_result = infn_append(final_result, z)
         print(f"... + +>{z} = {sorted(final_result)}")
