@@ -83,6 +83,7 @@ def H(informal_set):
     return 0
 
 
+## [WIP] [TODO]
 def matrix_3d_add_mult_H(matrix, size):
     # if first row is all 0's matrix is 0
     first_add = False
