@@ -64,8 +64,6 @@ def plot_grid(grid, ax):
 
 
 def animate(i, grid, ax):
-	if i == 0:
-		grid = init_grid()
 	plot_grid(grid, ax)
 	new_grid = update_grid(grid)
 	np.copyto(grid, new_grid)  # Copy new_grid into grid

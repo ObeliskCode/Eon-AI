@@ -51,12 +51,10 @@ def matrix_3d_add_mult_H(matrix, size):
 
     return H(compound)
     
-# Calculator adapted for testing matrix efficiency using informal matrix
 def informal_matrix_calculator_3d():
     size = int(input("Enter matrix size (e.g., 3 for 3x3x3): "))
     matrix = []
 
-    # Collect matrix elements from user input
     for i in range(size):
         matrix_2d = []
         print(f"Enter elements for 2D slice {i+1} (size: {size}x{size}):")

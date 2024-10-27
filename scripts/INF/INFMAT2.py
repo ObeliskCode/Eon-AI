@@ -8,6 +8,7 @@ def H(informal_set):
     return 0
 
 
+## [WIP] [TODO]
 def matrix_2d_add_mult_H(matrix, size):
     # if first row is all 0's matrix is 0
     first_add = False
@@ -46,12 +47,10 @@ def matrix_2d_add_mult_H(matrix, size):
     return H(compound)
                 
 
-# Calculator adapted for testing matrix efficiency using informal matrix
 def informal_matrix_calculator():
     size = int(input("Enter matrix size (e.g., 3 for 3x3): "))
     matrix = []
 
-    # Collect matrix elements from user input
     for i in range(size):
         row = []
         print(f"Enter row {i+1}:")
