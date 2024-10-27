@@ -7,7 +7,6 @@ from OpenGL.GLU import *
 import os, sys
 
 def g(tes_amount):
-    """Generate vertices of a 4D square (tesseract)."""
     vertices = []
     for i in range(tes_amount):
         for x in [i, i+1]:
@@ -18,7 +17,6 @@ def g(tes_amount):
     return np.array(vertices)
 
 def g_lines(tes_amount):
-    """Generate lines of a 4D square (tesseract)."""
     lines = []
     vertices = []
 
@@ -71,11 +69,8 @@ def rotate_4D(points, angles):
     return rotated_points
 
 def project_to_3D(points_4D):
-    """Project 4D points onto a toroidal surface in 3D space."""
     x, y, z, w = points_4D[:, 0], points_4D[:, 1], points_4D[:, 2], points_4D[:, 3]
     
-    # Example toroidal projection formula
-    # Here, we can wrap the z-coordinate to simulate a toroidal effect
     toroidal_radius = 5
     projected_x = (x / (1 + np.abs(w))) * toroidal_radius
     projected_y = (y / (1 + np.abs(w))) * toroidal_radius
@@ -133,11 +128,14 @@ def lineloop():
 
     num_points = 1000
     lines_4D = g_lines(5)
-    angles = (np.pi / 4, np.pi / 2, np.pi / 8) # spline
+    # angles = (np.pi / 4, np.pi / 2, np.pi / 8) # spline
     # angles = (np.pi / 2, np.pi / 2, np.pi / 2)
 
-    rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
-    projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
+    #rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
+    #projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
+
+    ctr = 0
+    baseRadian = np.pi / 64
 
     while True:
         for event in pygame.event.get():
@@ -145,9 +143,15 @@ def lineloop():
                 pygame.quit()
                 return
 
-        glRotatef(1, 0, 1, 0)  # Rotate the scene
+        #glRotatef(1, 0, 1, 0)  # Rotate the scene
 
-        # Rotate and project each endpoint of the lines separately
+        rad = baseRadian * ctr
+        ctr += 1
+        angles = (rad,rad,rad)
+
+        rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
+        projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
+
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         draw_lines(projected_lines)
 
