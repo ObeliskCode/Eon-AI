@@ -1,7 +1,6 @@
 from infmath import *
 
 def H(informal_set):
-    """Calculate H from a linear combination of informal numbers and return the informal set."""
     infn = informal_set
 
     if len(infn) == ((2*max(infn))+1):
@@ -54,7 +53,6 @@ def matrix_3d_add_mult_H(matrix, size):
     
 # Calculator adapted for testing matrix efficiency using informal matrix
 def informal_matrix_calculator_3d():
-    """Interactive calculator for informal 3D matrix operations."""
     size = int(input("Enter matrix size (e.g., 3 for 3x3x3): "))
     matrix = []
 

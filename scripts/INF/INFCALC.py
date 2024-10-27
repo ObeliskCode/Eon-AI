@@ -1,7 +1,6 @@
 from infmath import *
 
 def calculator():
-    """Interactive calculator for adding informal numbers."""
     inp = ''
     z = 0
     inp = input("infn number +>x (q to quit): ")
