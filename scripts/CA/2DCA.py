@@ -63,7 +63,7 @@ def animate_grid(size, steps):
 
     def animate(i):
         nonlocal grid
-        if "--no-anim" not in sys.argv:
+        if "--no-anim" not in sys.argv and i > 1:
             grid = update_grid(grid)
         img.set_data(grid)
         return [img]
@@ -74,4 +74,4 @@ def animate_grid(size, steps):
     plt.show()
 
 
-animate_grid(size=100, steps=1000)
+animate_grid(size=100, steps=2000)
