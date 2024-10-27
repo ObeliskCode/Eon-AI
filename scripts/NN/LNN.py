@@ -81,6 +81,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
 
 
+    #[TODO - get epoch of calls to under 1 min on laptop] 
     def call(self, inputs, hidden_state):
         pre_activation = (
             tf.matmul(inputs, self.W_input)
