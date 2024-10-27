@@ -21,14 +21,12 @@ def g_lines(tes_amount):
     vertices = []
 
     for i in range(tes_amount):
-        # Generate the vertices first
         for x in [i, i+1]:
             for y in [i, i+1]:
                 for z in [i, i+1]:
                     for w in [i, i+1]:
                         vertices.append([x, y, z, w])
 
-        # Generate lines connecting vertices
         for i in range(len(vertices)):
             for j in range(i + 1, len(vertices)):
                 # Check if the vertices are adjacent (Hamming distance of 1)
@@ -41,7 +39,6 @@ def g_lines(tes_amount):
 def rotate_4D(points, angles):
     theta, phi, psi = angles
 
-    # Create rotation matrices
     R_xy = np.array([
         [np.cos(theta), -np.sin(theta), 0, 0],
         [np.sin(theta), np.cos(theta), 0, 0],
@@ -63,7 +60,6 @@ def rotate_4D(points, angles):
         [np.sin(psi), 0, 0, np.cos(psi)]
     ])
 
-    # Combine rotations
     R = R_xy @ R_xz @ R_xw
     rotated_points = np.dot(points, R.T)
     return rotated_points
@@ -74,7 +70,7 @@ def project_to_3D(points_4D):
     toroidal_radius = 5
     projected_x = (x / (1 + np.abs(w))) * toroidal_radius
     projected_y = (y / (1 + np.abs(w))) * toroidal_radius
-    projected_z = (z % (2 * np.pi)) - np.pi  # Wrap around z
+    projected_z = (z % (2 * np.pi)) - np.pi
 
     return np.array([projected_x, projected_y, projected_z]).T
 
@@ -101,7 +97,7 @@ def pointloop():
                 pygame.quit()
                 return
 
-        glRotatef(1, 0, 1, 0)  # Rotate the scene
+        glRotatef(1, 0, 1, 0)  # Quaternion?
 
         rotated_points = rotate_4D(points_4D, angles)
         projected_points = project_to_3D(rotated_points)
@@ -115,8 +111,8 @@ def pointloop():
 def draw_lines(lines):
     glBegin(GL_LINES)
     for start, end in lines:
-        glVertex3fv(start[:3])  # Use only the first three dimensions
-        glVertex3fv(end[:3])    # Use only the first three dimensions
+        glVertex3fv(start[:3])
+        glVertex3fv(end[:3])
     glEnd()
 
 def lineloop():
@@ -126,13 +122,10 @@ def lineloop():
     gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)
     glTranslatef(0.0, 0.0, -30)
 
-    num_points = 1000
     lines_4D = g_lines(5)
-    # angles = (np.pi / 4, np.pi / 2, np.pi / 8) # spline
-    # angles = (np.pi / 2, np.pi / 2, np.pi / 2)
 
-    #rotated_lines = [(rotate_4D(np.array([start]), angles)[0], rotate_4D(np.array([end]), angles)[0]) for start, end in lines_4D]
-    #projected_lines = [(project_to_3D(np.array([start]))[0], project_to_3D(np.array([end]))[0]) for start, end in rotated_lines]
+    # angles = (np.pi / 4, np.pi / 2, np.pi / 8) # spline
+    # angles = (np.pi / 2, np.pi / 2, np.pi / 2) # ordinary view
 
     ctr = 0
     baseRadian = np.pi / 64
@@ -143,7 +136,7 @@ def lineloop():
                 pygame.quit()
                 return
 
-        #glRotatef(1, 0, 1, 0)  # Rotate the scene
+        #glRotatef(1, 0, 1, 0)  # Quaternion?
 
         rad = baseRadian * ctr
         ctr += 1
