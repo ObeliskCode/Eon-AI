@@ -88,7 +88,11 @@ def pointloop():
     glTranslatef(0.0, 0.0, -30)
 
     points_4D = g(50)
-    angles = (np.pi / 4, np.pi / 4, np.pi / 4)
+
+    # angles = (np.pi / 4, np.pi / 4, np.pi / 4)
+
+    ctr = 0
+    baseRadian = np.pi / 256
 
     while True:
         for event in pygame.event.get():
@@ -96,7 +100,11 @@ def pointloop():
                 pygame.quit()
                 return
 
-        glRotatef(1, 0, 1, 0)  # Quaternion?
+        # glRotatef(1, 0, 1, 0)  # Quaternion?
+
+        rad = baseRadian * ctr
+        ctr += 1
+        angles = (rad,rad,rad)
 
         rotated_points = rotate_4D(points_4D, angles)
         projected_points = project_to_3D(rotated_points)
