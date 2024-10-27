@@ -43,11 +43,6 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         self.bias = self.add_weight(
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
-
-        self.identity = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
         self.negative = self.add_weight(
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
@@ -102,7 +97,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         )
 
         def waveFunc(x):
-            dr_pre_activation = tf.abs(x) + self.bias
+            dr_pre_activation = x + self.offset
 
             latex_negative = tf.tanh(dr_pre_activation) * self.negative
             latex_zero = tf.tanh(dr_pre_activation) * self.zero
@@ -113,20 +108,19 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             latex_negative_sin = tf.sin(dr_pre_activation) * self.negative_sin
             latex_zero_sin = tf.sin(dr_pre_activation) * self.zero_sin
 
-            latex_tanh = tf.abs(latex_zero - latex_negative)
-            latex_sech = tf.abs(latex_zero_sech - latex_negative_sech)
-            latex_cos = tf.abs(latex_zero_cos - latex_negative_cos)
-            latex_sin = tf.abs(latex_zero_sin - latex_negative_sin)
-            latex_identity = tf.abs(x) + self.identity
+            latex_tanh = latex_zero - latex_negative
+            latex_sech = latex_zero_sech - latex_negative_sech
+            latex_cos = latex_zero_cos - latex_negative_cos
+            latex_sin = latex_zero_sin - latex_negative_sin
 
             latex_zero_dist = ((latex_tanh * latex_sech) + latex_cos - latex_sin) * self.zero_dist
             latex_negative_dist = ((latex_tanh * latex_sech) - latex_cos - latex_sin) * self.negative_dist  
 
-            post_activation = latex_zero_dist + latex_negative_dist + latex_identity
+            post_activation = latex_zero_dist + latex_negative_dist
 
-            return post_activation + x + self.offset
+            return post_activation
         
-        final_state = tf.maximum(-self.cutoff,waveFunc(pre_activation*self.domain_exp) + pre_activation)
+        final_state = tf.maximum(-self.cutoff,waveFunc(pre_activation/self.domain_exp) + tf.maximum(pre_activation,0.0))
 
         next_hidden_state = final_state
         return next_hidden_state
