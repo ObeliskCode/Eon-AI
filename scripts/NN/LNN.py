@@ -79,10 +79,6 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
             shape=(hidden_size,), initializer="random_normal", trainable=True
         )
 
-        self.cutoff = self.add_weight(
-            shape=(hidden_size,), initializer="random_normal", trainable=True
-        )
-
 
 
     def call(self, inputs, hidden_state):
@@ -93,7 +89,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
         )
 
         def waveFunc(x):
-            dr_pre_activation = x + self.offset
+            dr_pre_activation = tf.abs(x) + self.offset
 
             latex_negative = tf.tanh(dr_pre_activation) * self.negative
             latex_zero = tf.tanh(dr_pre_activation) * self.zero
@@ -116,7 +112,7 @@ class Latex_RNN_Cell(tf.keras.layers.Layer):
 
             return post_activation
         
-        final_state = tf.maximum(self.cutoff,waveFunc(domain_restrict(pre_activation)) + tf.maximum(pre_activation,0.0))
+        final_state = waveFunc(domain_restrict(pre_activation)) + tf.maximum(pre_activation,0.0)
 
         next_hidden_state = final_state
         return next_hidden_state
