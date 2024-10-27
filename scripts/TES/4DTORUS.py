@@ -67,9 +67,9 @@ def rotate_4D(points, angles):
 def project_to_3D(points_4D):
     x, y, z, w = points_4D[:, 0], points_4D[:, 1], points_4D[:, 2], points_4D[:, 3]
     
-    toroidal_radius = 5
-    projected_x = (x / (1 + np.abs(w))) * toroidal_radius
-    projected_y = (y / (1 + np.abs(w))) * toroidal_radius
+    torus_radius = 5
+    projected_x = (x / (1 + np.abs(w))) * torus_radius
+    projected_y = (y / (1 + np.abs(w))) * torus_radius
     projected_z = (z % (2 * np.pi)) - np.pi
 
     return np.array([projected_x, projected_y, projected_z]).T
@@ -87,7 +87,6 @@ def pointloop():
     gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)
     glTranslatef(0.0, 0.0, -30)
 
-    num_points = 1000
     points_4D = g(50)
     angles = (np.pi / 4, np.pi / 4, np.pi / 4)
 
