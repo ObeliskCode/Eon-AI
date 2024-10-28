@@ -20,6 +20,11 @@ def generate_initial_data(num_samples=100, seq_length=10):
         sequence = [randint(1, 10) for _ in range(seq_length)]
         training_data.append(sequence)
         labels.append(target)
+
+    seq = [3,3]
+    tar = 7
+    training_data.append(seq)
+    labels.append(tar)
     
     training_data = pad_sequences(training_data, maxlen=seq_length, padding='post')
     return np.array(training_data), np.array(labels)
@@ -37,6 +42,7 @@ def build_model(input_shape):
 # Training data
 seq_length = 10
 training_data, labels = generate_initial_data(seq_length=seq_length)
+print(training_data, labels)
 model = build_model(input_shape=(seq_length,))
 
 def attempt_solution(target, model, training_data, labels):
@@ -51,10 +57,10 @@ def attempt_solution(target, model, training_data, labels):
 
     current_set = infn_set(int(predicted_sequence[0][0]))
     for operation in predicted_sequence[0][1:]:
-        if operation > 0:
-            current_set = infn_mult_append(current_set, int(operation))
+        if operation >= 0:
+            current_set = infn_append(current_set, int(operation))
         else:
-            current_set = infn_append(current_set, int(-operation))
+            current_set = infn_mult_append(current_set, int(-operation))
 
     if H(current_set) == target:
         print(f"Verified sequence for {target}: {predicted_sequence}")
