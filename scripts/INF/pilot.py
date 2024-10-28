@@ -68,7 +68,10 @@ def attempt_solution(target, model, training_data, labels):
     current_set = infn_set(int(predicted_sequence[0][0]))
     for operation in predicted_sequence[0][1:]:
         if operation >= 0:
-            current_set = infn_append(current_set, int(operation))
+            # hack 0 means nothing 1 means +>0
+            if operation >= 1:
+                addop = int(operation) - 1
+                current_set = infn_append(current_set, addop)
         else:
             current_set = infn_mult_append(current_set, int(-operation))
 
