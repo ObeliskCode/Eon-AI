@@ -27,7 +27,7 @@ def generate_initial_data(num_samples=100, seq_length=10):
     append_data(7, [2+1, 3+1])
     append_data(8, [2+1, 4+1])
     append_data(9, [3+1, 4+1])
-    append_data(9, [4+1, 4+1])
+    append_data(10, [4+1, 4+1])
     
     
     training_data = np.array(training_data)
