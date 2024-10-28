@@ -26,11 +26,12 @@ def generate_initial_data(num_samples=100, seq_length=10):
         training_data.append(seq)
         labels.append(tar)
 
-    append_data([3,3],7)
-    append_data([0],1)
-    append_data([0,0],2)
-    append_data([2,2],6)
-    append_data([2,4],8)
+    # because of hack +>0 == 1
+    append_data([4,4],7)
+    append_data([1],1)
+    append_data([1,1],2)
+    append_data([3,3],6)
+    append_data([3,5],8)
     
     training_data = pad_sequences(training_data, maxlen=seq_length, padding='post')
     return np.array(training_data), np.array(labels)
