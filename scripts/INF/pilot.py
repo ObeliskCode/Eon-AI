@@ -43,6 +43,7 @@ def attempt_solution(target, model):
     target_np = np.array([[target]])
 
     predicted_sequence = model.predict(target_np)
+    predicted_sequence = np.round(predicted_sequence).astype(int)
 
     if predicted_sequence.shape[1] < 10:
         predicted_sequence = np.pad(predicted_sequence, ((0, 0), (0, 10 - predicted_sequence.shape[1])), mode='constant')
