@@ -18,11 +18,17 @@ def generate_initial_data(num_samples=100, seq_length=10):
         training_data.append(target)
         labels.append(seq)
 
-    append_data(7, [4, 4])
-    append_data(1, [1])
-    append_data(2, [1, 1])
-    append_data(6, [3, 3])
-    append_data(8, [3, 5])
+    append_data(1, [0+1])
+    append_data(2, [0+1, 0+1])
+    append_data(3, [1+1, 0+1])
+    append_data(4, [1+1, 1+1])
+    append_data(5, [1+1, 2+1])
+    append_data(6, [2+1, 2+1])
+    append_data(7, [2+1, 3+1])
+    append_data(8, [2+1, 4+1])
+    append_data(9, [3+1, 4+1])
+    append_data(9, [4+1, 4+1])
+    
     
     training_data = np.array(training_data)
     labels = pad_sequences(labels, maxlen=seq_length, padding='post')
