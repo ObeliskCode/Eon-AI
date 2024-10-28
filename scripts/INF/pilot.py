@@ -15,16 +15,22 @@ def generate_initial_data(num_samples=100, seq_length=10):
     training_data = []
     labels = []
     
-    for _ in range(num_samples):
-        target = randint(1, 100)
-        sequence = [randint(1, 10) for _ in range(seq_length)]
-        training_data.append(sequence)
-        labels.append(target)
+    ## random data
+    ##for _ in range(num_samples):
+    ##    target = randint(1, 100)
+    ##    sequence = [randint(1, 10) for _ in range(seq_length)]
+    ##    training_data.append(sequence)
+    ##    labels.append(target)
 
-    seq = [3,3]
-    tar = 7
-    training_data.append(seq)
-    labels.append(tar)
+    def append_data(seq,tar):
+        training_data.append(seq)
+        labels.append(tar)
+
+    append_data([3,3],7)
+    append_data([0],1)
+    append_data([0,0],2)
+    append_data([2,2],6)
+    append_data([2,4],8)
     
     training_data = pad_sequences(training_data, maxlen=seq_length, padding='post')
     return np.array(training_data), np.array(labels)
@@ -55,6 +61,10 @@ def attempt_solution(target, model, training_data, labels):
     elif predicted_sequence.shape[0] > 10:
         predicted_sequence = predicted_sequence[:10]
 
+    print(predicted_sequence[0])
+
+    # Todo: fix 0's counting as +>0 during prediction/eval
+
     current_set = infn_set(int(predicted_sequence[0][0]))
     for operation in predicted_sequence[0][1:]:
         if operation >= 0:
@@ -67,7 +77,7 @@ def attempt_solution(target, model, training_data, labels):
         training_data = np.append(training_data, [predicted_sequence], axis=0)
         labels = np.append(labels, target)
     else:
-        print(f"Failed sequence for {target}. Retrying...")
+        print(f"Failed sequence for {target}. H returned {H(current_set)}. Retrying...")
 
     return training_data, labels
 
