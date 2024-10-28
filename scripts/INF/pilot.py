@@ -28,6 +28,14 @@ def generate_initial_data(num_samples=100, seq_length=10):
     append_data(8, [2+1, 4+1])
     append_data(9, [3+1, 4+1])
     append_data(10, [4+1, 4+1])
+    append_data(3, [0+1, 0+1, 0+1])
+    append_data(4, [0+1, 0+1, 0+1, 0+1])
+    append_data(5, [0+1, 0+1, 0+1, 0+1, 0+1])
+    append_data(6, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
+    append_data(7, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
+    append_data(8, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
+    append_data(9, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
+    append_data(10, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
     
     
     training_data = np.array(training_data)
@@ -75,14 +83,14 @@ def attempt_solution(target, model):
         print(f"Verified sequence for {target}: {predicted_sequence}")
         return predicted_sequence
     else:
-        print(f"Failed sequence for {target}. H returned {H(current_set)}. Retrying...")
+        #print(f"Failed sequence for {target}. H returned {H(current_set)}. Retrying...")
         return None
 
 seq_length = 10
 training_data, labels = generate_initial_data(seq_length=seq_length)
 model = build_model(input_shape=1, seq_output_length=seq_length)
 
-epochs = 5
+epochs = 100
 for epoch in range(epochs):
     print(f"Epoch {epoch + 1}/{epochs}")
     model.fit(training_data, labels, epochs=1, verbose=1)
