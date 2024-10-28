@@ -65,7 +65,12 @@ def attempt_solution(target, model, training_data, labels):
 
     # Todo: fix 0's counting as +>0 during prediction/eval
 
-    current_set = infn_set(int(predicted_sequence[0][0]))
+    # [Hack]
+    fstop = int(predicted_sequence[0][0])
+    if fstop >= 1:
+        current_set = infn_set(fstop)
+    else:
+        current_set = set([0])
     for operation in predicted_sequence[0][1:]:
         if operation >= 0:
             # hack 0 means nothing 1 means +>0
