@@ -2,7 +2,6 @@ import tensorflow as tf
 from tensorflow.keras import layers, models
 import numpy as np
 from infmath import infn_append, infn_mult_append, infn_set
-from random import randint
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 def H(informal_set):
@@ -14,59 +13,44 @@ def H(informal_set):
 def generate_initial_data(num_samples=100, seq_length=10):
     training_data = []
     labels = []
+
+    def append_data(target, seq):
+        training_data.append(target)
+        labels.append(seq)
+
+    append_data(7, [4, 4])
+    append_data(1, [1])
+    append_data(2, [1, 1])
+    append_data(6, [3, 3])
+    append_data(8, [3, 5])
     
-    ## random data
-    ##for _ in range(num_samples):
-    ##    target = randint(1, 100)
-    ##    sequence = [randint(1, 10) for _ in range(seq_length)]
-    ##    training_data.append(sequence)
-    ##    labels.append(target)
+    training_data = np.array(training_data)
+    labels = pad_sequences(labels, maxlen=seq_length, padding='post')
 
-    def append_data(seq,tar):
-        training_data.append(seq)
-        labels.append(tar)
+    return training_data, np.array(labels)
 
-    # because of hack +>0 == 1
-    append_data([4,4],7)
-    append_data([1],1)
-    append_data([1,1],2)
-    append_data([3,3],6)
-    append_data([3,5],8)
-    
-    training_data = pad_sequences(training_data, maxlen=seq_length, padding='post')
-    return np.array(training_data), np.array(labels)
-
-def build_model(input_shape):
+def build_model(input_shape, seq_output_length):
     model = models.Sequential()
-    model.add(layers.Embedding(input_dim=101, output_dim=16, input_length=input_shape))
+    model.add(layers.Input(shape=(input_shape,)))
+    model.add(layers.Embedding(input_dim=101, output_dim=16, input_length=1))
     model.add(layers.LSTM(32, return_sequences=True))
     model.add(layers.LSTM(32))
-    model.add(layers.Dense(10, activation='relu'))
-    model.add(layers.Dense(1, activation='linear'))
+    model.add(layers.Dense(seq_output_length, activation='relu'))
     model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
     return model
 
-# Training data
-seq_length = 10
-training_data, labels = generate_initial_data(seq_length=seq_length)
-print(training_data, labels)
-model = build_model(input_shape=(seq_length,))
+def attempt_solution(target, model):
+    target_np = np.array([[target]])
 
-def attempt_solution(target, model, training_data, labels):
-    target_sequence = np.full((1, 10), target) 
+    predicted_sequence = model.predict(target_np)
 
-    predicted_sequence = model.predict(target_sequence)
-
-    if predicted_sequence.shape[0] < 10:
-        predicted_sequence = np.pad(predicted_sequence, (0, 10 - predicted_sequence.shape[0]), mode='constant')
-    elif predicted_sequence.shape[0] > 10:
-        predicted_sequence = predicted_sequence[:10]
+    if predicted_sequence.shape[1] < 10:
+        predicted_sequence = np.pad(predicted_sequence, ((0, 0), (0, 10 - predicted_sequence.shape[1])), mode='constant')
+    elif predicted_sequence.shape[1] > 10:
+        predicted_sequence = predicted_sequence[:, :10]
 
     print(predicted_sequence[0])
 
-    # Todo: fix 0's counting as +>0 during prediction/eval
-
-    # [Hack]
     fstop = int(predicted_sequence[0][0])
     if fstop >= 1:
         current_set = infn_set(fstop)
@@ -74,7 +58,6 @@ def attempt_solution(target, model, training_data, labels):
         current_set = set([0])
     for operation in predicted_sequence[0][1:]:
         if operation >= 0:
-            # hack 0 means nothing 1 means +>0
             if operation >= 1:
                 addop = int(operation) - 1
                 current_set = infn_append(current_set, addop)
@@ -83,18 +66,22 @@ def attempt_solution(target, model, training_data, labels):
 
     if H(current_set) == target:
         print(f"Verified sequence for {target}: {predicted_sequence}")
-        training_data = np.append(training_data, [predicted_sequence], axis=0)
-        labels = np.append(labels, target)
+        return predicted_sequence
     else:
         print(f"Failed sequence for {target}. H returned {H(current_set)}. Retrying...")
+        return None
 
-    return training_data, labels
+seq_length = 10
+training_data, labels = generate_initial_data(seq_length=seq_length)
+model = build_model(input_shape=1, seq_output_length=seq_length)
 
 epochs = 5
 for epoch in range(epochs):
     print(f"Epoch {epoch + 1}/{epochs}")
     model.fit(training_data, labels, epochs=1, verbose=1)
 
-    # Attempt solution and expand training data
     for target in range(1, 10):
-        training_data, labels = attempt_solution(target, model, training_data, labels)
+        new_sequence = attempt_solution(target, model)
+        if new_sequence is not None:
+            training_data = np.append(training_data, target)
+            labels = np.append(labels, new_sequence)
