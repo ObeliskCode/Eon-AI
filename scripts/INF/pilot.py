@@ -95,8 +95,24 @@ for epoch in range(epochs):
     print(f"Epoch {epoch + 1}/{epochs}")
     model.fit(training_data, labels, epochs=1, verbose=1)
 
+    new_training_data = []
+    new_labels = []
+
     for target in range(1, 10):
         new_sequence = attempt_solution(target, model)
         if new_sequence is not None:
-            training_data = np.append(training_data, target)
-            labels = np.append(labels, new_sequence)
+            new_training_data.append(target)
+            new_labels.append(new_sequence[0])  # Flatten to 1D if needed
+
+    if new_training_data and new_labels:
+        new_training_data = np.array(new_training_data)
+        print(f"new_training_data.shape{new_training_data.shape}")
+        new_labels = np.array(new_labels)
+        print(f"new_labels.shape{new_labels.shape}")
+
+        # Concatenate only if shapes are aligned
+        if new_training_data.shape[0] == new_labels.shape[0]:
+            training_data = np.concatenate([training_data, new_training_data], axis=0)
+            labels = np.concatenate([labels, new_labels], axis=0)
+
+    print(f"Updated training data size: {training_data.shape}, Labels size: {labels.shape}")
