@@ -109,7 +109,7 @@ for epoch in range(epochs):
             new_training_data.append(target)
             new_labels.append(new_sequence[0])
 
-    if ctr == max_attempt:
+    if ctr >= int((max_attempt-1)/2):
         max_attempt += 10
 
     if new_training_data and new_labels:
