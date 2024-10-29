@@ -64,7 +64,7 @@ def attempt_solution(target, model):
     elif predicted_sequence.shape[1] > 10:
         predicted_sequence = predicted_sequence[:, :10]
 
-    print(predicted_sequence[0])
+    #print(predicted_sequence[0])
 
     fstop = int(predicted_sequence[0][0])
     if fstop >= 1:
@@ -93,7 +93,7 @@ model = build_model(input_shape=1, seq_output_length=seq_length)
 epochs = 100
 for epoch in range(epochs):
     print(f"Epoch {epoch + 1}/{epochs}")
-    model.fit(training_data, labels, epochs=1, verbose=1)
+    model.fit(training_data, labels, epochs=1, verbose=2)
 
     new_training_data = []
     new_labels = []
@@ -106,9 +106,9 @@ for epoch in range(epochs):
 
     if new_training_data and new_labels:
         new_training_data = np.array(new_training_data)
-        print(f"new_training_data.shape{new_training_data.shape}")
+        #print(f"new_training_data.shape{new_training_data.shape}")
         new_labels = np.array(new_labels)
-        print(f"new_labels.shape{new_labels.shape}")
+        #print(f"new_labels.shape{new_labels.shape}")
 
         # Concatenate only if shapes are aligned
         if new_training_data.shape[0] == new_labels.shape[0]:
