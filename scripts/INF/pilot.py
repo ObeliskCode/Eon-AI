@@ -90,7 +90,9 @@ seq_length = 10
 training_data, labels = generate_initial_data(seq_length=seq_length)
 model = build_model(input_shape=1, seq_output_length=seq_length)
 
-epochs = 100
+max_attempt = 11
+
+epochs = 1000
 for epoch in range(epochs):
     print(f"Epoch {epoch + 1}/{epochs}")
     model.fit(training_data, labels, epochs=1, verbose=2)
@@ -98,11 +100,17 @@ for epoch in range(epochs):
     new_training_data = []
     new_labels = []
 
-    for target in range(1, 10):
+    ctr = 1
+
+    for target in range(1, max_attempt):
         new_sequence = attempt_solution(target, model)
         if new_sequence is not None:
+            ctr += 1
             new_training_data.append(target)
-            new_labels.append(new_sequence[0])  # Flatten to 1D if needed
+            new_labels.append(new_sequence[0])
+
+    if ctr == max_attempt:
+        max_attempt += 10
 
     if new_training_data and new_labels:
         new_training_data = np.array(new_training_data)
