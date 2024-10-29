@@ -46,10 +46,10 @@ def generate_initial_data(num_samples=100, seq_length=10):
 def build_model(input_shape, seq_output_length):
     model = models.Sequential()
     model.add(layers.Input(shape=(input_shape,)))
-    model.add(layers.Embedding(input_dim=101, output_dim=16, input_length=1))
-    model.add(layers.LSTM(32, return_sequences=True))
-    model.add(layers.LSTM(32))
-    model.add(layers.Dense(seq_output_length, activation='relu'))
+    model.add(layers.Embedding(input_dim=101, output_dim=32, input_length=1))
+    model.add(layers.LSTM(64, return_sequences=True))
+    model.add(layers.LSTM(64))
+    model.add(layers.Dense(seq_output_length, activation='linear'))
     model.compile(optimizer='adam', loss='mse', metrics=['accuracy'])
     return model
 
