@@ -68,7 +68,7 @@ def attempt_solution(target, model):
 
     fstop = int(predicted_sequence[0][0])
     if fstop >= 1:
-        current_set = infn_set(fstop)
+        current_set = infn_set(fstop - 1)
     else:
         current_set = set([0])
     for operation in predicted_sequence[0][1:]:
