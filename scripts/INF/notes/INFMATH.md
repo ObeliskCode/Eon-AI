@@ -356,3 +356,17 @@ suppose every time you integrate you get a
 multiplicative infinity that expands the scope
 of infinity for every calculation done up to
 a limit to infinity
+
+assume C is an irrational number such as pi,
+infinitely many digits, then,
+
+|T(C)| consequently should equal inf
+so, |T(C)| = inf  iff  C is irrational
+
+thus,
+in that case
+
+S(x)dx = (x^2/2) + C + (inf)^2
+
+so, every amount of digit needed to represent
+C amounts to a function with a lim to inf
