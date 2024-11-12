@@ -164,7 +164,7 @@ so informal number theory suggest matrices contain matrices within matrices
 
 informal subtraction (trivial):
 
-+>4 - +>2 = {-5,5} - {-3,3} = {-5,-5,0,4,5}
++>4 - +>2 = {-5,5} - {-3,3} = {-5,-4,0,4,5}
 
 obviously using integer subtraction within informal calc. is commutative
 same thing for division and subtraction, but informal subtraction
