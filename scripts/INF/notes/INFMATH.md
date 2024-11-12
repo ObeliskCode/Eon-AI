@@ -275,3 +275,5 @@ there is a finite amount of "special" ways
 to add up to the whole number x
 
 my theory is that this is how to "quantify" addition
+
+any whole number integer is re presentable by a finite amount of arrays of informal numbers which allows for matrix addition to represent integer addition, every time a register adds up amounts of +>(x) in 64 bits it allows for a computation of H(f(x)) to calculate an infinite number with decentralized computation that means a decentralized computation could add up an indefinite number
