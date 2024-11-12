@@ -340,5 +340,13 @@ rather be an element of any number system
 
 does this mean then that possibly,
 
-S(x)dx = (x^2/2) + H^inf(T(C)) ?
+T(C) is a function that sends to an inf num,
 
+S(x)dx = (x^2/2) + H^inf(T(C)) ?
+so,
+S(x)dx = (x^2/2) + C + |T(C)|(inf) ?
+
+R = |T(C)|(inf) = w(inf)
+then,
+S{x}dx^2 = S{ (x^2/2) + C + w(inf) }dx
+= S{ (x^2/2) + C }dx + xw(inf)
