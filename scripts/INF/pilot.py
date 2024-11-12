@@ -36,7 +36,7 @@ def generate_initial_data(num_samples=100, seq_length=10):
     append_data(8, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
     append_data(9, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
     append_data(10, [0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1, 0+1])
-    
+    append_data(36, [10+1, 15+1, 8+1])
     
     training_data = np.array(training_data)
     labels = pad_sequences(labels, maxlen=seq_length, padding='post')

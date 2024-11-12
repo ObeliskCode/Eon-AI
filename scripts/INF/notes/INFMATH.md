@@ -258,3 +258,20 @@ let a 1x2 matrix U be a linear combination up to +>1
 each slot will be reperesented by a 2-bit int 0,1,2,3
 => numerics [0,9] are supported by 4 bits allocated by U
 4 bits allocated using binary addition allows numerics [0,15]
+
+
+result: 
+iff H(+>x + +>x) != NIL then, 
+H(+>x + +>x) = (x+1) + (x+1), since
++>x + +>y = +>y + +>x
+
+so,
+H(+>10 + +>15 + +>8) = 36
+but,
+H(+>10 + +>15) = NIL
+
+so for every whole number x 
+there is a finite amount of "special" ways
+to add up to the whole number x
+
+my theory is that this is how to "quantify" addition
