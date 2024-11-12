@@ -324,5 +324,21 @@ H^2(10 and 15 and 8) is 39?
 but we know that iff H(f(x)) is valid,
 then H^2(f(x)) is valid 
 
-conjector hypothesis:
+conjector limit hypothesis:
 H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
+then, H^C(+>x + +>y) = (x+1) + (y+1) + 2(C)
+
+so, assume conjector lim hyp is valid
+idea: 
+S(x)dx = (x^2/2) + C
+why not,
+S(x)dx = (x^2/2) + H(C)?
+
+simple proof, perturbing a function to infinity
+could mean that C could be infinity or
+rather be an element of any number system
+
+does this mean then that possibly,
+
+S(x)dx = (x^2/2) + H^inf(f(C)) ?
+
