@@ -300,3 +300,10 @@ so,
 (+-7 or +-8 or +-9 or 0)
 
 there is an equation for satisfiability here!
+
+so a chain of numbers with and operations
+could lead to a reduction trivially
+
+so, is (10 and 15 and 8) a special list?
+the answer is yes or no.
+computational hardness proof required.
