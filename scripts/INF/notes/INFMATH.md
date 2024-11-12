@@ -323,3 +323,6 @@ let H^2 be the 3SAT halting machine for 'infn_set_pow2'
 H^2(10 and 15 and 8) is 39?
 but we know that iff H(f(x)) is valid,
 then H^2(f(x)) is valid 
+
+conjector hypothesis:
+H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
