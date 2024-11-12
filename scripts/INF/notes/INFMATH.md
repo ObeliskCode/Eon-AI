@@ -319,7 +319,7 @@ then we have 'infn_set_pow2(0)' = 2
 so then that means since we know,
 H(10 and 15 and 8) is 36
 then
-let H^2 be the 3SAT halting machine for 'nfn_set_pow2'
+let H^2 be the 3SAT halting machine for 'infn_set_pow2'
 H^2(10 and 15 and 8) is 39?
 but we know that iff H(f(x)) is valid,
 then H^2(f(x)) is valid 
