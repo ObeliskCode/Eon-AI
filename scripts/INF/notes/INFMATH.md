@@ -289,3 +289,14 @@ and, +> 1 = -2 or -1 or 0 or 1 or 2
 then, +>1 = +- 1 or +- 2 or 0
 why is (+- 1 or 0) + (+-1 or 0) possibly
 a function reducible to 3SAT?
+
+so, (+- 1 or 0) + (+-1 or 0)
+then, (+- 1 or 0) and (+-1 or 0)
+
+so,
++>10 + +>15 + +>8 = 
+(+-9 or +-10 or +-11 or 0) and
+(+-14 or +-15 or +-16 or 0) and
+(+-7 or +-8 or +-9 or 0)
+
+there is an equation for satisfiability here!
