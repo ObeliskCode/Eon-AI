@@ -350,3 +350,9 @@ R = |T(C)|(inf) = w(inf)
 then,
 S{x}dx^2 = S{ (x^2/2) + C + w(inf) }dx
 = S{ (x^2/2) + C }dx + xw(inf)
+
+integral hypothesis:
+suppose every time you integrate you get a 
+multiplicative infinity that expands the scope
+of infinity for every calculation done up to
+a limit to infinity
