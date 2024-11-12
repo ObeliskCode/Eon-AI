@@ -370,3 +370,6 @@ S(x)dx = (x^2/2) + C + (inf)^2
 
 so, every amount of digit needed to represent
 C amounts to a function with a lim to inf
+
+lets say C = pi then, 
+S(x)dx = (x^2/2) + pi + (inf)^2
