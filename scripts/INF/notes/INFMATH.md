@@ -340,5 +340,5 @@ rather be an element of any number system
 
 does this mean then that possibly,
 
-S(x)dx = (x^2/2) + H^inf(f(C)) ?
+S(x)dx = (x^2/2) + H^inf(T(C)) ?
 
