@@ -396,6 +396,6 @@ since, 0/-2 |=| -2/0 ?
 
 theory,
 
-d/ix(x) = i + d/dx(x)/S(x)dx
+d/ix(x) = i * d/dx(x)/S(x)dx
 
-(x+1)(y+1)/0 = h**super**(summation[k,k->inf](d/ix(x) + d/ix(y))
+(x+1)(y+1)/0 = h**super**(summation[k,k->inf](d/ix(x) * d/ix(y))
