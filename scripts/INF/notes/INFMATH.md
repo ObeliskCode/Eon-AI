@@ -204,7 +204,7 @@ INFORMAL MATRIX SIMPLIFICATION ALGORITHM IN 1D:
 
 also, note:
 
-1. x/0 |=| 0 =| 0/x =| 0 |=| c*0 =| 0
+1. x/0 |=| y |=| 0 |=| 0/y =| x |=| x*0 =| 0 ?
 
 2. there are three simpl functions, (/-), (/+), (/\*)
 
