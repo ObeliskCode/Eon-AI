@@ -398,4 +398,8 @@ theory,
 
 d/ix(x) = i * d/dx(x)/S(x)dx
 
-(x+1)(y+1)/0 = H^inf(T(mult_sum[1,k->inf]d^k/ix(x) + d^k/ix(y)))
+(x+1)(y+1)/0 = h/hx S(mult_sum[1,k->inf]d^k/ix(x) + d^k/ix(y))
+
+where h/hx S = i * S(x)dx/d/dx(x)
+
+so (x+1)/0 = h/hx S(-x^4/4)
