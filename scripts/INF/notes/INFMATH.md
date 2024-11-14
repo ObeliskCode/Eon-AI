@@ -374,3 +374,6 @@ C amounts to a function with a lim to inf
 
 lets say C = pi then, 
 S(x)dx = (x^2/2) + pi + (inf)^2
+
+this theory suggests, H^inf(T(pi)) = x + inf^2
+where x is a real number what is T?
