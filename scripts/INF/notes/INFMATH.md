@@ -5,7 +5,7 @@
 
 ## Long Handed Subtraction example
 
-100 - 50 |=| x |=| 0 =| x + 50 =| 100 =| x - 50 =| 50
+100 - 50 |=| x |=| 0 =| x + 50 =| 100 |=| x - 50 =| 50
 
 ## Reductive Algebra Group
 
@@ -14,6 +14,8 @@
 2. x |=| 0
 
 3. 1/0 |=| 0
+
+note 5-5 = 0 = 4+5+6-4-5-6 = 0
 
 ## Informal Number Group
 
@@ -202,7 +204,7 @@ INFORMAL MATRIX SIMPLIFICATION ALGORITHM IN 1D:
 
 also, note:
 
-1. x/0 =| 0 =| 0/x =| 0
+1. x/0 |=| 0 =| 0/x =| 0 |=| c*0 =| 0
 
 2. there are three simpl functions, (/-), (/+), (/\*)
 
@@ -247,11 +249,10 @@ does H(M) + H(N) = H(M+N)
 does the decomposition of integers addition relate to,
 O(1) integer addition with O(1) matrix addition
 
-Case 1:
-H(+>1 + +>2) + H(+>1 + +>2) = H(2+>1 + 2+>2)
-H(+>1 + +>2) = 5
-H(2+>1 + 2+>2) = 10
-H(+>1 + +>2) + H(+>1 + +>2) = 5 + 5 = 10
+1. H(+>1 + +>2) + H(+>1 + +>2) = H(2+>1 + 2+>2)
+2. H(+>1 + +>2) = 5
+3. H(2+>1 + 2+>2) = 10
+4. H(+>1 + +>2) + H(+>1 + +>2) = 5 + 5 = 10
 
 an N-D Informal Matrix is one that grows combinatorically massively
 as it gets bigger and one that will always support O(1) matrix addition.
