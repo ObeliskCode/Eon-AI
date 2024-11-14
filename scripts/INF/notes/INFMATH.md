@@ -386,11 +386,14 @@ since,
 2. +>1 / +>1 = {-2,-1,0,1,2, 0/-2, 0/-1 , 0/1 , 0/2 , -2/0 , -1/0 , 1/0, 2/0}
 
 both sets have a cardinality of 13 so could
-for ex, 1/0 be two values ? 
+for ex, 1/0 be two values
 
-maybe, 1 and -1 ?
-
-since, 0/-2 |=| -2/0 ?
+the result R = |T(C)|(inf) or min|T(C)|(inf)
+seems to make little sense except if array x is an el. of X (INF numbers)
+is an infinite array in linear algebra because H^inf seems like something
+that could be used somewhere completely specific and that to my opinion is
+in fact having a number system which has a definite number after 1.
+because 0 = {0} is the zero el. and +>0 =  {-1,0,1} is the unit element
 
 # Completely Unproven Theory
 
@@ -411,3 +414,5 @@ so, (x+1)/0 = ix^3/20
 3. 3/0 = i8/20
 4. 4/0 = i27/20
 5. 5/0 = i64/20
+
+mystery of how symbols labeled x/0 could have parity with inf. mult. |=|?
