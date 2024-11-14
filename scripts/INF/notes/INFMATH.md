@@ -101,9 +101,9 @@ so, 3(+>5) = 4(+>2) + 3(+>1) = 3(+>4) + +>2
 1-D matrix/2-D matrix calculations could in theory,
 be faster than binary integer calculations past a very large number
 
-# [CHALLENGE] calculate 4 bil. in less than 32 bits
-# Hypothesis: inf. mult. isn't more space effic. 
-# than regular binary addition to infinity?
+[CHALLENGE] calculate 4 bil. in less than 32 bits
+Hypothesis: inf. mult. isn't more space effic. 
+than regular binary addition to infinity?
 
 +>0 = [->1,+>1]
 +>1 = [->2,+>2] =+>0 + +>0
