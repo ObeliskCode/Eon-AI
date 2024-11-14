@@ -377,3 +377,17 @@ S(x)dx = (x^2/2) + pi + (inf)^2
 
 this theory suggests, H^inf(T(pi)) = x + inf^2
 where x is a real number what is T?
+
+observation:
+1. |(+>(x+1) * +>(x+1))| |=| |(+>x / +>x)
+
+since,
+1. +>2 * +>2 = {-9,-6,-4,-3,-2,-1,0,1,2,3,4,6,9}
+2. +>2 / +>2 = {-2,-1,0,1,2, 0/-2, 0/-1 , 0/1 , 0/2 , -2/0 , -1/0 , 1/0, 2/0}
+
+both sets have a cardinality of 13 so could
+for ex, 1/0 be two values ? 
+
+maybe, 1 and -1 ?
+
+since, 0/-2 |=| -2/0 ?
