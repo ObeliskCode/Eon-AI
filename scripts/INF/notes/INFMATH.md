@@ -391,3 +391,11 @@ for ex, 1/0 be two values ?
 maybe, 1 and -1 ?
 
 since, 0/-2 |=| -2/0 ?
+
+# Completely Unproven Theory
+
+theory,
+
+d/ix(x) = i + d/dx(x)/S(x)dx
+
+(x+1)(y+1)/0 = h**super**(summation[k,k->inf](d/ix(x) + d/ix(y))
