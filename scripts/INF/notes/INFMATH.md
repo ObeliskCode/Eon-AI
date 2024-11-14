@@ -394,6 +394,8 @@ is an infinite array in linear algebra because H^inf seems like something
 that could be used somewhere completely specific and that to my opinion is
 in fact having a number system which has a definite number after 1.
 because 0 = {0} is the zero el. and +>0 =  {-1,0,1} is the unit element
+correction: +>0 =  {-1,0,1} is not the unit element it is the first element
+H(+>0) may send to 1
 
 # Completely Unproven Theory
 
