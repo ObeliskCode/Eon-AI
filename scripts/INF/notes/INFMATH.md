@@ -403,3 +403,5 @@ d/ix(x) = i * d/dx(x)/S(x)dx
 where h/hx S = i * S(x)dx/d/dx(x)
 
 so (x+1)/0 = h/hx S(-x^4/4)
+
+so, (x+1)/0 = ix^3/20
