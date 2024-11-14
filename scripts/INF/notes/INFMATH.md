@@ -398,4 +398,4 @@ theory,
 
 d/ix(x) = i * d/dx(x)/S(x)dx
 
-(x+1)(y+1)/0 = H^inf(T(mult_sum[k,k->inf](d/ix(x) + d/ix(y)))
+(x+1)(y+1)/0 = H^inf(T(mult_sum[1,k->inf]d^k/ix(x) + d^k/ix(y)))
