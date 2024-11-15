@@ -426,3 +426,5 @@ where d/ix S = i + S(x)dx/d/dx(x)
 so (x+1)/0 = ?
 
 it is possible this function could be telegraphic?, divergent and converges at the same time?
+
+could that be because i could possibly only ever have a field of integers if we can modify d/ix ?
