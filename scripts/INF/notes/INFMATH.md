@@ -463,3 +463,6 @@ the cartesian plane being graphed means 1 passing on x actually means one functi
 
 so if a cartesian plane can only be graphed by counting in integers than it can be used to
 count functions instead of variables.
+
+q: how do you use regular math make a sequence which always goes from 0 to i to i^2
+in that order to infinity?
