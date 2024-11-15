@@ -425,3 +425,4 @@ where d/ix S = i + S(x)dx/d/dx(x)
 
 so (x+1)/0 = ?
 
+it is possible this function could be telegraphic?, divergent and converges at the same time?
