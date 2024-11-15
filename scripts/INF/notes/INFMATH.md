@@ -401,20 +401,13 @@ H(+>0) may send to 1
 
 theory,
 
-d/ix(x) = i * d/dx(x)/S(x)dx
-
-(x+1)(y+1)/0 = h/hx S(mult_sum[1,k->inf]d^k/ix(x) + d^k/ix(y))
-
-where h/hx S = i * S(x)dx/d/dx(x)
-
-so (x+1)/0 = h/hx S(-x^4/4)
-
-so, (x+1)/0 = ix^3/20
-
-1. 1/0 = 0
-2. 2/0 = i1/20
-3. 3/0 = i8/20
-4. 4/0 = i27/20
-5. 5/0 = i64/20
-
 mystery of how symbols labeled x/0 could have parity with inf. mult. |=|?
+
+d/ix(x) = i + d/dx(x)/S(x)dx
+
+(x+1)(y+1)/0 = d/ix S(multiply[1,k->inf]d^k/ix(x) * d^k/ix(y))
+
+where d/ix S = i + S(x)dx/d/dx(x)
+
+so (x+1)/0 = ?
+
