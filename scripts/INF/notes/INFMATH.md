@@ -447,3 +447,13 @@ i when i^2 = -1 could be expaned to i where i^3 = -1 and this would already mean
 it takes depositing i twice for i to be able to create a negative "telegraph",
 this means that if you draw a function continously upwards like in signal graphs then the integral
 between when the function wasn't negative is the area of the signal square wave of the function.
+
+this means the functions in between negatives are always concave which means quickly all there is
+a number before a line almost up and then spaces where there are discontinuities
+
+but those discontinuaties also make a function which were ridiculously concave too if we graphed
+its negation, somewhere in the middle is two values for a complex number exactly meaning that
+complex number meaning if 1 was a complex value you could find two values for 1 that aren't
+the same as -1 that means that the graph of y = x could defy the rules of cartesian planes
+a graph of f(x) = x could mean x = f(x) then x = f(x) could be a circle.
+
