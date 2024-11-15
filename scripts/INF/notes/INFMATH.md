@@ -428,3 +428,9 @@ so (x+1)/0 = ?
 it is possible this function could be telegraphic?, divergent and converges at the same time?
 
 could that be because i could possibly only ever have a field of integers if we can modify d/ix ?
+
+a complex function would be interesting if its imaginary field were restricted to integers
+because this alone could be outpaced by the monotic function at every step k for some k->inf somewhere?
+
+imagine saying a function is always getting negated so it is now it's negative counterpart.
+could a function then say it could always be positive after being negated in a sequence?
