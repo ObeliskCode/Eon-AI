@@ -457,3 +457,9 @@ complex number meaning if 1 was a complex value you could find two values for 1 
 the same as -1 that means that the graph of y = x could defy the rules of cartesian planes
 a graph of f(x) = x could mean x = f(x) then x = f(x) could be a circle.
 
+if there is a circle where it means (1)x then there could be another circle that represents
+2(x) but that circle would have to start at 2(x) and end at 3 or so because
+the cartesian plane being graphed means 1 passing on x actually means one function passes by
+
+so if a cartesian plane can only be graphed by counting in integers than it can be used to
+count functions instead of variables.
