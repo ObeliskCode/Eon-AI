@@ -476,4 +476,5 @@ from every 1/2 then that would make the whole graph be representable by two func
 
 hypothesis: then the point is to say eventually that then this system takes the integer before a dot
 in the real number for ex. 1.22405215 would then be between 1 and 2 so 1.22 could mean x = 22 for a 
-function bounded from [1,2] exactly! 
+function bounded from [1,2] exactly! this concludes with the suggestion 1.22.44 could mean
+that from [1,2] that we plot (f1(22.44),f2(22.44)) suggesting a three dot real number system.
