@@ -434,3 +434,16 @@ because this alone could be outpaced by the monotic function at every step k for
 
 imagine saying a function is always getting negated so it is now it's negative counterpart.
 could a function then say it could always be positive after being negated in a sequence?
+
+that function would have to always grow larger with every step K. thats means will have always atleast
+been able to double itself every step K which means the function creates atleast 
+2x amount of itself of itself every step K.
+
+imagine always being multiplied by larger and larger negative numbers continuously then always being negated
+bt larger and larger negative numbers means if a function save itself from monotonically diverging towards
+the negative numbers always then you can only have a function monotonically diverge positively then,
+this should measure how much a function displaces amounts "of itself of itself" it is the fact that
+i when i^2 = -1 could be expaned to i where i^3 = -1 and this would already mean that when i^2 = -1
+it takes depositing i twice for i to be able to create a negative "telegraph",
+this means that if you draw a function continously upwards like in signal graphs then the integral
+between when the function wasn't negative is the area of the signal square wave of the function.
