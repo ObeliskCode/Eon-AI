@@ -466,3 +466,14 @@ count functions instead of variables.
 
 q: how do you use regular math make a sequence which always goes from 0 to i to i^2
 in that order to infinity?
+
+the shape of spinors and how i suggest you can plot either (x,y) or (f(x),(x,y))
+means to me that spinors are counted in i where i requires more degrees to turn i into -1
+so that the folds of spinors mirrors the amount of functions that cannot overlap or
+rather an amount of folds. imagine the unit circle centered at (1/2,1/2) then it would
+start at 0 and end at one then think there is a unit circle centered at every integer away
+from every 1/2 then that would make the whole graph be representable by two functions
+
+hypothesis: then the point is to say eventually that then this system takes the integer before a dot
+in the real number for ex. 1.22405215 would then be between 1 and 2 so 1.22 could mean x = 22 for a 
+function bounded from [1,2] exactly! 
