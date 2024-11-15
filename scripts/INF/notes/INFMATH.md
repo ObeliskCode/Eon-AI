@@ -397,6 +397,20 @@ because 0 = {0} is the zero el. and +>0 =  {-1,0,1} is the unit element
 correction: +>0 =  {-1,0,1} is not the unit element it is the first element
 H(+>0) may send to 1
 
+
+Corollary:
+H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
+then, H^C(+>x + +>y) = (x+1) + (y+1) + 2(C)
+
+if H^inf(+>x + ...) then (x0+1) + ... + n(inf)
+then it is possible that then we have,
+
+for ex (x0+1) + ... = 12
+then,
+12 + n(inf) = 6*2 + n(inf)
+so is it possible that we can enemurate amount of factors
+for 12 this way some how then ?
+
 # Completely Unproven Theory
 
 theory,
