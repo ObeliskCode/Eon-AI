@@ -523,6 +523,57 @@ in the first space we have infinity
 in the second space we have inf^2 + i*inf
 in the third space we have ((inf^2) + i*inf)^2
 
+the point is that the first space is the empty space
+is the point for an integer,
+so a real number is a two integer space because
+there is a . that seperates two integer spaces
+
+so we have 512321.123213 then we also have
+
+123214.21412421.21421214.124214.214124
+
+there are 4 dots here in this example but that also means this
+an amount of spaces above the space for a real number
+so imagine allocating a dot is a new realer format at every
+point
+
+then 21323 is an int
+then 213.213 is a real number
+then 5215.2215.215215 is a complex number right? wrong?
+
+521.213.213 is equal to fractional components of complex numbers so,
+
+imagine now,
+
+521.213.213 + i(521.213.213)
+
+this simple complex number would now be infinitely confusable if
+it could be a complex number but thats the point!
+
+521.213.213 + i(521.213.213)
+
+the fractional component 213 now adds to the same component
+where i(521.213.213) used to be
+
+before it became 0 because it now is the third element of the
+numbers i!
+
+so,
+
+then,
+
+some magical set of operators O,
+
+521.213.213 + i(521.213.213) = 521.213 +  + iO(213) + i'O(521.213.213)
+
+this would then require for example adding atleast
+
+.213 to 521.213
+
+adding .213.213 atleast to O(213)
+
+to be able to push i'O(521.213.213) to then copy over the same way.
+
 there seems to be a space between towers measuerd
 by the change in x which then goes to 0 at the same
 time it squeezes the height between each riemann square
