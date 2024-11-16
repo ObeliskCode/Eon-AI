@@ -513,3 +513,40 @@ in a single case becase we could have
 inf + O(inf) + O'2(inf) + ... + O'n(inf) ?
 
 solve.
+
+if a real number is calculated to be inf^2 if it was only
+made of infinite squares then how can we say that inf^2 
+has two cardinalities. in an empty space there is 0 space
+this is not even a point, this is a belladurn.
+
+in the first space we have infinity
+in the second space we have inf^2 + i*inf
+in the third space we have ((inf^2) + i*inf)^2
+
+there seems to be a space between towers measuerd
+by the change in x which then goes to 0 at the same
+time it squeezes the height between each riemann square
+to each other. but that means the height difference between
+the left riemann sum compared to the right riemann sum
+integrate at different speeds. we have
+
+lets say f(x) = x then at every riemann square the left
+and right height differences would integrate at the
+same constant. if we can say that then equates
+to a difference in height of 1 for a square size of 1
+(rise over run are the same) then we can actually start
+to integrate the sides of riemann sum using integers
+and informal numbers if instead of squeezing riemman sum
+square size to 0 we could that calculation using integer
+values for square sizes. that means that integration
+could be done with a square size which would be the diff.
+that you integrate by. normal integration uses 0.
+but using a seperate formalution of 0 send to it by informality
+it could be a different base for integrating height.
+this means that squeezing happens where squeezing should happen
+
+so if you had a function that needed smaller squares for ex after 1
+
+if f(x) = { x if x<1 and x^2 if x>=1 }
+then riemann squares would squeeze faster after x = 1 to normalize
+the rise/run distributing along a real number
