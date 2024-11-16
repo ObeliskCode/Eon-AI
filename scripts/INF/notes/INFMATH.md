@@ -478,3 +478,38 @@ hypothesis: then the point is to say eventually that then this system takes the 
 in the real number for ex. 1.22405215 would then be between 1 and 2 so 1.22 could mean x = 22 for a 
 function bounded from [1,2] exactly! this concludes with the suggestion 1.22.44 could mean
 that from [1,2] that we plot (f1(22.44),f2(22.44)) suggesting a three dot real number system.
+
+the riemann hypotnuse is the part of the riemann sum that isn't included in calculus
+because there are infinitely many squares in linear algebra.
+
+experimental theory: an informal array could take H(+>x) to an integer
+but an informal matrix could take H(+>x) to a real number possibly.
+
+this way you can say other bases of dims in these matrices are expansions
+of of the space between integers. meaning that every base change in 
+a 2d matrix in this system takes the number calculated
+
+to a real number or infinite expansions of spaces between real numbers
+
+would this then be a real number or another construct to infxinf dims
+
+proof.
+the point of this number format is to originally
+"destroy the unity of number set uniquness of integers"
+
+the original puzzle for informal numbers is:
+an infinite list of sanscript characters that never ever repeats
+the same character twice in the entire list
+
+a real number could then be if we took H to all rows
+
+let +>x(n) be row n of matrix +>x
+
+H(+>x(0)) + O(+>x(1)) + ..
+
+could mean 1547 + O(71281) + O'2(12515) + ... + O'n(151548)
+in a single case becase we could have
+
+inf + O(inf) + O'2(inf) + ... + O'n(inf) ?
+
+solve.
