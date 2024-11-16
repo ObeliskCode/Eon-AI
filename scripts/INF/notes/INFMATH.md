@@ -564,7 +564,7 @@ then,
 
 some magical set of operators O,
 
-521.213.213 + i(521.213.213) = 521.213 +  + iO(213) + i'O(521.213.213)
+521.213.213 + i(521.213.213) = 521.213 + iO(213) + i'O(521.213.213)
 
 this would then require for example adding atleast
 
@@ -573,6 +573,44 @@ this would then require for example adding atleast
 adding .213.213 atleast to O(213)
 
 to be able to push i'O(521.213.213) to then copy over the same way.
+
+so then where does 3 dots come into play then?
+
+so with 123214.21412421.21421214.124214
+
+we now have two integer slots after the first so we could then 
+stop there!
+
+because with two integer slots after a real number we could
+calculate the sides exapnsion in a riemann sum with two integers
+that were derived from exactly informal numbers. that means
+that the wrong conlcusion to make is this.
+
+that 5 dots are needed to do this computation,
+
+123214.21412421.21421214.124214.21421214.124214
+
+the math for 5 dots is literally the same math but only
+harder to do in every way possible.
+
+because informal numbers means we have 
+
+123214.21412421.21/4/21/214.1/24/21/4
+
+this is why a 3 dot number system is more efficient to calculate
+than a 5 dot number system, informal numbers are necessary to
+understand that they are needed to solve the 5D problem
+in an efficient amount of time on earth (NP?)
+
+and maybe that might be because every dot creates another NP hardness
+that NP hardness is harder than the amount of time our universe
+would take to die. that means it's supposed to take about
+that long to do before it would supposedly "die".
+my opinion. 5 dots means that a 12D string theory is actually
+the 18D string theory. we live in a 12D universe so 18D
+math could be a higher dimension around physics here.
+
+this means that the universe is 12D - in terms of string theory
 
 there seems to be a space between towers measuerd
 by the change in x which then goes to 0 at the same
