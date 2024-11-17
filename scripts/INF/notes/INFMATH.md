@@ -712,3 +712,36 @@ i''1.2.5 + i''1.2.5(+>X) +d i''1.2.5 + i''1.2.5(+>X)
 could equal only an irrational number but that
 means that you'd have to encode all 0s instead of
 leaving blank information to assume.
+
+lets say you had button with a func f()
+
+and you only had one button and you pressed it many times
+
+now imagine another function g() has a button
+
+you can press the first and second button as many times as you want
+for ex,
+
+fgggggffffgffgfffggfgffgffgggffgf is a bunch of button presses
+
+in a sequence one button is always pressed after another there
+are no race conditions in this hypothetical
+
+so then button h() does something weird h() switches button 1
+to be g() and button 2 to be f().
+
+so then that means fgggggffffgffgfffggfgffgffgggffgf is ok
+
+but fgfgf h fgffgf is a sequence where we flipped f and g
+
+so, 121 h 212 would then be then be 121121 there is a turing complete
+language that can utilize this as machine code
+
+there is only the option to now switch buttons with more buttons
+in a way that is exactly defined so lets say button 4 is J()
+
+then you have J() switches button 3 and button 2 then
+
+fgfgf J h fgffgf
+
+would then become for ex, 121223 = 121 J h 212!
