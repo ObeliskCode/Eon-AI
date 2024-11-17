@@ -791,6 +791,10 @@ will x() be a() b() or c() ?
 
 1() 2() 4() a() c() b() c()
 
-1() 2() 4() a() b() c() b()
+1() 2() a() b() c() b()
+
+1() 2() 1() 2() 1()
 
 seems x could be only a() or c()
+
+so abdacbc = 01010 as expected.
