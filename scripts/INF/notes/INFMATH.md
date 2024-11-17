@@ -760,3 +760,8 @@ be assigned to a function which writes in the sequence
 a button is void function in pure math
 
 f(x) is a function, f() is a button
+
+if buttons a() and b() lead to buttons write0() write1() and swap0(), swap1(), ... , swapn() 
+then this is the point of this math being about buttons only mapping to buttons purely
+
+now imagine a() is (write 0) and b() is write(1) and c swaps a's action with b's action
