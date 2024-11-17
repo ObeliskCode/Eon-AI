@@ -772,3 +772,25 @@ in the action set and a() is the unit button in the button set
 this is how you do the algebra
 if 3() is actually swap(a,b) that means that 3() would be the first action
 to nest every action after it within the action 3()
+
+so the first logical step is to say,
+
+we have a() b() d() a() c() b()
+
+we have 1() 2() 4() a() c() b()
+
+we have 1() 2() a() b() c()
+
+we have 1() 2() 1() 2() c()
+
+this is an invalid sequence then,
+
+then, a() b() d() a() c() b() x()
+
+will x() be a() b() or c() ?
+
+1() 2() 4() a() c() b() c()
+
+1() 2() 4() a() b() c() b()
+
+seems x could be only a() or c()
