@@ -765,3 +765,6 @@ if buttons a() and b() lead to buttons write0() write1() and swap0(), swap1(), .
 then this is the point of this math being about buttons only mapping to buttons purely
 
 now imagine a() is (write 0) and b() is write(1) and c swaps a's action with b's action
+
+a() is only a button because actions are numbered so 1() is unit function
+in the action set and a() is the unit button in the button set
