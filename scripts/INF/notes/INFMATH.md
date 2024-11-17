@@ -768,3 +768,7 @@ now imagine a() is (write 0) and b() is write(1) and c swaps a's action with b's
 
 a() is only a button because actions are numbered so 1() is unit function
 in the action set and a() is the unit button in the button set
+
+this is how you do the algebra
+if 3() is actually swap(a,b) that means that 3() would be the first action
+to nest every action after it within the action 3()
