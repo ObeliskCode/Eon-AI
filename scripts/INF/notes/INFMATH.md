@@ -756,3 +756,7 @@ the func for b writes 1 then swapping the func to write
 only by possibly swapping it with a func to swap specific 
 slots means that only 2 letters in the alphabet will ever 
 be assigned to a function which writes in the sequence 
+
+a button is void function in pure math
+
+f(x) is a function, f() is a button
