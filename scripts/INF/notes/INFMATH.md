@@ -751,4 +751,8 @@ so if we had a number system like one where
 a = 0, b = 1, c = swap(a,b), d = swap(b,c), ...
 then this swap math is turing complete, assumably
 
-so, 
+so, the func standardly applied to a writes 0 and 
+the func for b writes 1 then swapping the func to write 
+only by possibly swapping it with a func to swap specific 
+slots means that only 2 letters in the alphabet will ever 
+be assigned to a function which writes in the sequence 
