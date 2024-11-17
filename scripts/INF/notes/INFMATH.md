@@ -639,3 +639,65 @@ so if you had a function that needed smaller squares for ex after 1
 if f(x) = { x if x<1 and x^2 if x>=1 }
 then riemann squares would squeeze faster after x = 1 to normalize
 the rise/run distributing along a real number
+
+what is the integral of 1.2.5x then,
+
+simple 1.2.0.5x^2 is the result of the integration.
+
+that means integrating on time could be expressed otherwise
+
+(1.2.5 + +>X) because if 1.2 + i is the point of complex numbers
+then 1.2.5 + 1.2.5(+>X) is the point of informal numbers. so
+this means while i is uncomplementary to its expansions
+informal number are when are component to two decimal numbers
+
+this is because .5 is just an informal number too.
+
+this means (1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X))
+
+would be a complex informal number because finding the second
+pattern for combinatorical growth other i might be "dirac x"
+or +d x or +> x, which i thought before.
+
+this means that to add a new type of i in mather after i you
+have to make the complex pattern again and add a . to the end
+of every number that is just the new expansion.
+
+so i is the number which takes 1 to 1.2 always. if you always
+restrict your domain to integers you might also always find
+shortcuts to integration without forcefully include the algebra
+related to i calculus because the algebra related to +d might
+be already a new +d calculus for itself then,
+
+we could have, 
+
+2. (1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X)) +d ((1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X)))
+
+and this is also an informal number.
+
+this means that
+
+1. 521.213.213 + i(521.213.213) = 521.213 + iO(213) + i'O(521.213.213)
+
+is the past math which takes you to two so,
+
+so we have 
+
+1.2.5 + i(1.2.5) = 1.2 + 5i + 
+i'((1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X)) +d 
+((1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X))))
+
+so, 
+1.2.5 + i(1.2.5) - 
+i'((1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X)) +d 
+((1.2.5 + 1.2.5(+>X)) + i(1.2.5 + 1.2.5(+>X))))
+
+= 1.2 + 5i so what is i'*i then? i'' so that means
+
+i'1.2.5 + i'1.2.5(+>X) + i''1.2.5 + i''1.2.5(+>X) +d 
+i'1.2.5 + i'1.2.5(+>X) + i''1.2.5 + i''1.2.5(+>X)
+
+so we have,
+
+i'1.2.5 + i'1.2.5(+>X) +d i'1.2.5 + i'1.2.5(+>X) +
+i''1.2.5 + i''1.2.5(+>X) +d i''1.2.5 + i''1.2.5(+>X)
