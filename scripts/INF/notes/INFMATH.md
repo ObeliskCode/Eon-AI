@@ -745,3 +745,10 @@ then you have J() switches button 3 and button 2 then
 fgfgf J h fgffgf
 
 would then become for ex, 121223 = 121 J h 212!
+
+so if we had a number system like one where
+
+a = 0, b = 1, c = swap(a,b), d = swap(b,c), ...
+then this swap math is turing complete, assumably
+
+so, 
