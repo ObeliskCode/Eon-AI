@@ -701,3 +701,14 @@ so we have,
 
 i'1.2.5 + i'1.2.5(+>X) +d i'1.2.5 + i'1.2.5(+>X) +
 i''1.2.5 + i''1.2.5(+>X) +d i''1.2.5 + i''1.2.5(+>X)
+
+
+this is the integer format for a real numbered informal number
+it obeys all rules as x so
+
+i'1.2.5 + i'1.2.5(+>X) +d i'1.2.5 + i'1.2.5(+>X) +
+i''1.2.5 + i''1.2.5(+>X) +d i''1.2.5 + i''1.2.5(+>X)
+
+could equal only an irrational number but that
+means that you'd have to encode all 0s instead of
+leaving blank information to assume.
