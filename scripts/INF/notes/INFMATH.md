@@ -908,3 +908,56 @@ ia()+>5c() + ib()+>5c()
 ia()+>5c() + ib()+>5c()
 
 is the correct way to comput x.y.(+>5) ?
+
+a flag is a composite term for two termless functions a() and b() of any type
+which down to the term level mean the exact same thing. so if you say
+
+f() then i know you meant a() and b() so lets say then f() is now.
+a() and b() but they do they a different function each once flagged
+
+this is like say f(a()) = c() and f(b()) = d()
+but also f(a()) = c() and f(b()) = c()
+
+if it were a valid flag. an invalid flag is 
+missing all of its cardinality because it could
+always mean the same thing in deeper math
+
+so obviously cant then say make
+
+f() a() then mean a() b()
+
+happen because then b() could be before a()
+
+so if f() assigned a new term to a() then
+we have f() a() = b() a() because f()
+would signal that something
+
+at the end its complicated to say a() could mean
+two actions like write 0 and write 1 at the same time
+this wouldn't ever make sense.
+
+so a flag can only ever designate another wire
+to be placed before a button
+
+here is the system 
+button, action, wire, flag
+
+then a() b() mean are simply button hooked
+up to actions 
+1() and 2()
+then those actions have wires so
+a() -> 1() and b() -> 2()
+then, a flag says
+
+if f() could change a wire by
+adding an action to it only previously
+then f() could then morph wire g0: a() -> 1()
+to then mean g1: a() -> 2() -> 1()
+
+then we have two wires g0 and g1 connected by
+a flag as the same button so we have,
+f : g0: a() -> 1() , g1: a() -> 2() -> 1()
+
+which means consequently that an action originally
+intention always takes priority on its material state
+ 
