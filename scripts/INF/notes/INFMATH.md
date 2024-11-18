@@ -798,3 +798,33 @@ will x() be a() b() or c() ?
 seems x could be only a() or c()
 
 so abdacbc = 01010 as expected.
+
+possibly could this swap function describe this numeral?
+
+i'1.2.5 + i'1.2.5(+>X) +d i'1.2.5 + i'1.2.5(+>X) +
+i''1.2.5 + i''1.2.5(+>X) +d i''1.2.5 + i''1.2.5(+>X)
+
+so imagine we only have a() b() c() and d() for 1() 2() 3() 4()
+
+then how is this system a mapping to functional component mapping like this
+if we said any part of this moving system had any parts to it'd mean that
+discover d() or 4() would be the answer to the mystery.
+
+
+so then we live in the real world where actions are only buttons then,
+
+i' = ic()
+i'' = id()
+
+there are no more i than ic() and id()
+
+this is the same system except that it has some way of computing it
+
+iff, the order of operations literally moved themselves in order according
+to this system depending on which you did first so does that mean
+that already rewriting the system would've changed ic() and id(), no
+that only made sense if +d didn't already break up ic() and id()
+by being a replacement for your imagination of seperating ic() and id()
+because once you encounter +d you know something changed already due
+to a single action before hand so if i' is ic() then +d is an unkown
+expression like i that could only be discovered by a guess.
