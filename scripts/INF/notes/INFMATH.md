@@ -961,3 +961,45 @@ f : g0: a() -> 1() , g1: a() -> 2() -> 1()
 which means consequently that an action originally
 intention always takes priority on its material state
  
+
+b0 : f0 : w0 : a0[]
+so,
+b() : f() : w() : 1()
+
+because f()  could mean its oringal meaning
+of add the action 1() but w()
+could perform action 1()
+
+so you could push all 4 of these "buttons" and achieve
+the same result then how could swap do this then
+
+b0() : f0() : w0() : 1()
+b1() : f1() : w1() : 2()
+
+then simply calculating a system before the next is algebra
+if you made f3() a flag in your system and that meant
+f3 : g0: a() -> 1() , g1: a() -> 2() -> 1()
+
+this flag would have to be swappable with both
+
+f0() and f1() at some point meaning that required another wire to
+create f3() so how did you take two flags and composite their
+wires by using a buttons flag before another button
+
+that means using flags are unsafe because then adding a flag
+without closing will always be add computation before other
+computation
+
+so say we use f1() illegally then we have
+
+f1() b() b() and now we have 1() 2() 1() 1() 2()
+
+because then we need f1() b() b() f1() a()
+
+to mean, 1() 2() 1() 1() 2() 1()
+
+not, 
+
+1() 2() 1() 1() 2() 1() 1()
+
+if we said f1() b() b() a()
