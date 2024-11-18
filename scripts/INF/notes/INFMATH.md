@@ -1003,3 +1003,67 @@ not,
 1() 2() 1() 1() 2() 1() 1()
 
 if we said f1() b() b() a()
+
+so then we can build a tiny system using only
+the 4 systems said above in python that could 
+encode informal addition
+
+
+so if we had 4 sets we then have
+
+F for flags,
+B for buttons,
+W for wires, and
+A for actions
+
+then,
+
+B0() : F0() : W0 : A0
+B1() : F1() : W1 : A1
+
+where A0 is write 0 and A1 is write 1 then
+
+how do we make a new rule?
+
+F1() F0() B1 F0() F1()
+will give us, a new rule every time F is used
+
+so, this now gives us
+
+101 where now our rules are 
+
+B0() : F0() : W0 : A0
+B1() : F1()F0()F1() : W1,W0W1,W1W0W1 : A1,A0,A1
+
+then you have a system where 
+
+B1() is now 101 so
+
+B1() B1() is 101101 which is good
+
+then if a sequnece 1110 is supposed to mean +>2
+
+then how could 1110 + 1110 then mean 111 111 0
+
+but then how could
+
+11 100 0  + 111 000 000 0 then mean +>4 + +>8 which is
+
+then 11 111 111 111 110 0 which is an invalid set.
+
+you could think this system would work but it needs a modification
+
+and that means the action to do A1() by itself is gone,
+so how would you get it back then, by making memory for it
+using flags on wires themselves
+
+using a flag on a button makes the button forget its past rule
+because it keeps it and always does it first in a decsion matrix,
+using a flag on a wire means that then the wire you made
+could be connected to a button if a button is pressed after it
+that is newly defined so defining a wire to add to before pressing
+a button is the only way to save a new rule for writing sequences
+in front already 
+
+
+
