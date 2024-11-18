@@ -851,3 +851,60 @@ i'1.2.5 + i'1.2.5(+>X)
 + i'1.2.5 + i'1.2.5(+>X)
 
 is equal to 1.2(+>5). :D
+
+there are a few errors with plugging along with axiomatic patches
+
+the fact is 1.2.0 is equal to 1.2 the real number so if 
+
+1.2.1 could mean +d 1 then actually the whole point of the +d
+anywhere in this system is to change everything after the second dot
+
+so that means that the first two slots in this number system x.y.z
+will always be compatible with the real numbers so
+
+1.0.z * 1.2 = 1.2.z, the system then can be compromised into only
+portions which contain the .z then we have 
+
+ic()5 + ic()5(+>X) + id()5 + id()5(+>X) +d 
+ic()5 + ic()5(+>X) + id()5 + id()5(+>X)
+
+so whats the point? then , this is the best part!
+
+ic()+>5 + ic()+>5(+>X) + id()+>5 + id()+>5(+>X) +d 
+ic()+>5 + ic()+>5(+>X) + id()+>5 + id()+>5(+>X)
+
+the pattern should change and it does sommetimes by two expansions
+
+which means,
+        |              |         |        
+ic()+>5 + ic()+>5(+>X) + id()+>5 + id()+>5(+>X) +d 
+ic()+>5 + ic()+>5(+>X) + id()+>5 + id()+>5(+>X)
+
+ic()+>5 + id()+>5 +d ic()+>5(+>X) + id()+>5(+>X)
+ic()+>5 + id()+>5 +d ic()+>5(+>X) + id()+>5(+>X)
+
+then w have the true pattern of this system. through the wire system
+where c() and d() are wires instead of action or buttons.
+
+imagine taking a wire system like and putting it out in real life
+it is the point of c() and d() because they are analog counterpart to actions
+an action is made from wire to a button. every action has a wire to a button.
+this is the same thing as having a button that pushes an action
+imagine a button that was a fake of an action then c() and d() prove to me
+that algebra is self-referential enough to never not require combinatorical
+patterns as a humongous effort that is humanly achievable within saying order
+of everthing matters
+
+then the idea of this being a matrix isnt funny becase its composed of 4?
+
+a. ic()+>5 + id()+>5 +d 
+b. ic()+>5(+>X) + id()+>5(+>X)
+c. ic()+>5 + id()+>5 +d 
+d. ic()+>5(+>X) + id()+>5(+>X)
+
+then maybe 
+a()+>5 + ib()+>5 d()  ia()+>5 + ib()+>5 d()
+ia()+>5c() + ib()+>5c()
+ia()+>5c() + ib()+>5c()
+
+is the correct way to comput x.y.(+>5) ?
