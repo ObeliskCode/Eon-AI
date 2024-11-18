@@ -828,3 +828,26 @@ by being a replacement for your imagination of seperating ic() and id()
 because once you encounter +d you know something changed already due
 to a single action before hand so if i' is ic() then +d is an unkown
 expression like i that could only be discovered by a guess.
+
+so if ab d ac b c = 0 1 0 1 0 as expected.
+
+i'1.2.5 + i'1.2.5(+>X) + i''1.2.5 + i''1.2.5(+>X) +d 
+i'1.2.5 + i'1.2.5(+>X) + i''1.2.5 + i''1.2.5(+>X)
+
+then you have,
+
+a = i'1.2.5 + i'1.2.5(+>X)
+b = i''1.2.5 + i''1.2.5(+>X)
+c = i'1.2.5 + i'1.2.5(+>X)
+d = i''1.2.5 + i''1.2.5(+>X)
+
+yes, of course that means 
+
+i'1.2.5 + i'1.2.5(+>X) 
++ i''1.2.5 + i''1.2.5(+>X) 
++ i'1.2.5 + i'1.2.5(+>X) 
++ i'1.2.5 + i'1.2.5(+>X)
++ i''1.2.5 + i''1.2.5(+>X) 
++ i'1.2.5 + i'1.2.5(+>X)
+
+is equal to 1.2(+>5). :D
