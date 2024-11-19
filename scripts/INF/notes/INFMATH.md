@@ -1242,3 +1242,27 @@ also,
 (+>1 + +>1) * +>1 * +>1 /(+>1 + +>1) + (+>1 + +>1)  = +>1
 
 (+>2 + +>2) * +>1 * +>1 /(+>2 + +>2) + (+>2 + +>2)  = +>2
+
+a super blonde operation is one that has the incapacity to
+take a real numbered operation and digitize it to integers
+where those integers point by point are fractal like functional programming
+
+so imagine that a real number where x/1/3/1/.x/2/1/3
+
+is our result then a said function is each computational pipeline on the right
+
+so x/0.y/0 is a simple way to say x.y so x/1/0/1.y1/0/1 is NOTEQ x/0.y/0
+
+that then means x/1/0/1.y1/0/1 is EQ 1/x/1.1/y/1 in this case but that
+would mean every 0 would require its own integer
+
+x.y.z + w.e.r = (x.y+w.e).(z/z+r) in f0
+x.y.z + w.e.r = (x.y+w.e).(z+r/z) in f1
+
+so, 
+
+1/x/1.1/y/1.z + 1/w/1.1/e/1.r = (x.y+w.e).(z/z+r) in f0
+
+(x.y+w.e).(z/z+r) + (x.y+w.e).(z/z+r) = 2(x.y+w.e).(z / z+r / 2(z / z+r))
+
+= 2(x.y+w.e).(z / z+r / 2(z / z+r)) = 2(x.y+w.e).(z+r/z)
