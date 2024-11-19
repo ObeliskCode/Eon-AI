@@ -1101,3 +1101,41 @@ f1: , g0 -> 0 -> 1, g1 -> 0 would get computed second
 
 in a system where f0 is forward physics.
 and f1 is negative physics.
+
+regarding x.y.z numbers we have
+
+x.y.z + w.e.r (antecedent)
+x.y.z - w.e.r (subcedent)
+
+x.y.z * w.e.r (expositive)
+x.y.z / w.e.r (regressive)
+
+result where x.y.z + w.e.r = x.y.z.z.z.w.e.r.r.r
+but then you have x.y.z . z . z . w.e.r . r . r =
+
+and c() is .z then, let a() = x.y 
+and d() is .r then, let b() = w.e
+
+so, a() c() c() c() b() d() d() d()
+is the whole point of, doing the computation
+
+here we have the whole point there are three steps
+of computation to be measured for c() and d()
+because they are the third component of x.y.z
+but that means that c() is opening and closing after a()
+correct so that means that c() opens a function to generate
+.z and closes at the point of c()
+
+so,
+
+a() c() b() d() d() c() is valid and then we can say,
+b() c() a() d() c() d() is also valid to rules of algebra
+
+here we have a small amount of binary for,
+antecedent and subcedent operations because its property of
+commutativity would be reflexed instead
+
+a() d() b() c() d() c() and
+b() d() a() c() c() d()
+
+because then this would be w.e.r + x.y.z above.
