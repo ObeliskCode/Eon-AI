@@ -1065,5 +1065,24 @@ that is newly defined so defining a wire to add to before pressing
 a button is the only way to save a new rule for writing sequences
 in front already 
 
+now lets say we have a problem with flags the way they work,
+an analog to flags could be faces then there is a problem
 
+lets say we have 
+
+B0() : F0() : W0 : A0
+B1() : F1()F0()F1() : W1,W0W1,W1W0W1 : A1,A0,A1
+
+
+then why would we how could we stack wires differently?
+
+we have f: g0 -> 1, g1 -> 0 -> 1,
+
+then we have f: , g0 -> 1 -> 0, g1 -> 1,
+
+this is the problem is that flags and faces are different to each other
+
+this means that my hypothesis is we live in a flag universe
+where a faces universe would never support the action order
+in the universe done by its simulation being always sequential
 
