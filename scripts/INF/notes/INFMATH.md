@@ -1165,6 +1165,8 @@ that isn't correct then,
 
 so how does this clear up the mystery behind mult?
 
+let mult, * := regular integer mult after transform to integer
+
 so if 4/2 = (+>1 * +>1)/(+>1) = (+>1) then how does this work ?
 
 so if 8/4 = (+>1 * +>1 * +>1)/(+>1 * +>1) you take two of the
@@ -1215,6 +1217,8 @@ to addition meaning that if * worked like
 it did in informal numbers where numbers are
 mutliplied in the set like before then
 
+let mult, * := +>x * +>y = {all num in x,y multiplied}
+
 (+>1 + +>1) * +>1 / (+>1 + +>1) = +>1
 
  so then,
@@ -1222,3 +1226,11 @@ mutliplied in the set like before then
 (+>2 + +>2) * +>1 / (+>2 + +>2) = +>1
 
 which then gives us the rule for informal mult.
+
+so then,
+
+((+>1 + +>1) * +>1 / (+>1 + +>1)) * +>1 / (+>1 + +>1) = +>1
+
+so then
+
++>1 * +>1 / (+>1 + +>1) = +>1 in a formal way.
