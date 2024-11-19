@@ -1182,7 +1182,6 @@ so that means that for everything to work then
 
 +>1 = (+>1 * +>1)/(+>1)
 +>2 = (+>2 * +>2)/(+>2)
-+>1 = (+>1 * +>1)/(+>1)
 
 somehow multiplication here can only be
 the multiplication algorithm where
@@ -1190,7 +1189,6 @@ the multiplication algorithm where
 it just turns into an integer before multiplication
 every time, that means the multiplication algorithm
 correctly made is the only hard part about this system
-
 
 so does 4*4 work here then
 
@@ -1206,3 +1204,21 @@ so generally then,
 so multiplication would then require regular integer
 multiplication as most of the shortcut math for
 multiplication in the first case
+
+but then does ?
+
++>0 = +>0 * +>0 / +>0 = 1*1 / 1 = 1/1 = 1
+
+this just means eventually multiplication
+could be found to be algebraically different
+to addition meaning that if * worked like
+it did in informal numbers where numbers are
+mutliplied in the set like before then
+
+(+>1 + +>1) * +>1 / (+>1 + +>1) = +>1
+
+ so then,
+
+(+>2 + +>2) * +>1 / (+>2 + +>2) = +>1
+
+which then gives us the rule for informal mult.
