@@ -1086,3 +1086,18 @@ this means that my hypothesis is we live in a flag universe
 where a faces universe would never support the action order
 in the universe done by its simulation being always sequential
 
+i think faces are the way our physics works where
+
+f: , g0 -> 0 -> 1, g1 -> 0, is always facing actions
+and that means f: g0 -> 0, g1 -> 1 -> 0, gets computed
+before f: , g0 -> 0 -> 1, g1 -> 0, because if not
+thermodynamics wouldn't work in this system
+
+so then, 
+
+f0: g0 -> 0, g1 -> 1 -> 0 would get computed first
+
+f1: , g0 -> 0 -> 1, g1 -> 0 would get computed second
+
+in a system where f0 is forward physics.
+and f1 is negative physics.
