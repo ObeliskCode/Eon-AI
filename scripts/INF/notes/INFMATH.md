@@ -1154,8 +1154,55 @@ because if +> 2 / (+>5 + +>10)
 hypothesis: then division in informal numbers requires two
 denominators always so,
 
-
 so, that means,
 if 2/4 = (+>1)/(+>1 + +>1)
 
 would then = (+>1) consequently
+
+that isn't correct then,
+
+4/2 = (+>1 + +>1)/(+>1) = (+>1)
+
+so how does this clear up the mystery behind mult?
+
+so if 4/2 = (+>1 * +>1)/(+>1) = (+>1) then how does this work ?
+
+so if 8/4 = (+>1 * +>1 * +>1)/(+>1 * +>1) you take two of the
+same symbol off the top and bottom then? but that can be fixed
+by thinking of the point here
+
+if z+r/z = 8/4 = 2 and then z/z+r = 4/8 = 1/2 then how does 1/2
+work then? so if 4/8 = (+>1 * +>1)/(+>1 * +>1 * +>1)
+then 4/8 = (+>1)/(+>1 * +>1) = 2/4 so here is the shortcut!
+
+so 8/4 = (+>1 * +>1 * +>1)/(+>1 * +>1) 
+= (+>1 * +>1)/(+>1) then is the meaning of +>1
+
+so that means that for everything to work then
+
++>1 = (+>1 * +>1)/(+>1)
++>2 = (+>2 * +>2)/(+>2)
++>1 = (+>1 * +>1)/(+>1)
+
+somehow multiplication here can only be
+the multiplication algorithm where
+
+it just turns into an integer before multiplication
+every time, that means the multiplication algorithm
+correctly made is the only hard part about this system
+
+
+so does 4*4 work here then
+
+(+>1 + +>1)*(+>1 + +>1) = 16 = (4+>3) = 8(+>1) = 2*2*2(+>1)
+
+which means that multiplication is just the a
+shortcut for counting itself a number of times
+
+so generally then,
+
+(+>1 + +>1 + +>1)*(+>1 + +>1) = 12(+>1) = 3*2*2(+>1)
+
+so multiplication would then require regular integer
+multiplication as most of the shortcut math for
+multiplication in the first case
