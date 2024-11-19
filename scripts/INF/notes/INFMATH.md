@@ -1139,3 +1139,23 @@ a() d() b() c() d() c() and
 b() d() a() c() c() d()
 
 because then this would be w.e.r + x.y.z above.
+
+that means,
+
+x.y.z + w.e.r = (x.y+w.e).(z/z+r) in f0
+x.y.z + w.e.r = (x.y+w.e).(z+r/z) in f1
+
+in the similar valid experiment.
+
+why would z/z+r be the point of this ?
+
+because if +> 2 / (+>5 + +>10)
+
+hypothesis: then division in informal numbers requires two
+denominators always so,
+
+
+so, that means,
+if 2/4 = (+>1)/(+>1 + +>1)
+
+would then = (+>1) consequently
