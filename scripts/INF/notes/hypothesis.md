@@ -1035,3 +1035,21 @@ also,
 (+>1 + +>1) * +>1 * +>1 /(+>1 + +>1) + (+>1 + +>1)  = +>1
 
 (+>2 + +>2) * +>1 * +>1 /(+>2 + +>2) + (+>2 + +>2)  = +>2
+
+# Possible Solutions
+
+the end of this mess of axioms could be that
+
+(+>0) * 1.25 = 1.25.(+>0) = 1.25
+
+the whole point is that then (+>0)
+
+could always mean 1 so then why not
+
+sub in (+>0) everywhere?
+
+1.25 + 2.50 = (+>0 * 1.25) + (+>0 * 2.50) = 3.75
+
+(+>0 * 1.25) + (+>1 * 1.25) = 2.50.(+>0 + +>1/+>1)
+
+then how does this work?
