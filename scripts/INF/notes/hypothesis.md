@@ -1053,3 +1053,19 @@ sub in (+>0) everywhere?
 (+>0 * 1.25) + (+>1 * 1.25) = 2.50.(+>0 + +>1/+>1)
 
 then how does this work?
+
+# New Theoretical Direction
+
+Where do informal numbers mean anything anywhere in math?
+
+The theory I have hypothetically is half-sound,
+where in any of these axioms I can find conclusions
+somehow out of order.
+
+My best guess is that informal numbers have something
+to do with riemann sums, other than that informal division
+would obey the same algebra group as rational numbers,
+is my other guess. the reason for this group is so
+interesting is still puzzling, because it could
+relate to nothing but an application like cellular automata
+which is completely it's own study of it's own.
