@@ -204,3 +204,21 @@ H^2(10 and 15 and 8) is 39?
 but we know that iff H(f(x)) is valid,
 then H^2(f(x)) is valid 
 
+Informal Abstract Algebra:
+
+the informal number set is not equivalent to the integers.
+
+if we imagine group relations then we have a function for
+generating subsets of the entire set denoted <a> to be 
+a generated set where a is an element of X (informal numbers).
+
+Calculate: <+>0>
+
+we have that <+>0> = {1(+>0),2(+>0),3(+>0)...}
+
+which has an equivalence relation to <1>
+
+so can we assume <+>x> =: <x+1>, where =: means equiv. rel. ?
+
+yes, because <+>1> =: <2> and <+>2> =: <3>
+
