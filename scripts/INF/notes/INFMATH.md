@@ -258,6 +258,11 @@ because 6(+>12) is valid and 6(+>13) isn't valid,
 so if we add together these "pross" numbers (+>x)
 and the resultant is an informal number (all sets with negative integer parity)
 
-then, the minimum amount of additions needed to makes pross addition valid
+then, the minimum amount of additions needed to make pross addition valid
 would be lowered by the pross number added with the smallest scalar needed
 to be valid.
+
+if +>x is odd then subtract 1 then halve the integer and thats the scalar
+for the first full informal number made with +>x
+
+if +>x is even subtract by two then halve the number.
