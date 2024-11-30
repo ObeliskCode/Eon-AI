@@ -248,3 +248,16 @@ the pattern expanded up to 30
 0-10: 000 11 22 333 4
 11-20: 55 66 77 88 99 
 21-30: 10 10 11 11 12 12 13 13 14 14
+
+possible corollary:
+
+adding (+>12) + 5(+>13) is valid
+
+because 6(+>12) is valid and 7(+>13) isn't valid,
+
+so if we add together these "pross" numbers (+>x)
+and the resultant is an informal number (all sets with negative integer parity)
+
+then, the minimum amount of additions needed to makes pross addition valid
+would be lowered by the pross number added with the smallest scalar needed
+to be valid.
