@@ -220,5 +220,25 @@ which has an equivalence relation to <1>
 
 so can we assume <+>x> =: <x+1>, where =: means equiv. rel. ?
 
-yes, because <+>1> =: <2> and <+>2> =: <3>
+since <+>1> =: <2> and <+>2> =: <3> ?
 
+no, a trivial counter-example is 
+
+2(+>100) = [0, 1, 2, 99, 100, 101, 198, 199, 200, 201, 202]
+
+lets examine <+>3>.
+
+<+>3> - {+>3} =: <4> - {4}
+
+so if we had a pattern starting at +>0,
+then the number of elements subtracted for
+a homomorphism to whole numbers then it'd
+be 000 11 222 333 4 55 66 77 8
+
+where 8 is the number of subtracted items from <+>17>
+
+then we have that for example
+
+<+10> - {+>10, ... , 4(+>10)} = <11> - {11, ... , 4(11)}
+
+where we must subtract the first 4 elements of <+>10>
