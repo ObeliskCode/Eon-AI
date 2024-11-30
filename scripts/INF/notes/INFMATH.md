@@ -261,8 +261,20 @@ and the resultant is an informal number (all sets with negative integer parity)
 then, the minimum amount of additions needed to make pross addition valid
 would be lowered by the pross number added with the smallest scalar needed
 to be valid.
-
+  
 if +>x is odd then subtract 1 then halve the integer and thats the scalar
 for the first full informal number made with +>x
 
 if +>x is even subtract by two then halve the number.
+
+corollary (subtraction):
+
+subtraction must be analogous to integer subtraction
+since,
+
+1. scalars wouldn't work (then +>x - +>x != 0)
+2. subtracting invalid sets together would be overly trivial
+
+we have that +>1 = +>2 - +>0
+
+hyp: maybe then +>3 = +>4 - +>0 ?
