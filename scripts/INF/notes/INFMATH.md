@@ -233,7 +233,7 @@ lets examine <+>3>.
 so if we had a pattern starting at +>0,
 then the number of elements subtracted for
 a homomorphism to whole numbers then it'd
-be 000 11 222 333 4 55 66 77 8
+be 000 11 22 333 4 55 66 77 8
 
 where 8 is the number of subtracted items from <+>17>
 
@@ -242,3 +242,9 @@ then we have that for example
 <+10> - {+>10, ... , 4(+>10)} = <11> - {11, ... , 4(11)}
 
 where we must subtract the first 4 elements of <+>10>
+
+the pattern expanded up to 30
+
+0-10: 000 11 22 333 4
+11-20: 55 66 77 88 99 
+21-30: 10 10 11 11 12 12 13 13 14 14
