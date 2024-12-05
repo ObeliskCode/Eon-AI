@@ -298,3 +298,20 @@ in a purely mathematical way
 we need to map the function f to send complete subtractions
 to incomplete ones!
 
+(+>10 + +>15 + +>5) + +>2 = +[]35
+
+since, (+>10 + +>15 + +>5) + +>2 = +[]32 + +>2
+
+so, +[]35 - +>5 = x and
+
+x = (+>10 + +>15 + +>2)
+
+x - +>2 = (+>10 + +>15)
+
+so x = +[]29 since,
+
++>2 + +>10 + +>15 = +[]29
+
+then, x - +>2 - +>2 = +[]23 ?
+
+such that, +>10 + +>15 - +>2 = +[] 23 ?
