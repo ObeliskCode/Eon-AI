@@ -295,6 +295,6 @@ f: +>y -> +>x
 
 in a purely mathematical way 
 
-we need to map the function f to send coplete subtractions
+we need to map the function f to send complete subtractions
 to incomplete ones!
 
