@@ -1069,3 +1069,22 @@ is my other guess. the reason for this group is so
 interesting is still puzzling, because it could
 relate to nothing but an application like cellular automata
 which is completely it's own study of it's own.
+
+
+
+## theory for subtraction
+
++>x - +>y = { all numbers in both +>x subtracted together }
+
+such that, +>10 + +>15 - +>2 = +[]23
+
+assume for sake of contradiction that if a linear combination 
+were valid any number of them being negative is a vailid
+set down to 0 ?
+
+Prove.
+
+the result in atecedence comes from developing a righter solution
+
+on every wrong turn to a decsion matrix as proof that the kernel can reach k> 1 intervals per CPU cycle
+in a measure u = 0.130935 cm^2 per semi-conductor width of 9nm CPU architecture
