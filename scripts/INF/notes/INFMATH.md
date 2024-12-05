@@ -278,3 +278,23 @@ since,
 we have that +>1 = +>2 - +>0
 
 hyp: maybe then +>3 = +>4 - +>0 ?
+
+so,
+
++>10 + +>15 + +>5 is complete
+
++>10 + +>15 is incomplete
+
++>10 + +>15 + +>5 - +>z = +>y
+
++>10 + +>15 - +>z = +>x
+
+how do we map relations
+
+f: +>y -> +>x
+
+in a purely mathematical way 
+
+we need to map the function f to send coplete subtractions
+to incomplete ones!
+
