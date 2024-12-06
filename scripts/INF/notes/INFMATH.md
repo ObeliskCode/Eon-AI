@@ -335,3 +335,13 @@ to the domain then,
 but then, (+>10 + +>15) - +>2 is restricted to the domain of +[]23
 so that means that subtraction moves the maximum a number can be
 held within the set down to 0!
+
+let o be a new subtraction type operator.
+
+if we have +>10 + +>15 - +>2 = +[]23
+
+then,
+
++[]23 o +>2 = +>10 + +>15
+
+would o represent the analog of - (subtraction)
