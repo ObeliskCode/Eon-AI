@@ -315,3 +315,23 @@ so x = +[]29 since,
 then, x - +>2 - +>2 = +[]23 ?
 
 such that, +>10 + +>15 - +>2 = +[] 23 ?
+
+The subtraction algorithmn may require a very weird rule!
+
+in order to subtract 
+
+(+>10 + +>15) - +>2 we have to say that we are only
+doing this in one direction
+
+that means that the subtraction algorithm means you
+have to only subtract every element of one set
+with all the elements of the other set.
+
+so if we do this subtraction then requiring a restriction
+to the domain then,
+
+(+>10 + +>15) could have had a domain of +[]26
+
+but then, (+>10 + +>15) - +>2 is restricted to the domain of +[]23
+so that means that subtraction moves the maximum a number can be
+held within the set down to 0!
