@@ -442,3 +442,12 @@ consequently, since,
 {0} o^-1 +>9 o^-1 +[]9 already means 1/10.
 
 Multiplication hypothesis: multiplication would require oo^-1 or o^-1o in some way together.
+
+multiplying incomplete sets could mean theoretically that,
+
++[]5 * +[]4 
+
+is equal to both,
+
+1. +[]4  o +[]4  o +[]4  o +[]4  o +[]4 
+2. +[]5  o +[]5  o +[]5  o +[]5
