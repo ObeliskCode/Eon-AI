@@ -2,10 +2,6 @@
 
 +>x = {+/- x, +/- (x-1), +/- (x+1), 0}
 
-+>x + +>y = +>x - +>y = +y - +>x (1.)
-
-1. both informal addition and informal subtraction are commutative
-
 +>x + +>y = {all numbers in both +>x added together} = N
 
 2. the set N can return either 5,7,...,19,21,...,31,33 numbers
@@ -25,28 +21,9 @@ a set only contains unique numbers!
 
 +> x + >y = {[{all num in +>x}] + [{all num in +>y}]}
 
-## Informal Addition and Multiplication
+commutativity of addition means add from left to right and right to left above.
 
-Solve. +>1 \* +>2
-
-to solve find all unique numbers in [-2,-1,0,1,2] \* [-3,-2,-1,0,1,2,3]
-
-=> {-6,-4,-3,-2,-1,0,1,2,3,4,6}
-note: only the upper triangle of the matrix needs to be calculated
-
-Assume for sake of contradiction division were not possible in the informal number
-set
-
-to be considered an informal number it'd require for the addition after a division
-to be,
-
-contained within the set O of informal numbers
-
-so, +>1 + +>1 = 2+>1 NOTEQ +>2
-
-thus, in order to compute 2+>x it'd require H(+>x + +>x) where H relates informal numbers to the integers
-
-the calculation of the set +>x + +>x is trivial and linear but what computational requirements does H take?
+## Informal Addition
 
 +>2 + +>2 = {-6,...,6} = +>1 + +>3
 +>4 + +>4 = {-10,...,10} = +>3 + +>5 = +>2 + +>6 NOTEQ +>1 + +>7
@@ -133,12 +110,6 @@ O(1) integer addition with O(1) matrix addition
 4. H(+>1 + +>2) + H(+>1 + +>2) = 5 + 5 = 10
 
 
-let a 1x2 matrix U be a linear combination up to +>1
-each slot will be reperesented by a 2-bit int 0,1,2,3
-=> numerics [0,9] are supported by 4 bits allocated by U
-4 bits allocated using binary addition allows numerics [0,15]
-
-
 result: 
 iff H(+>x + +>x) != NIL then, 
 H(+>x + +>x) = (x+1) + (x+1), since
@@ -155,7 +126,10 @@ to add up to the whole number x
 
 my theory is that this is how to "quantify" addition
 
-any whole number integer is re presentable by a finite amount of arrays of informal numbers which allows for matrix addition to represent integer addition, every time a register adds up amounts of +>(x) in 64 bits it allows for a computation of H(f(x)) to calculate an infinite number with decentralized computation that means a decentralized computation could add up an indefinite number
+any whole number integer is re presentable by a finite amount of arrays of informal numbers which allows
+for matrix addition to represent integer addition, every time a register adds up amounts of +>(x) in 64 bits
+it allows for a computation of H(f(x)) to calculate an infinite number with decentralized computation that 
+means a decentralized computation could add up an indefinite number
 
 3SAT methodology:
 
