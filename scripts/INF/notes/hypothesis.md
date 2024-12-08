@@ -1,15 +1,3 @@
-an N-D Informal Matrix is one that grows combinatorically massively
-as it gets bigger and one that will always support O(1) matrix addition.
-
-
-(1.)
-1-D matrix/2-D matrix calculations could in theory,
-be faster than binary integer calculations past a very large number
-
-
-Hypothesis: inf. mult. isn't more space effic. 
-than regular binary addition to infinity?
-
 ## Reduction Proof
 
 = | stands for Reduction.
@@ -29,11 +17,7 @@ than regular binary addition to infinity?
 
 note 5-5 = 0 = 4+5+6-4-5-6 = 0
 
-H([[2,3],[3,2]](+\*)) = 576
-
-lets examine[[2,3],[3,2]](+\*)
-
-## Informal Set Subtraction and Simplification
+## Informal Set Simplification
 
 if an nxn(+\*) matrix be allocated a numeric in another matrix,
 then an nxn(nxn(+\*)) matrrix would still aloow for ordinary matrix operations
@@ -44,25 +28,6 @@ ergo, this could lead to faster matrix multiplication algorithms
 for most non-trivial computations
 
 so informal number theory suggest matrices contain matrices within matrices
-
-informal subtraction (trivial):
-
-+>4 - +>2 = {-5,5} - {-3,3} = {-5,-4,0,4,5}
-
-obviously using integer subtraction within informal calc. is commutative
-same thing for division and subtraction, but informal subtraction
-is not integer subtraction! (set closure)
-
-thus,
-
-+>0 - +>0 = {0}
-
-Simplication(Informal Division) Proofs
-
-Q: we said that +>4 meant a solution which means choice for elements in the set
-
-we can quantify it into one number then do some operation probably just
-multiplication again to the whole set as one operation to the whole set...
 
 this means division is about multiplication by selection sorting H or maybe h
 another conjector function similar to H in the same field of conjector funcs?
@@ -75,11 +40,19 @@ to lower informal matrix spaces but not to integers!
 so if simplification (/) were a real operation in informal numbers regardless
 it'd have to send itself as a function from ->n +>x= -> ->1 +>x (n dim to 1 dim)
 
-the example matrix multiplication is the first order of informal (simplification)
-
 INFORMAL MATRIX SIMPLIFICATION ALGORITHM IN 1D:
 ------------[b1,b2,b3,b4,b5]
 [a1, a2, a3, a4]------------
+
+algorithm : nxm x mxn = mxm matrix ?
+
+                : so nxm x nxm = nxn matrix
+
+                so 1x2 x 1x2 = 1x1 matrix
+
+                so 2x4 x 1x3 = 2x1
+
+matrix defined orthogonally
 
 1D informal matrix simpl requires stacking matrices like this.
 
@@ -122,75 +95,6 @@ conjector limit hypothesis:
 H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
 then, H^C(+>x + +>y) = (x+1) + (y+1) + 2(C)
 
-so, assume conjector lim hyp is valid
-idea: 
-S(x)dx = (x^2/2) + C
-why not,
-S(x)dx = (x^2/2) + H(C)?
-
-simple proof, perturbing a function to infinity
-could mean that C could be infinity or
-rather be an element of any number system
-
-does this mean then that possibly,
-
-T(C) is a function that sends to an inf num,
-
-S(x)dx = (x^2/2) + H^inf(T(C)) ?
-so,
-S(x)dx = (x^2/2) + C + |T(C)|(inf) ?
-
-R = |T(C)|(inf) = w(inf)
-then,
-S{x}dx^2 = S{ (x^2/2) + C + w(inf) }dx
-= S{ (x^2/2) + C }dx + xw(inf)
-
-integral hypothesis:
-suppose every time you integrate you get a 
-multiplicative infinity that expands the scope
-of infinity for every calculation done up to
-a limit to infinity
-
-assume C is an irrational number such as pi,
-infinitely many digits, then,
-
-|T(C)| consequently should equal inf
-so, |T(C)| = inf  iff  C is irrational
-
-thus,
-in that case
-
-S(x)dx = (x^2/2) + C + (inf)^2
-
-so, every amount of digit needed to represent
-C amounts to a function with a lim to inf
-
-lets say C = pi then, 
-S(x)dx = (x^2/2) + pi + (inf)^2
-
-this theory suggests, H^inf(T(pi)) = x + inf^2
-where x is a real number what is T?
-
-observation:
-1. |(+>(x+1) * +>(x+1))| |=| |(+>x / +>x)
-
-since,
-1. +>2 * +>2 = {-9,-6,-4,-3,-2,-1,0,1,2,3,4,6,9}
-2. +>1 / +>1 = {-2,-1,0,1,2, 0/-2, 0/-1 , 0/1 , 0/2 , -2/0 , -1/0 , 1/0, 2/0}
-
-both sets have a cardinality of 13 so could
-for ex, 1/0 be two values
-
-the result R = |T(C)|(inf) or min|T(C)|(inf)
-seems to make little sense except if array x is an el. of X (INF numbers)
-is an infinite array in linear algebra because H^inf seems like something
-that could be used somewhere completely specific and that to my opinion is
-in fact having a number system which has a definite number after 1.
-because 0 = {0} is the zero el. and +>0 =  {-1,0,1} is the unit element
-correction: +>0 =  {-1,0,1} is not the unit element it is the first element
-H(+>0) may send to 1
-
-
 Corollary:
 H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
 then, H^C(+>x + +>y) = (x+1) + (y+1) + 2(C)
@@ -205,22 +109,6 @@ so is it possible that we can enemurate amount of factors
 for 12 this way some how then ?
 
 # Completely Unproven Theory
-
-theory,
-
-mystery of how symbols labeled x/0 could have parity with inf. mult. |=|?
-
-d/ix(x) = i + d/dx(x)/S(x)dx
-
-(x+1)(y+1)/0 = d/ix S(multiply[1,k->inf]d^k/ix(x) * d^k/ix(y))
-
-where d/ix S = i + S(x)dx/d/dx(x)
-
-so (x+1)/0 = ?
-
-it is possible this function could be telegraphic?, divergent and converges at the same time?
-
-could that be because i could possibly only ever have a field of integers if we can modify d/ix ?
 
 a complex function would be interesting if its imaginary field were restricted to integers
 because this alone could be outpaced by the monotic function at every step k for some k->inf somewhere?
@@ -1069,18 +957,6 @@ is my other guess. the reason for this group is so
 interesting is still puzzling, because it could
 relate to nothing but an application like cellular automata
 which is completely it's own study of it's own.
-
-
-
-## theory for subtraction
-
-+>x - +>y = { all numbers in both +>x subtracted together }
-
-such that, +>10 + +>15 - +>2 = +[]23
-
-assume for sake of contradiction that if a linear combination 
-were valid any number of them being negative is a vailid
-set down to 0 ?
 
 Prove.
 

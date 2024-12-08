@@ -217,7 +217,7 @@ possible corollary:
 
 adding (+>12) + 5(+>13) is valid
 
-because 6(+>12) is valid and 6(+>13) isn't valid,
+because 6(+>12) is valid and 5(+>13) isn't valid,
 
 so if we add together these "pross" numbers (+>x)
 and the resultant is an informal number (all sets with negative integer parity)
