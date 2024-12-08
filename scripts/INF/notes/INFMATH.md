@@ -93,12 +93,6 @@ H([->102,+>102]) = H(9(+>9) + +>7 + +>3) = 102
 
 ## Informal Analysis
 
-Noel's Inequality:
-if x >= 1 and y >= 2
-(+>x)^y will never return a continuous set of integers
-
-an important deduction to be made first is,
-if we have two 1-D informal M and N matrices then
 does H(M) + H(N) = H(M+N)
 
 does the decomposition of integers addition relate to,
