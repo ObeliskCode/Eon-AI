@@ -103,7 +103,6 @@ O(1) integer addition with O(1) matrix addition
 3. H(2+>1 + 2+>2) = 10
 4. H(+>1 + +>2) + H(+>1 + +>2) = 5 + 5 = 10
 
-
 result: 
 iff H(+>x + +>x) != NIL then, 
 H(+>x + +>x) = (x+1) + (x+1), since
@@ -254,12 +253,6 @@ so,
 
 +>10 + +>15 - +>z = +>x
 
-how do we map relations
-
-f: +>y -> +>x
-
-in a purely mathematical way 
-
 we need to map the function f to send complete subtractions
 to incomplete ones!
 
@@ -312,7 +305,7 @@ then,
 would o represent the analog of - (subtraction)
 
 corollary: assume for sake of contradiction that if a linear combination 
-were valid any number of them being negative is a vailid
+were valid any number of them being negative is a valid
 set down to 0 
 
 how could a full set become an incomplete set after undoing a subtraction.
