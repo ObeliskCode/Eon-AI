@@ -25,9 +25,6 @@ a set only contains unique numbers!
 
 +> x + >y = {[{all num in +>x}] + [{all num in +>y}]}
 
-+>x + +>y = +>x - +>y = +>y - +>x
-+> commutative subtraction
-
 ## Informal Addition and Multiplication
 
 Solve. +>1 \* +>2
