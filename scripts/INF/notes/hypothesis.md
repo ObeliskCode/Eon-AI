@@ -1,13 +1,9 @@
-## Reduction Proof
+## Reductive Algebra Group
 
 = | stands for Reduction.
 | = | stands for Irreducible Reduction
 
-## Long Handed Subtraction example
-
 100 - 50 |=| x |=| 0 =| x + 50 =| 100 |=| x - 50 =| 50
-
-## Reductive Algebra Group
 
 1. x |=| x
 
@@ -15,81 +11,9 @@
 
 3. 1/0 |=| 0
 
-note 5-5 = 0 = 4+5+6-4-5-6 = 0
-
-## Informal Set Simplification
-
-if an nxn(+\*) matrix be allocated a numeric in another matrix,
-then an nxn(nxn(+\*)) matrrix would still aloow for ordinary matrix operations
-on top of the existing thinner matrix which fits perfectly as subset speed for
-found numerics which minimize the computational bound of H to O(1)
-
-ergo, this could lead to faster matrix multiplication algorithms
-for most non-trivial computations
-
-so informal number theory suggest matrices contain matrices within matrices
-
-this means division is about multiplication by selection sorting H or maybe h
-another conjector function similar to H in the same field of conjector funcs?
-
-so, is it the func H or h which relates Simplification?
-
-u suggest that h is the new function which relates higher dim informal matrices
-to lower informal matrix spaces but not to integers!
-
-so if simplification (/) were a real operation in informal numbers regardless
-it'd have to send itself as a function from ->n +>x= -> ->1 +>x (n dim to 1 dim)
-
-INFORMAL MATRIX SIMPLIFICATION ALGORITHM IN 1D:
-------------[b1,b2,b3,b4,b5]
-[a1, a2, a3, a4]------------
-
-algorithm : nxm x mxn = mxm matrix ?
-
-                : so nxm x nxm = nxn matrix
-
-                so 1x2 x 1x2 = 1x1 matrix
-
-                so 2x4 x 1x3 = 2x1
-
-matrix defined orthogonally
-
-1D informal matrix simpl requires stacking matrices like this.
-
-also, note:
-
 1. x/0 |=| y |=| 0 |=| 0/x =| y |=| x*0 =| 0 ?
 
-2. there are three simpl functions, (/-), (/+), (/\*)
-
-calculating (/+) is the easiest one to calc
-
-there are 6 2d axes to manage in this system in total
-
-(-,/), (+,/), (_,/), (_,+), (-,+), (-,\*)
-
-4-D -> 6-D extension:
-
-+, -, \*, / are all formally defined operations in the informal number system
-
-[+ := set add.,- := set subt.,* := set mult.,/ := simpl.]
-
-so, (-,/), (+,/), (_,/), (_,+), (-,+), (-,_)
-= (+,-,_),(+,-,/),(+,_,/),(-,_,/) => 4-D
-
-so for 6-D we have
-
-[1]:[(+,-,*),(+,-,/)]
-[2]:[(+,-,*),(+,*,/)]
-[3]:[(+,-,*),(-,*,/)]
-[4]:[(+,-,/),(+,*,/)]
-[5]:[(+,-,/),(-,*,/)]
-[6]:[(+,*,/),(-,*,/)]
-
-where for example we have the operator h then,
-
-(+,-,\*) h (+,-,/) |=| (x,y,z) ?
-
+# Completely Unproven Theory
 
 conjector limit hypothesis:
 H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
@@ -107,8 +31,6 @@ then,
 12 + n(inf) = 6*2 + n(inf)
 so is it possible that we can enemurate amount of factors
 for 12 this way some how then ?
-
-# Completely Unproven Theory
 
 a complex function would be interesting if its imaginary field were restricted to integers
 because this alone could be outpaced by the monotic function at every step k for some k->inf somewhere?
