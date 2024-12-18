@@ -330,6 +330,8 @@ o stands for regency, another subtractive operator
 the solution to regency is finding incomplete linear combinations of any
 kind that could be completed by adding the operated number to the ilc.
 
+(+>10 + +>15) - +>2 o +>2 = (+>10 + +>15)
+
 undoing subtraction could mean saving integer space by letting
 the maximum of incomplete sets to be used as reserve calculations
 previously done. why would taking a single degree of of doing
