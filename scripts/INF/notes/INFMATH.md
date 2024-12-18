@@ -168,6 +168,22 @@ H^2(10 and 15 and 8) is 39?
 but we know that iff H(f(x)) is valid,
 then H^2(f(x)) is valid 
 
+H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
+then, H^C(+>x + +>y) = (x+1) + (y+1) + 2(C)
+
+Corollary:
+H^inf(+>x + +>y) = (x+1) + (y+1) + 2(inf)
+then, H^C(+>x + +>y) = (x+1) + (y+1) + 2(C)
+
+if H^inf(+>x + ...) then (x0+1) + ... + n(inf)
+then it is possible that then we have,
+
+for ex (x0+1) + ... = 12
+then,
+12 + n(inf) = 6*2 + n(inf)
+so is it possible that we can enemurate amount of factors
+for 12 this way some how then ?
+
 Informal Abstract Algebra:
 
 the informal number set is not equivalent to the integers.
@@ -252,9 +268,6 @@ so,
 +>10 + +>15 + +>5 - +>z = +>y
 
 +>10 + +>15 - +>z = +>x
-
-we need to map the function f to send complete subtractions
-to incomplete ones!
 
 (+>10 + +>15 + +>5) + +>2 = +[]35
 
@@ -409,3 +422,20 @@ is equal to both,
 
 1. +[]4  o +[]4  o +[]4  o +[]4  o +[]4 
 2. +[]5  o +[]5  o +[]5  o +[]5
+
+corollary: assume for sake of contradiction that if a linear combination 
+were valid any number of them being negative is a valid
+set down to 0 
+
+subtraction can complete ilc
+proof.
+
+if +[]20 - +[]20 = 0
+
+then, - +[]20 should be complete then?
+
+then, an ilc subtracted should complete
+an ilc since,
+
+subtracting further from a negative ilc
+also would complete it?
