@@ -336,7 +336,10 @@ previously done. why would taking a single degree of of doing
 calculations matter if this operator would then only work on complete 
 sets denoted +[]x then.
 
-big question. what would o +>x be by itself?
+what would then, the sequence, x o +>n mean if n -> inf
+assuming x is complete ?
+
+what would o +>x be by itself?
 
 so theoretically o +[]26 = (+>10 + +>15).
 
@@ -439,3 +442,11 @@ an ilc since,
 
 subtracting further from a negative ilc
 also would complete it?
+
+o and o^-1 properties:
+
+1. a o b o^-1 b = a
+2. a o^-1 b o b = c o b
+
+where, c = a o^-1 b , is an incomplete set if a is complete
+
