@@ -20,25 +20,14 @@ def calculator():
     print(f"+>{start_x} + +>{start_y} = {sorted(final_result)}")
 
     while True:
-        inp = input("Enter +>z (type -x to multiply) (q to quit): ")
+        inp = input("Enter +>z (type -x to subtract) (q to quit): ")
         if inp == 'q':
             break
         z = int(inp)
         if z < 0:
             mult_scalar = -z
-            inp = input(f"Enter the integer scalar for +>{mult_scalar}: ")
-            scalar = int(inp)
-            ## do scalar math.
-            if scalar == 1:
-                final_result = infn_mult_append(final_result, mult_scalar)
-            elif scalar > 1:
-                compound = infn_add(mult_scalar, mult_scalar)
-                for i in range(scalar):
-                    if i < 2:
-                        continue
-                    compound = infn_append(compound,mult_scalar)
-                final_result = infn_mult_extend(final_result, compound)
-            print(f"... x ({scalar})+>{z} = {sorted(final_result)}")
+            final_result = infn_subt_append(final_result, mult_scalar)
+            print(f"... - +>{-z} = {sorted(final_result)}")
             continue
         final_result = infn_append(final_result, z)
         print(f"... + +>{z} = {sorted(final_result)}")
