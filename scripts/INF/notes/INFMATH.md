@@ -353,71 +353,9 @@ so if o +[]inf = +>inf, then why
 
 not inf -1, inf, inf + 1 ?
 
-let o be an operator such that there is no infinity
-between spaces in integers that take exactly no space in between one
-space after and before a . that would mean that . would insuniate that . means all
-inf, inf -1 , and inf + 1
-
-ok so +>0 o +>inf o +>2 + +>1 could equal 1.5 ? in some system.
-
-this would suggest we use some kind of 10-max-char system [0-9]
-
-what about 1-max-char system [0] where
-
-a number could be 000.0000 for 3 and then 4 reserved spaces for characters ?
-
-if 1.1.1 meant something it'd only be because 5.5.5 meants something to it, logically.
-
-so 1.1.5 + 1.1.5 = 2.3.0 in some other math system.
-
-could then +>0 o +>inf o +>0 o +>inf o +>0 = 1.1.1 in some representation?
-
-the sliding math makes more sense in the way that a domain expanding would reserve
-a new end to a new start at every pair where a single digit is multiplying
-a domain expansions such as 5 x 10^3 = 5000
-but the digit 5 at 5431 still also means 5000
-
-you have that the regency operator could be a theoretical multi-plexor for higher
-maximums without breaks in continuity then we have that you would then count numbers
-in reserve space expansion ?
-
-so, {0} o +>9 o +>3 + +>4 o +>89 o +>4 +>1
-
-could represent 79.
-
-what happens below a dot. but also what happens before regency? then what is o^-1 as
-an operator? because anything below a dot would then be modeled by o^-1 here.
-
-lets say that {0} o^-1 +>9 o^-1 +>1 is equiv to .2 
-
-then we could have {0} o^-1 C(0) o^-1 +>x and {0} o C(0) o +>x
-
-and that could give us 1.2 for example
-
-we take inv regency and argue that the operator o^1 is the only analog to create an
-algebraic structure that would be able to define division as a pragmatic subtraction.
-when dividing it is taking as note that divided numbers are supposed to be more
-subtracted arithmetic.
-
 if regency can undo a subtraction which means that regency is incomplete addition then
 how could its inverse mean incomplete subtraction. the obvious assumptions is valid.
 o^-1 could take only complete sets to incomplete sets witha restricted domain like before.
-
-so, +[]29 o^-1 +>2 = (+>10 + +>15) aswell.
-
-then we could then have +>x / +>y
-
-if we said this was 10/5 ?
-
-we could say this is equiv to {0} o +>9 o +[]9 / {0} o +>9 o +[]4
-
-then we'd have {0} o +>9 o +[]9 o^-1 {0} o +>9 o +[]4
-
-consequently, since,
-
-{0} o^-1 +>9 o^-1 +[]9 already means 1/10.
-
-Multiplication hypothesis: multiplication would require oo^-1 or o^-1o in some way together.
 
 multiplying incomplete sets could mean theoretically that,
 
