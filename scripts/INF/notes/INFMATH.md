@@ -383,10 +383,16 @@ an ilc since,
 subtracting further from a negative ilc
 also would complete it?
 
-o and o^-1 properties:
+o x - x = 0
+o^-1 x + x = 0
 
-1. a o b o^-1 b = a
-2. a o^-1 b o b = c o b
+o^-1 is more the analog to o
+more than it is the functional inverse
+because then that would be - for o & + for o^-1
 
-where, c = a o^-1 b , is an incomplete set if a is complete
+o x o^-1 x = 0
+o^-1 x o x = 0
+
+so, i'm assuming that plausibly o and o^-1 cancel each other out.
+
 
