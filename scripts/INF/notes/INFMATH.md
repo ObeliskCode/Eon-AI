@@ -353,6 +353,49 @@ so if o +[]inf = +>inf, then why
 
 not inf -1, inf, inf + 1 ?
 
+defense: inf + 1 being silly means maybe inf - 1 having to be real if 
+inf + 1 is real could be a sound riddle in math.
+
+so if we take inf + x  to infinity and inf - x to infinity then,
+
+lim x->inf (inf - x) = 0 and NOT = -inf because then a lim is the only
+way to add infinities together
+
+so the lim x->inf (inf + x) = inf^2 with this argument.
+
+only in an analogy then .. 
+
+lim x->inf (inf - x) = inf * 0 = 0
+
+lim x->inf (inf + x) = inf * inf = inf^2
+
+could limits mean the convolution of variables ?
+
+what about lim x->inf (inf * x) =  inf o inf
+and, lim x->inf (inf / x) =  inf o- inf
+
+but before that the question needs to be answered where
+how would then,
+
+lim x->inf (inf^2 - x) = inf
+
+left handed subtraction group defense:
+
+where long handed subtraction can mean pile math then that
+missing algebra block is where addition is the or operand
+
+by the argument 1 - 1 = 1 + (-1) where then saying that 
+pushing any argument in an algebra to 0 could create
+the pile math algebra block then
+
+1 + (-1) ... 0 + (-1) ... 1 + 0 ... 0 + 0 
+
+means 1 + -1 with a certain reformulation could mean +>0 when
++>0 means +/- 1 then, i hypothesize lha could be a reason
+for why 0 is included in the set formula ..
+
++>x = {+/- x, +/- (x-1), +/- (x+1), 0}
+
 if regency can undo a subtraction which means that regency is incomplete addition then
 how could its inverse mean incomplete subtraction. the obvious assumptions is valid.
 o- could take only complete sets to incomplete sets witha restricted domain like before.
